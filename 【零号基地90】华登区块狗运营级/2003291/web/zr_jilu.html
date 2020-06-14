@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="HandheldFriendly" content="True">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>Lucky zodiac</title>
+	<link rel="stylesheet" type="text/css" media="all" href="./css/reset.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="./css/style.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="./css/zodiac_style.css" />
+
+	<script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
+	<script src="./js/js.js" type="text/javascript"></script>
+	<script src="./js/layui.all.js" type="text/javascript"></script>
+
+</head>
+<body>
+<!-- 头部 -->
+<div class="header">
+	<div class="duo"></div>
+	<a href="javascript:history.back(-1)" class="hele"></a>
+	<h1 class="hetitle">转让记录</h1>
+</div>
+
+<div id="page" class="page m3">
+	<div class="turn disFlex align-items flex-justify">
+		<p class="turn_sta" type="0">待转让</p>
+		<p class="turn_sta xz_sta" id="zrz" type="2">转让中</p>
+		<p class="turn_sta" type="1">已完成</p>
+		<p class="turn_sta" type="3">取消/申诉</p>
+	</div>
+
+	<div class="turn_jilu"></div>
+</div>
+
+<script src="/js/public.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function(){
+        var status = $("#zrz").text();
+        var type = 2;
+        $.ajax({
+            type:"post",
+            url:url+'/trade/transtrade.html?token='+token,
+            async:false,
+            data:{
+                token:token,
+                type:type
+            },
+            dataType:'json',
+            success:function(result){
+                if(result.status == "0001"){
+                    $('.turn_jilu').html('');
+                    var html = '';
+                    var data=result.data;
+
+                    for(var i in data){
+                        html += '<div class="order disFlex align-items">';
+                        html += '<img src="./images/ddbh.png" alt="" class="bhimg"/>';
+                        html += '订单编号：<span>I'+data[i].in_userid+'O'+data[i].out_userid+'T</span><span class="orderNub">'+data[i].order_id+'</span></div>';
+                        html += '</div>'
+                        html += '<div class="order_con">';
+                        html += '<p class="font28"><span class="colae">品名：</span><span>'+data[i].name+'</span></p>';
+                        html += '<p class="font28 marT20"><span class="colae">周期：</span><span class="colfea">'+data[i].due+'天</span></p>';
+                        html += '<p class="font28 marT20"><span class="colae">收益：</span><span class="colfea">'+data[i].award+'</span></p>';
+                        html += '<p class="font28 marT20"><span class="colae">价格：</span><span>'+data[i].hcg+'</span></p>';
+                        if(data[i].status == 2 || data[i].status == 7){
+                            html += '<p class="font28 marT20"><span class="colae">付款剩余时间：</span>';
+                            html += ' <span data = " '+ data[i].countdown +' " style="color:red;" class="a-join1" id="timer'+i+'" ></span></p>';
+                        }
+                        if(status = '转让中'){
+                            html += '<div class="over" order_id="'+data[i].order_id+'">查看详情</div>';
+                        }
+                        html += '</div>';
+
+                    }
+                    $('.turn_jilu').append(html);
+
+                    $(".over").on("click",function(){
+                        var order_id = $(this).attr("order_id");
+                        window.location.href="order_details.html?token=" + token + "&id="+order_id+"&type=2";
+                    })
+
+                    //倒计时
+                    var gh=document.getElementsByClassName("a-join1");
+                    for(var i=0;i<gh.length;i++){
+                        addTimer(gh[i].id,gh[i].getAttribute("data"));
+                    }
+                }else{
+                    isErr(result);
+                }
+            },
+            error:function(){
+                layer.msg("响应失败");
+            }
+        })
+    })
+
+    $(".turn_sta").on("click",function(){
+        var status = $(this).text();
+        $(this).addClass("xz_sta").siblings().removeClass("xz_sta");
+        var type = $(this).attr("type");
+        $.ajax({
+            type:"post",
+            url:url+'/trade/transtrade.html?token='+token,
+            async:false,
+            data:{
+                token:token,
+                type:type
+            },
+            dataType:'json',
+            success:function(result){
+                if(result.status == "0001"){
+                    $('.turn_jilu').html('');
+                    var html = '';
+                    var data=result.data;
+                    for(var i in data){
+
+                        if(status == '转让中' || status == '已完成' || status == '取消/申诉'){
+                            html += '<div class="order disFlex align-items">'
+                            html += '<img src="./images/ddbh.png" alt="" class="bhimg"/>';
+                            html += '<p class="font28"><span>订单编号：</span><span>I'+data[i].in_userid+'O'+data[i].out_userid+'T'+data[i].order_id+'</span></p>';
+                            html += '</div>'
+                        }
+                        html += '<div class="order_con">';
+                        html += '<p class="font28"><span class="colae">品名：</span><span>'+data[i].name+'</span></p>';
+                        html += '<p class="font28 marT20"><span class="colae">周期：</span><span class="colfea">'+data[i].due+'天</span></p>';
+                        html += '<p class="font28 marT20"><span class="colae">收益：</span><span class="colfea">'+data[i].award+'</span></p>';
+                        html += '<p class="font28 marT20"><span class="colae">价格：</span><span>'+data[i].hcg+'</span></p>';
+                        if(data[i].status == 2 || data[i].status == 7){
+                            html += '<p class="font28 marT20"><span class="colae">付款剩余时间：</span>';
+                            html += ' <span data="'+ data[i].countdown +'" style="color:red;"  class="a-join1" id="timer'+i+'" ></span></p>';
+                        }
+                        if(status == '转让中'){
+                            html += '<div class="over" order_id="'+data[i].order_id+' ">查看详情</div>';
+                        }
+                        html += '</div>';
+
+                    }
+                    $('.turn_jilu').append(html);
+
+                    $(".over").on("click",function(){
+                        var order_id = $(this).attr("order_id");
+                        window.location.href="order_details.html?token=" + token + "&id="+order_id+"&type=2";
+                    })
+
+                    //倒计时
+                    var gh=document.getElementsByClassName("a-join1");
+                    for(var i=0;i<gh.length;i++){
+                        addTimer(gh[i].id,gh[i].getAttribute("data"));
+                    }
+                }else{
+                    isErr(result);
+                }
+            },
+            error:function(){
+                layer.msg("响应失败");
+            }
+        })
+
+    })
+
+    //多个倒计时
+    var time=new Date().getTime();
+    var addTimer = function(){
+        var list = [],
+            interval;
+
+        return function(id,timeStamp){
+            if(!interval){
+                interval = setInterval(go,1);
+            }
+            list.push({ele:document.getElementById(id),time:timeStamp});
+        }
+
+        function go() {
+            for (var i = 0; i < list.length; i++) {
+                list[i].ele.innerHTML = changeTimeStamp(list[i].time);
+                if (!list[i].time)
+                    list.splice(i--, 1);
+            }
+        }
+
+        //传入unix时间戳，得到倒计时
+        function changeTimeStamp(timeStamp){
+            var distancetime = new Date(timeStamp*1000).getTime() - new Date().getTime();
+            if(distancetime > 0){
+                //如果大于0.说明尚未到达截止时间
+                var ms = Math.floor(distancetime%1000);
+                var sec = Math.floor(distancetime/1000%60);
+                var min = Math.floor(distancetime/1000/60%60);
+                var hour =Math.floor(distancetime/1000/60/60%24);
+
+                if(ms<100){
+                    ms = "0"+ ms;
+                }
+                if(sec<10){
+                    sec = "0"+ sec;
+                }
+                if(min<10){
+                    min = "0"+ min;
+                }
+                if(hour<10){
+                    hour = "0"+ hour;
+                }
+
+                return hour + "时" +min + "分" +sec + "秒";
+            }else{
+                return "时间到期"
+            }
+//        if(timeStamp<Date.parse(new Date())){
+//　　　　　　　　　　　　　　//若否，就是已经到截止时间了
+////			Window.location.reload()
+//          return "时间到期"
+//        }  
+        }
+    }();
+
+</script>
+</body>
+</html>
+
+
+
+

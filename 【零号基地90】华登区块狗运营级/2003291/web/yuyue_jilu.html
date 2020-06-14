@@ -1,0 +1,112 @@
+<html class="pixel-ratio-3 retina ios ios-13 ios-13-2-3 ios-gt-12 ios-gt-11 ios-gt-10 ios-gt-9 ios-gt-8 ios-gt-7 ios-gt-6"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="yes" name="apple-touch-fullscreen">
+  <meta content="telephone=no,email=no" name="format-detection">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script type="text/javascript" src="./assets/jquery-2.1.4.js"></script>
+  <script type="text/javascript" src="./assets/jquery-weui.js?v=1"></script>
+  <link rel="stylesheet" type="text/css" href="./assets/weui.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/jquery-weui.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/body.css?v=5">
+  <link rel="stylesheet" type="text/css" href="./assets/iconfont.css?v=5">
+  <title>预约记录</title>
+  <meta name="keywords" content="幸运十二生肖">
+  <meta name="description" content="幸运十二生肖">
+  <body class="head-body ">
+  <header>
+      <div class="weui-cell">
+          <div class="weui-cell__hd">
+                          <a href="javascript:history.back();"><i class="iconfont icon-fanhui"></i></a>
+                      </div>
+          <div class="weui-cell__bd ellipsis">预约记录</div>
+              </div>
+  </header>
+  
+  
+  <div class="idata">
+    <div class="ilist point-cell">
+      <div class="mbody">
+        <div class="weui-cells data-body" id="page">
+<!-- 内容 -->
+  </div>
+      </div>
+    </div>
+  </div>
+  <div class="" style="display: inline-block;text-align: center;width:100%;padding:.2rem 0;">
+		<span class="notMore">拖动加载更多</span>
+	</div>
+  </body></html>
+<script src="/js/public.js"type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+            tabData();
+        });
+        //下拉
+        var page = 1;
+        function tabData() {
+            $.ajax({
+                type:"post",
+                url:url+'/trade/applylist.html?token='+token,
+                async:false,
+                data:{
+                    token:token,
+                    page:page
+                },
+                dataType:'json',
+                success:function(result){
+                    if(result.status == "0001"){
+                        if(result.data.list.length!=0){
+                            var html = '';
+                            var data=result.data.list;
+                            for(var i in data){
+                            	console.log(123)
+                              html = `<div class="weui-cell" id="${data[i].id}">
+                                          <div class="weui-cell__bd">
+                                            <p class="title blue">${data[i].name}</p>
+                                            <p class="gray">花费积分：<strong class="black">${data[i].hcg}</strong> 个</p>
+                                          </div>
+                                          <div class="weui-cell__ft">
+                                            <p>${data[i].created_at}</p>
+                                            <p>&nbsp;</p>
+                                          </div>
+                                        </div>`
+
+								                            $('#page').append(html);   
+
+                            }
+                            
+                            
+//                          $(".about").on("click",function(){
+//                          	var id = $(this).attr("id");
+//      						window.location.href="order_details.html?id=" + id;
+//                          })
+                            
+						}else {
+                            $('.notMore').css('display', 'block').html("没有更多！");
+						}
+                    }else{
+                        isErr(result);
+                    }
+                },
+                error:function(){
+                    layer.msg("响应失败");
+                }
+            })
+        }
+        // 下拉加载更多
+        $(window).scroll(function() {
+            if($(document).scrollTop() >= $(document).height() - $(window).height() - 1) {
+			console.log('我到底了');
+                if($('.notMore').css('display') != "block") {
+                	
+        
+                    page++;
+                    tabData();
+                }
+            }
+        })
+	</script>

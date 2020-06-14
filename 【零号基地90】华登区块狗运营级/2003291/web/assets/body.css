@@ -1,0 +1,337 @@
+* { box-sizing:border-box; }
+html { max-width: 640px; margin:0 auto; }
+body { background-color:#f5f5f5; max-width: 640px; margin:0 auto; }
+.head-body { padding-top:46px; }
+.foot-body { padding-bottom:48px; }
+header { position: fixed; left:0; top:0; width:100%; height: 46px; overflow: hidden; background:#1d204e; font-size:17px; font-weight: 400; color:#333; z-index: 9; }
+header a { color:#fff; font-weight: 400; }
+header .weui-cell__bd {  text-align: center; }
+header .weui-cell:first-child:before { display: block; width:100%; top:45px; left:0; border:solid 1px #ddd; }
+.red { color:#ff3d3d; }
+.green { color:#0ddc06; }
+.blue { color:#5da9ff; }
+.gray { color:#aaa; }
+.orange { color:#f90; }
+.black { color:#000; }
+.hide { display: none; }
+.ellipsis { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color:#fff;}
+.weui-cell-btn { padding:15px 15px; }
+.clear { clear: both; }
+
+.app-warp { width:100%; height: auto; padding:10px 0; margin-top:36%; position: relative; text-align: center; }
+.app-warp .logo { width: auto;height: 80px;margin: 0 auto; }
+.passport .weui-cells { margin-top: 20px; }
+.passport-login { padding:0; width:76%; margin:0 auto; }
+.passport-login .weui-cells { background:none; border-radius: 3px; overflow: hidden; }
+.passport-login .weui-cell { background:#fff; }
+.passport-login .weui-cell a { color:#666; font-size: 14px; }
+.passport-login .weui-cell .weui-label { width:50px; }
+.passport-login .weui-cell-nobg { padding:10px 0; background:none; }
+.passport-login .weui-cell-nobg:before { border:none; }
+.passport-login #login-btn { background:#2c9086; margin-top:10px; }
+.passport .weui-agree { line-height: 30px;  }
+.passport #pact { color:#e1b35f;  }
+.weui-cells:after { bottom: .1px; }
+.passport .weui-cell-row::before { border:none; }
+.passport .forget-title { width:100%; height: 60px; line-height: 60px; text-align: center; font-size: 17px; font-weight: 900; color:#333;  }
+
+.weui-btn { border-radius: 0; }
+.weui-btn:after { border-radius: 0 }
+#user_pact { z-index: 999; }
+#user_pact .weui-popup__modal { background-color:#fff; padding:15px; line-height: 22px; font-size:14px; }
+#user_pact .weui-cell-btn { padding:15px 0; }
+
+.weui-loadmore_line .weui-loadmore__tips { background-color: #f4f4f4; }
+.weui-load_line { width:100%; height: 20px; line-height: 20px; margin:10px 0; text-align: center; font-size:13px; color:#999; }
+.weui-vcode-btn { color:#e1b35f; }
+.weui-btn_primary { border-radius: 3px; background-color: #e1b35f; }
+.weui-btn_primary:not(.weui-btn_disabled):active{color:hsla(0,0%,100%,.6); background-color:#e1b35f }
+.weui-btn_green { border-radius: 3px; background-color: #e1b35f; }
+.weui-btn_green:not(.weui-btn_disabled):active{color:hsla(0,0%,100%,.6); background-color:#e1b35f }
+.weui-btn_black { border-radius: 3px; background-color: #2c9d94; }
+.weui-btn_black:not(.weui-btn_disabled):active{color:hsla(0,0%,100%,.6); background-color:#2c9d94 }
+
+.obadge { display: inline-block; padding:0px 6px; background-color:#10ca00; color:#fff; font-size:12px; }
+.obadge-red { background-color:#ff1c1c; }
+.obadge-blue { background-color:#2388ff; }
+
+.weui-tabbar { position: fixed; left:0; bottom:0; background:#1d204e; }
+.weui-tabbar__label, .weui-tabbar__icon i { color:#e8e4e4; }
+.weui-tabbar__icon { position: relative; }
+.weui-tabbar__icon img { position: relative; top:5px; width:22px; height: 22px; }
+.weui-tabbar__icon>i, i.weui-tabbar__icon { position: absolute; top:-6px; left:0; font-size:30px; }
+.weui-tabbar__item { padding:2px 0; }
+.weui-tabbar__item.weui-bar__item--on .weui-tabbar__label { color:#83eac9; }
+.weui-tabbar__item.weui-bar__item--on .weui-tabbar__icon>i { color:#83eac9; }
+.weui-tabbar:before { border-color:#bbb; }
+
+.app-tabbar .weui-tabbar__item {  padding:10px 10px; background-color:#f13f3f; color:#fff; font-size:16px; }
+
+.border-o:after,.border-o:before { content: " "; position: absolute; left: 0; right: 0; height: 1px; color: #ccc; z-index: 2; }
+.border-bottom-o:after { bottom: 0; border-bottom: 1px solid #ccc; -webkit-transform-origin: 0 100%; transform-origin: 0 100%; -webkit-transform: scaleY(.5); transform: scaleY(.5); }
+.border-top-o:after { top: 0; border-top: 1px solid #ccc; -webkit-transform-origin: 0 0; transform-origin: 0 0; -webkit-transform: scaleY(.5); transform: scaleY(.5); }
+
+.member { width: 100%;position: relative;height: 300px;margin-bottom: 77px; }
+.member-head { position: relative; width: 100%; height: 110px; background-size:100% 100%; text-align: left;}
+.member-head .face { margin-top:15px;margin-left:6px;width:29px; height: 29px; background-color:#fff; border-radius: 50% }
+.member-head .member-group {width: 85%;display: inline-block;height: 55px;line-height: 55px;position: relative;top: -11px;}
+.member-head p { padding: 0; margin:0; font-size:0; }
+.member-head .nickname { height: 28px; line-height: 28px; overflow: hidden; font-size:22px; color:#fff; padding-left:5%;}
+.member-head .nickname #level { color:#fff6a1; font-size:12px; }
+.member-head .usort { font-size:12px; color:#fff; }
+.member-head .mincome { position: absolute; left:0; bottom:0; background:none;  }
+.mincome-body { border-radius: 5px; overflow: hidden;margin-top: 20px; }
+.mincome { width:90%; display: flex;margin: auto;margin-bottom: 10px;}
+.mincome .mincome-item { margin-right: 5px;width:50%;border-radius: 20px; background-image: linear-gradient(#473D8C, #937cb3);height: auto; line-height: 24px;padding: 6px 0 6px 17px; color:#fff; text-align: left; font-size:12px; }
+.mincome .mincome-item .item-num { font-size:15px; color:#ffffff; }
+.member-rent { border-radius: 38%;width:90%; margin:14px auto 72px auto; height: auto; display: flex; border-radius: 5px; overflow: hidden;background-image: linear-gradient(#473D8C, #937cb3); }
+.member-rent .rent-group { color: #e8e2e2;position: relative; width:50%; line-height: 22px; height: 75px; padding-top:16px;border:none; text-align: center; font-size:12px;z-index:99;}
+.member-rent .rent-group .i-mark { position: absolute; left:63%; top:20%; display: block; width:8px; height: 8px; background:#ff4949; border-radius: 50%; }
+.member-rent .rent-icon i { font-size:24px; color:#eef5f5; }
+
+.member .member-notice { position: absolute; top:0px; right:35px; color:#fff; }
+.member .member-notice i {  font-size: 30px; }
+
+.mbadge { display: inline-block; background:green; border-radius: 3px; padding:0 5px; margin-right:5px; font-size:12px; color:#fff; }
+.mbadge-green { background:#00da00; background:linear-gradient(90deg, #00ff95, #00a33a); }
+.mbadge-red { background:#00da00; background:linear-gradient(90deg, #ff77bc, #b90089); }
+.mbadge-blue { background:#00da00; background:linear-gradient(90deg, #38cefb, #007fa5); }
+
+.member-setting-icon { position:absolute; right:15px; top:15px; color:#fff; }
+
+.member-list .weui-cell__bd { padding-left:26px; }
+.member-list .iconfont { position: absolute; left:15px; top:8px; font-size:20px; }
+
+.member .weui-footer { font-size:14px; }
+.hortal-body { width:100%; height: auto; padding:0 20px; margin: 20px 0; }
+.hortal-body .weui-cells { margin-top:0; }
+.hortal-body .weui-cells .iconfont { position: absolute; left:15px; top:8px; font-size: 20px; }
+.hortal-body .weui-cells .weui-cell__bd { padding-left: 28px; font-size:14px; }
+.hortal-body .weui-cells .weui-cell { padding:12px 12px; }
+
+.hortal-main { width:100%; height: auto; border-radius: 5px; overflow: hidden;  }
+.hortal { display: flex; background-color:#fff; }
+.hortal .hortal-item { position: relative; display: block; width:100%; padding:20px 0 10px 0; text-align: center; font-size:12px; }
+.hortal .hortal-icon { line-height: 20px; }
+.hortal .hortal-label { line-height: 20px; color:#666; }
+.hortal .iconfont { font-size:30px; }
+.hortal .i-mark { position: absolute; left:60%; top:20%; display: block; width:8px; height: 8px; background:#ff4949; border-radius: 50%; }
+.member-tip { padding:8px 18px; line-height: 18px; color:#464242; font-size:12px; }
+
+.pd-bottom-50 { padding-bottom:50px; }
+.atab { position: relative; width:100%; height: 42px; line-height: 42px; display: flex; background-color:#fff; font-size:14px; }
+.atab .item { width:100%; height: 42px; text-align: center; color:#999; }
+.atab .item-active { border-bottom:solid 2px #00acb9; color:#00acb9; font-weight: 900; }
+
+.usetting .face { width:50px; height: 50px; }
+
+.teams .weui-media-box__hd { position: relative; width:40px; height: 40px; }
+.teams .face { position: absolute; left:0; top:0; width:40px; line-height: 40px; }
+.teams .level { display: inline-block; background:#09f; padding:0 5px; border-radius: 10%; color:#fff; font-weight: 400; font-size:12px; }
+
+/*瀹炲悕璁よ瘉*/
+.auth-real { padding:40px 0; text-align: center; color:#999; font-size:14px; }
+.auth-real i { display: block; font-size:60px; }
+
+/*璧勪骇*/
+.assets-panel { padding:15px; }
+.assets-body { position: relative; width:100%; height: 140px; background: #5d6096;border-radius: 9px;padding:15px; font-size:14px; color:#fff; }
+.assets-body .assets-title { width:100%; height: 20px; line-height: 20px; }
+.assets-body .assets-num { width:100%; margin-top:30px; font-size:36px; font-weight: 900 }
+.assets-body .assets-btn { position: absolute; right:20px; bottom:20px; display: inline-block; border:solid 1px yellow; border-radius: 3px; padding:0 12px; width: auto; height: 30px; line-height: 28px; color:yellow; font-size:14px; }
+.assets-label { margin:10px 0; line-height: 20px; font-weight: 900; color:#000 }
+.assets-desc { font-size:12px; }
+.point-cell .weui-cell { font-size:12px; }
+.point-cell .weui-cell .title { font-size:14px; }
+.point-cell .weui-cells { margin-top:0; }
+
+/*鏀粯缁戝畾*/
+.member-pay .weui-media-box__hd { width:56px; height: 56px; line-height: 56px; }
+.member-pay .weui-media-box { padding:0 20px; font-size:12px; }
+.member-pay .iconfont { font-size:26px; }
+.member-pay .weui-media-box__title { font-size:14px; }
+.member-pay .weui-cells__title { margin:0 0 15px 0; background:#1e1e2a; border-bottom:solid 1px #1e1e2a; padding:10px 0; font-size:17px; text-align: center; color:#fff; }
+.member-pay .weui-panel { background:none; }
+.member-pay .pay-code { text-align: center; }
+
+/*绌烘暟鎹�*/
+.pdata-empty { display: block; width:100%; height: auto; padding:20px 0; text-align: center; font-size:14px; color:#999; }
+.pdata-empty i { display: block; width: 140px; height: 100px; margin:0 auto; background:url(../image/icon-empty.png) no-repeat center top; background-size:100% auto; }
+
+.with_list { background:none; }
+.with_list .weui-form-preview { margin-top: 15px; }
+.with_list:before { border: none; }
+
+/*璁㈠崟鍒楄〃*/
+.ogame { padding:15px; }
+.ogame .oitem { padding:0 12px; margin-bottom:15px; background:#fff; font-size:14px; color:#999; }
+.ogame .oitem:last-child { margin-bottom:0; }
+.ogame .oitem .oitem-head { position: relative; padding:12px 0 12px 25px; }
+.ogame .oitem .oitem-head i { position: absolute; left:0; top:8px; font-size:20px; }
+.ogame .oitem ul { list-style: none; margin:10px 0; padding:0; }
+.ogame .oitem ul li { display: flex; line-height: 24px; }
+.ogame .oitem .oitem-btn { position: relative; padding:12px 0; width:100%; font-size:14px; text-align: center;}
+.ogame .oitem .oitem-btn-oper { display: inline-block; }
+.ogame .oitem .oitem-btn .obtn { margin-right: 10px; }
+.ogame .oitem .oitem-btn .oitem-btn-oper .obtn { margin-left:10px; margin-right: 0; font-size:14px; }
+.obtn { display: inline-block; vertical-align: middle; line-height: 20px;border:none; outline: none; padding:6px 12px; border-radius: 3px; font-size:14px; color:#fff; }
+.obtn-danger { background:#ff5757; }
+.obtn-success { background:#452F8E; }
+.obtn-warning { background:#f90; }
+.obtn-gray { position: relative; background:#fff; color:#000; }
+.obtn-gray:after { content: " "; position: absolute; left: 0; top: 0; width:100%; height: 200%; color: #ccc; border: 1px solid #333; -webkit-transform-origin: left top; transform-origin: left top; -webkit-transform: scaleY(.5); transform: scaleY(.5); box-sizing:border-box; border-radius: 3px; z-index: 2; }
+
+/*璁㈠崟璇︾粏*/
+.order-tabbar { position: fixed; left: 0; bottom: 0; width:100%; background: #fff; padding:10px 10px; text-align: center; z-index: 9; }
+.order-tabbar .obtn { margin:0 5px; }
+.order-detail { font-size:14px; }
+.order-detail .weui-cell__hd { color:#999; }
+.order-detail .weui-cell__bd { text-align: left; }
+.order-detail .weui-cell { font-size:14px; }
+.order-detail .weui-cells { margin-top:0; }
+.order-detail .order-title { width:100%; height: 50px; line-height: 50px; background:#fff; padding:0 15px; font-size:17px; font-weight: 900; color:#333; }
+.order-detail .weui-cells-text .weui-cell__bd { text-align: left; }
+
+.weui-photo-browser-modal { z-index: 9; }
+.order-pay { width:100%; height: auto; background:#fff; padding:0 15px; }
+.order-pay .pay-item { position: relative; background:#f5f5f5; padding:10px; margin-bottom: 10px; line-height: 22px; font-size:13px; }
+.order-pay .pay-item:last-child { margin-bottom:0; }
+.order-pay .pay-item .pay-code { position: absolute; right:10px; top:10px; width:50px; height: 65px; }
+
+.countdown-time { width:100%; height: 70px; padding:12px 0; background-color:#f90; font-size:12px; text-align: center; color:#fff; }
+.countdown-time .dtime { line-height: 28px; font-size:20px; font-family: "榛戜綋" }
+
+/*鍦板尯閫夋嫨UI缁勪欢*/
+.ui-mask { width:100%; height: 100%; position: fixed; left:0; top:0; background:rgba(0,0,0,0.6); z-index: 998 }
+.ui-select { width:100%; height: 44%; position: fixed; left:0; bottom:0; background-color:#fff; z-index: 999 }
+.ui-select .ui-select-head { width:100%; height: 46px; line-height: 46px; border-bottom:solid 1px #ddd; padding:0 10px; text-align: left; font-size:16px; color:#000; }
+.ui-select .ui-select-oper { text-align: right; color:#09f; }
+.ui-select .ui-select-oper span { padding:0 0 0 15px; }
+.ui-select .ui-select-oper .cancel { color:#e30000; }
+.ui-select .ui-select-body { width:100%; height: 100%; }
+.ui-select .item { padding-bottom:46px; border-right:solid 1px #ddd; overflow: auto; }
+.ui-select .item:last-child { border-right:none; }
+.ui-select .item .line { width:100%; height: 40px; line-height: 40px; padding:0 10px; overflow: hidden; text-overflow: ellipsis; font-size:16px; color:#000; }
+.ui-select .item .line-open { background-color:#ddd; }
+
+/*OTC鍒楄〃甯冨眬*/
+.idata-head {  width:100%; padding:0 12px; margin-top:10px; text-align: right; }
+.downmenu { position: relative; display: inline-block; width:auto; height: 20px; font-size:14px; color:#666; }
+.downmenu .menu-list { display: none; position: absolute; right:0; width:150px; height: auto; max-height: 250px; overflow: auto; background-color:#fff; list-style: none; padding:10px 12px; border-radius: 3px; box-shadow: 0 1px 6px rgba(0,0,0,0.2); z-index: 99; }
+.downmenu .menu-list li { margin:0; padding:0; height: 30px; line-height: 30px; text-align: left; color:#000; }
+.downmenu .menu-list .selected { color:#f07; }
+
+#trade-body { z-index: 599 }
+#trade-body .price { font-size:18px; }
+.trade-tip { width:100%; height: auto; padding:0 15px 15px 15px; font-size:12px; color:#999; }
+.trade-tip p { margin-bottom:6px; line-height: 20px; }
+.trade-tip p:last-child { margin:0; }
+
+.trade-form { width:100%; height: auto; padding:15px; background-color:#fff; }
+.trade-form-limit { width:100%; height: 20px; line-height: 20px; font-size:12px; }
+.trade-form .weui-cell { padding:6px 4px; margin-bottom:15px; }
+.trade-form .weui-cell::before { border:none; }
+
+.wallet { position: relative; width:100%; height: 110px; background:none; color:#fff; }
+.wallet .wallet-title { position: relative; width:100%; height: 40px; line-height: 40px; text-align: center; }
+.wallet .wallet-advance { width:100%; line-height: 30px; padding-top:30px; text-align: center; font-size:24px; }
+.wallet .wallet-advance .otc-code { font-size:16px; }
+.wallet .wallet-free { position: absolute; right:10px; bottom:10px; font-size:14px; color:#eee; }
+.wallet .wallet-detail { position: absolute; left:10px; bottom:10px; font-size:14px; color:#eee; }
+.wallet-addr { width:100%; font-size:12px; text-align: center; }
+.wallet-qrcode .qrcode { text-align: center; }
+.wallet-qrcode .qrcode img { margin:10px auto; width:150px; height: 150px; }
+
+.wallet-tip { width:100%; height: auto; padding:12px 15px; font-size:12px; }
+.wallet-tip .iconfont { font-size:12px; }
+.wallet-tip p { line-height: 18px; margin-bottom:4px; color:#999; }
+
+/*閽卞寘鍒楄〃*/
+.wallet-group { margin:0; }
+.wallet-group .weui-cells { margin-bottom:15px; margin-top:0; background:none; }
+.wallet-group .weui-cells img { width:50px; margin:0; border-radius: 50%; padding:8px; }
+.wallet-group .weui-cells:before { border:none; }
+.wallet-group .weui-cells:after { border:none; }
+.wallet-group .weui-cells .weui-cell { background:#fff; margin-bottom:10px; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.15); padding:6px 10px 6px 0; font-size:16px; }
+.wallet-group .weui-cells .weui-cell:before { border:none; }
+.wallet-group .weui-cells .weui-cell__hd { margin-right:10px; }
+.wallet-group .weui-cells .weui-cell__bd { font-weight: 400; color:#222; }
+.wallet-group .weui-cells .weui-cell__bd p { font-size:12px; color:#999; }
+.wallet-group .weui-cells .weui-cell__ft { line-height: 18px; }
+.wallet-group .weui-cells .weui-cell__ft .advance { font-weight: 400; font-size:16px; font-family: verdana; color:#222; }
+.wallet-group .weui-cells .weui-cell__ft .rate { font-weight: 400; font-size:12px; }
+
+.apply-body { width:100%; z-index: 998 }
+.apply-body .title { position: relative; width:100%; height: 46px; line-height: 46px; background:#1e1e2a; border-bottom:solid 1px #1e1e2a; text-align: center; font-weight: 900; color:#fff; }
+
+/*鍒嗕韩濂栧姳*/
+.reward { width:100%; height: auto; }
+.reward .reward-bg { width:100%; height: auto; font-size:0; }
+.reward .reward-bg img { width:100%; height: auto; }
+.reward .reward-total { width:100%; height: 40px; line-height: 40px; background-color:#fff; padding:0 15px; font-size:17px; text-align: center; }
+.reward-url { width:100%; height: auto; padding:0 15px; word-break: break-all; font-size:12px; color:#000; }
+
+.swiper-container { font-size:0; }
+.swiper-container img { max-width: 100%; margin:0; padding:0; }
+.swiper-pagination-bullet-active { background:#fff; }
+
+.i-news { margin:0 0 15px 0; }
+.i-news .weui-panel__hd { font-size:17px; font-weight: 900; }
+.i-news .weui-cell__hd { width:70px; height: 50px; background-color:#f5f5f5; overflow: hidden; }
+.i-news .weui-cell__hd img { width: auto; height: auto; max-height: 50px; }
+.i-news .weui-panel__hd .more { float: right; font-size:14px; color:#999; font-weight: 400 }
+.i-news .weui-cell__bd { padding-left:10px; font-size:14px; }
+.i-news .weui-cell__bd .desc { font-size:12px; }
+
+.tip-red { width:100%; height: auto; line-height: 20px; padding:5px 10px; background:#ffe9e9; font-size:12px; color:red; }
+
+.iwallet { width:100%; height: auto; padding:0 15px; margin-top:15px; }
+.iwallet .iwallet-head { width:100%; height: 180px; border-radius: 5px; background:url(../image/wallet-bg.png) no-repeat center top; background-size:100% 100%; }
+.iwallet .iwallet-head-2 { background:url(../image/wallet-bg-2.jpg) no-repeat center top; background-size:100% 100%; }
+.iwallet .iwallet-head .iwallet-head-empty { display: block; width:20%; height: auto; margin:0 auto; position: relative; top: 48px; }
+.iwallet .iwallet-head .iwallet-head-group { position: relative; display: block; line-height: 24px; padding:60px 0 0 0; text-align: center; color:#fff; font-size:14px; }
+.iwallet .iwallet-head .iwallet-head-money { line-height: 30px; font-size:26px; font-family: verdana; color:#fff; }
+.iwallet-body { width:100%; margin-top:15px; padding:0; }
+.iwallet-body .weui-btn_black { display: none; }
+.iwallet .iwallet-cog { position: absolute; right:30px; top:10px; color:#fff; }
+.iwallet .iwallet-cog i { font-size:20px; }
+.iwallet .icoin-font { position: relative; left:20%; top:40px; width:50%; transform: rotate(-25deg); font-size:18px; color:#33cfb4; text-align: left; }
+
+.icoin-main { padding:15px; }
+.icoin { position: relative; width:100%; height: 180px; border-radius: 5px; background:url(../image/wallet-bg.jpg?=1) no-repeat center top; background-size:100% 100%; text-align: center; color:#fff; font-size:14px; }
+.icoin-all { height: 260px; border-radius: 0; background:url(../image/yubi-bc.jpg) no-repeat center top; background-size:100% 100%; }
+.icoin-all .quanquan { position: absolute; display: block; top:65px; left:50%; margin-left:-60px; width:120px; height: auto; }
+.icoin-group { width:100%; height: auto; padding-top:40px; }
+.icoin-group .icoin-money { font-size:24px; font-family: verdana; color:#fff; }
+.icoin .icoin-zijin { display: block; width:100%; height: auto; margin:0; }
+.icoin .icoin-zijin img { display: block; width:100%; height: auto; }
+
+.icoin .icoin-img { position: relative; display: block; width:100%; height: auto; margin:0; }
+.icoin .icoin-img img { display: block; width:100%; height: auto; }
+.icoin .icoin-img .icoin-font { position: absolute; left:20px; top:44%; font-size:18px; color:#fff; text-align: left; }
+
+.icoin-tab { position: absolute; left:0; bottom:15px; width:100%; height: 36px; line-height: 36px; display: flex; padding:0 15px; }
+.icoin-tab .icoin-tab-item { display: block; width:50%; margin:0 auto; background-color:#29828a; border-radius: 5px; font-size:14px; color:#fff; }
+.icoin-tab .icoin-tab-item:first-child {  margin-right:7.5px; }
+.icoin-tab .icoin-tab-item:last-child {  margin-left:7.5px; }
+.icoin-tab .icoin-tab-item img { display: inline-block; width:16px; height: 16px; margin-right:5px; vertical-align: sub; }
+.icoin-tip { background:#fdfaf0; padding:6px 10px; font-size:12px; color:#9a6900; }
+
+.coin-recharge { position: fixed; width:100%; height: 100%; background:#fff; margin:0 auto; padding:20px 0 0 0; overflow: auto; }
+.coin-recharge .recharge-title { font-size:16px; text-align: center; font-weight: 900 }
+.coin-recharge .recharge-addr { padding:0 10px; font-size:12px; text-align: center; margin:10px; color:#666; word-break: break-all;
+    line-height: 16px; }
+.coin-recharge .recharge-qrcode { width:140px; height: 140px; background:#f5f5f5; margin:20px auto; }
+.coin-recharge .recharge-qrcode img { display: block; width:100%; height: 100%; }
+.coin-recharge .recharge-btn { width:100%; height: auto; padding:20px 20px 0 20px; border-top: dashed 1px #ccc }
+.coin-recharge .wallet-tip { padding: 15px 20px; }
+
+.all-tip-fixed { position: fixed; left:0; bottom:20px; width:100%; padding:0 20px; font-size:12px; text-align: center; color:#666; opacity: 0.5; }
+
+.weui-cells .list{
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 5px;
+    color: #626262;
+}
+.weui-tabbar:before{border-top:none;}

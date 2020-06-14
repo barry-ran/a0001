@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="./js/mui.min.js"></script>
+    <link href="./css/mui.min.css" rel="stylesheet"/>
+    <link href="./css/main.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./css/login.css" title="" type="text/css" />
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+    <style type="text/css" media="all">
+    	.logo{
+    		    width: auto;
+    height: 80px;
+    margin: 0 auto;
+    	}
+    	.app-warp{
+    		width: 100%;
+    height: auto;
+    padding: 10px 0;
+    margin-top: 14%;
+    position: relative;
+    text-align: center;
+    	}
+    </style>
+</head>
+<body class="bgs">
+	<div class="app-warp">
+	<img class="banner logo" src="./assets/logo (1).png">
+</div>
+	<!--<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">登录</h1>
+	</header>-->
+	<div class="main_wrap main_login" style="background: unset;    background-color: unset;">
+		<form id='login-form' class="mui-input-group">
+			<div class="mui-input-row">
+				<label><span class="mui-icon mui-icon-phone"></span></label>
+				<input id='phone' type="tel" maxlength="11" class="mui-input-clear mui-input" placeholder="请输入电话号码">
+			</div>
+			<div class="mui-input-row">
+				<label><span class="mui-icon mui-icon-locked"></span></label>
+				<input id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入登录密码">
+			</div>
+			<div class="bottom_control">
+				<a href="forget.html" class="forget_btn" style="color:#fff">忘记密码？</a>
+				<div class="remember_pwd"><input type="checkbox" class="remember_check" name="remember_check" value="1">&nbsp;<span style="color:#fff;">记住密码</span></div>
+			</div>
+			<div class="login_area">
+				<a href="javascript:;" class="login_btn">登录</a>
+			</div>
+			
+			<div class="login_area reg_area">
+				<a href="register.html" class=" go_register_btn">立即注册</a>
+			</div>
+		</form>
+	</div>
+	<script src="./js/jquery-2.1.1.min.js"></script>
+	<script src="/js/jquery.cookie.js"></script>
+	<script src="/js/main.js"></script>
+</body>
+</html>
