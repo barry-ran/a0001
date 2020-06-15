@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="images/favicon.ico" >
+<link rel="Shortcut Icon" href="images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="css/min.css" />
+<link rel="stylesheet" type="text/css" href="iconfont/iconfont.min.css" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script> 
+<script type="text/javascript" src="js/jquery.SuperSlide.min.js"></script> 
+
+<meta name="keywords" content="<{$config['config_keywords']}>" />
+<meta name="description" content="<{$article.ma_description}>" /> 
+<title>资讯详情-<{$article.ma_name}>-<{$config['config_name']}></title>
+<style>
+body{margin: 0;padding: 0;border: 0;}
+.dh{display: inline;}
+.dh a{padding: 7px 20px 0;color: #fff;font-size: 16px;line-height: 36px;}
+.dh a:hover{color:yellow;}
+.small_dh{display: inline;float: left;width: 50%;height: 42px;text-align: center;border-bottom: 1px dashed #e2e2e2;}
+.small_dh a{font-size: 14px;color: #000;height: 45px;line-height: 40px;text-align: center;}
+.small_dh a:hover{color:red;}
+.qudian{display: inline;}
+.qudian a:hover{color:#848484;}
+</style>
+</head>
+<body>
+<{include file="top.html"}> 
+        	<div class="container-full">
+                 <div class="container" style="padding-top: 10px;">
+                      <div class="col-sm-9" style="padding:0px">
+                            <div class="row" style="text-align: center;margin: -1px;"><h2><{$article.ma_name}></h2> </div>
+                            <div class="row" style="text-align: center;margin: -1px;"><p><small>时间：<{$article.ma_time}>&nbsp;&nbsp;来源：<a href="http://www.tao1tao.vip" target="_blank" style="color: red;"><{$config['config_name']}></a></small></p></div>
+                            <div class="row" style="border: 1px solid #e5e5e5;padding-bottom: 10px;margin: -1px;">
+                                       <img src="<{$article.ma_images}>" style="width: 95%;padding: 5px;"/>     
+                                       <p style="color: #888;;">&nbsp;&nbsp;<h6><small><{$article.ma_description}></small></h6></p>
+                                      <p><span style="color: red;">淘宝购买<i class="icon Hui-iconfont">&#xe67a;</i><i class="icon Hui-iconfont">&#xe67a;</i><i class="icon Hui-iconfont">&#xe67a;</i></span>&nbsp;&nbsp;<{$article.ma_contents}></p> 
+                                            </div> 
+                                </div>
+                      <div class="col-sm-3" style="padding:5px">
+                               <div class="row" style="border: 1px solid #e5e5e5;padding: 5px;margin: -1px;">
+                               <p style="padding-top: 5px;padding-bottom: 5px;"><h4>最新推荐</h4><hr style="border: 1px solid #333;"/></p>
+                               <{foreach from=$all item=value key=key}>  
+                               <li class="qudian"><p><i class="Hui-iconfont btn btn-danger size-MINI radius"><{$key+1}></i>&nbsp;&nbsp;<a style="line-height:1.6em;margin-top:3px;font-size: 14px;" href="<{spUrl c=main a=article_show ma_id=$value.ma_id}>"><{$value.ma_name|truncate:21}></a></p></li>
+                               <{/foreach}>
+                                     </div>  
+                                </div>
+                 </div>
+        </div>
+    <{include file="footer.html"}>     
+
+</body>
+</html>

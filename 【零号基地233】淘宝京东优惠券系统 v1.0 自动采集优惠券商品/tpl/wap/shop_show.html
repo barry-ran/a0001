@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel="stylesheet" type="text/css" href="css/wap/hui.css" />   
+<title><{$arrays_row.title}></title>
+<style>
+.layui-layer.layui-layer-iframe.layer-anim{z-index: 19891015;position: absolute;top: 100px; width: 90%;margin: auto;height: 80%;}
+</style>
+</head>
+
+<body style="background: #fff;">
+
+<{include file="wap/top.html"}> 
+
+<header class="hui-header">
+    <div id="hui-back"></div>
+    <h1 style="font-size: 14px;"><{$arrays_row.title}></h1>
+    <div id="hui-header-menu" onclick="hui.showSlideMenu();"></div>
+</header>
+
+<div class="hui-wrap" style="padding-top: 44px;padding-bottom: 60px;">
+
+     
+       
+    
+    	<div class="hui-swipe" id="swipe">
+	    	<div class="hui-swipe-items">
+             <{foreach from=$content item=value}>
+	            <div class="hui-swipe-item"> <img src="<{$value}>" style="width: 375px;height: 375px;"/></div>
+                <{/foreach}>
+	        </div>
+	    </div>
+        
+     <div class="hui-speed-dial">   
+     <p style="padding-top: 15px;color: red;font-size: 12px;">券后价 ¥ <span style="font-size: 20px;color: red;"><{$arrays_row.actualPrice}></span></p>              
+     <p style="font-size:11px; color:#aaa;padding-top: 10px;">原价: ¥ <{$arrays_row.originalPrice}>
+       <{if $arrays_row.yunfeixian == '1'}>&nbsp;&nbsp;&nbsp;&nbsp;<span class="hui-icons hui-icons-success" style="font-size:11px; color:#aaa;">送运费险</span><{else}><{/if}>
+     <span class="hui-fr" style="color: red;">已售:<{$arrays_row.monthSales}>件</span></p>
+     <p style="font-size: 14px;width: 100%;padding-top: 15px;">
+                   <{if $arrays_row.shopType == '1'}>   <img src="images/tmall.png" style="width: 15px;height: 15px;"/>&nbsp;<{else}><{/if}>
+                          <{if $arrays_row.activityType == '3'}>  <img src="images/juhuasuan.png" style="width: 15px;height: 15px;"/>&nbsp;<{else}><{/if}>   
+                  <{$arrays_row.title}>         
+            </p>
+        <a href="<{spUrl c=main a=shop_tiaozhuan taobaoid=$arrays_row.goodsId}>" target="_blank">    <p style="height: 70px;background: url(images/wap/shop_show_01.png) no-repeat;background-size: 100% 100%;display: flex;color: #fff;margin-top:10px">
+                 <span style="padding-left: 2rem;padding-top: 14px;color: #fff;font-size: 14px;"><b style="color: #fff;font-size: 18px;"><{$arrays_row.couponPrice}> </b>&nbsp;元优惠券<br /><{$arrays_row.couponStartTime|date_format:'%Y-%m-%d'}> ~ <{$arrays_row.couponEndTime|date_format:'%Y-%m-%d'}></span>   
+                    </p>  </a>
+                    <p style="font-size: 13px;line-height: 1.5em;padding: 10px 8px 0px 8px;color: #999999;"><{$arrays_row.desc}></p>
+                    
+                <div class="hui-common-title" style="margin-top:15px;">
+		<div class="hui-common-title-line"></div>
+		<div class="hui-common-title-txt">基本信息</div>
+		<div class="hui-common-title-line"></div>
+	</div>
+    
+    <p style="font-size: 12px;">    
+        <{foreach from=$information item=value}>    
+              <{foreach from=$value item=v key=key}>      
+	           	&nbsp;&nbsp;<{$key}>&nbsp;:&nbsp;<{$v}><br />
+               <{/foreach}>
+         <{/foreach}>
+    </p>
+    
+    <p>
+    <div  class="hui-tags">
+    <{foreach from=$pinglun item=value}>    
+    <{if $value.type == '1'}>
+		<button type="button" class="hui-button hui-button-small hui-danger hui-fl" style="margin: 2px 5px 2px 5px;font-size: 12px;"><{$value.word}>(<{$value.count}>)</button>
+        <{else}>
+        <button type="button" class="hui-button hui-button-small hui-fl" style="margin: 2px 5px 2px 5px;font-size: 12px;"><{$value.word}>(<{$value.count}>)</button>
+        <{/if}>
+	 <{/foreach}>
+	</div>
+    </p>
+    
+    
+      <div class="hui-common-title" style="margin-top:15px;">
+		<div class="hui-common-title-line"></div>
+		<div class="hui-common-title-txt">商品详情</div>
+		<div class="hui-common-title-line"></div>
+	</div>
+    
+                   <p>
+                   <{if $xiangqinsss != null }>
+                      <{foreach from=$xiangqinsss item=value}>
+                       <img src="<{$value}>" style="width: 100%;"/>
+                         <{/foreach}>
+                   <{else}>
+                       <{foreach from=$content item=value}>
+                       <img src="<{$value}>" style="width: 100%;"/>
+                         <{/foreach}>
+                   <{/if}>
+                                            </p>
+        <iframe runat="server" src="<{$askall_url}>" width="100%" height="400" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes" ></iframe>
+     </div>
+           
+    
+</div>
+
+<div class="hui-fooer-line"></div>
+<div id="hui-footer">
+     <a href="index.php?c=main&a=mindex">
+        <div class="hui-footer-icons hui-icons-home"></div>
+        <div class="hui-footer-text">首页</div>
+    </a>
+    <div style="width: 25%;text-align: center;padding: 10px 0px 10px 0px;">
+      <span style="font-size: 16px;color: red;">¥ <{$arrays_row.actualPrice}></span>
+    </div>
+    <div class="hui-fr" style="text-align: center;width: 80%;">
+        <button type="button" class="hui-button  hui-primary hui-fr" style="margin-right: 10px;" onclick="javascript:window.location.href='<{spUrl c=main a=shop_tiaozhuan taobaoid=$arrays_row.goodsId}>' ">领券购买</button>
+ <button type="button" onclick="fenxiang('分享朋友','<{spUrl c=main a=fenxiang taobaoid=$arrays_row.goodsId}>','100%','100%')" class="hui-button  hui-danger hui-fr" >口令分享</button>
+            </div>
+</div>
+
+
+
+
+
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/wap/hui.js" type="text/javascript"></script>
+<script src="js/wap/hui-swipe.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/layer.js"></script> 
+<script type="text/javascript" src="js/admin.js"></script> 
+<script type="text/javascript">
+    hui.ready(function(){
+        var swipe = new huiSwpie('#swipe');
+        swipe.autoPlay = true;
+        swipe.run();
+    });
+</script>
+<script>
+$(document).ready(function(){
+      $("#typeid<{$typeid}>").css({"border-bottom":"2px solid #f2f2f2","color":"#fff"});
+});
+</script> 
+<script>
+function fenxiang(title,url,w,h){
+var index = layer.open({
+  type: 2,
+    title: '分享给朋友，或直接打开淘宝购买',
+  content: '<{spUrl c=main a=fenxiang taobaoid=$arrays_row.goodsId}>',
+  area: ['320px', '195px'],
+  maxmin: true
+});
+layer.full(index);
+}
+</script>
+</body>
+</html>

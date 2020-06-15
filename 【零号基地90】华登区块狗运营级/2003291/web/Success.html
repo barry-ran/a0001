@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="HandheldFriendly" content="True">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>Lucky zodiac</title>
+<link rel="stylesheet" type="text/css" media="all" href="./css/reset.css" />
+<link rel="stylesheet" type="text/css" media="all" href="./css/style.css" />
+<link rel="stylesheet" type="text/css" media="all" href="./css/zodiac_style.css" />
+
+<script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
+<script src="./js/js.js" type="text/javascript"></script>
+<script type="text/javascript" src="./js/layui.all.js" ></script>
+<style type="text/css">
+	.dgimg{
+		width: 2.8rem;
+		height: 2.86rem;
+		margin-top: 1.5rem;
+	}
+	.zfcg{
+		font-size: .4rem;
+		color: #fea803;
+		margin-top: .3rem;
+	}
+	.complete{
+		width: 3rem;
+		height: .6rem;
+		border:1px solid #FEA803;
+		text-align: center;
+		line-height: .6rem;
+		color: #FEA803;
+		border-radius: .1rem;
+		margin-top: 2rem;
+	}
+</style>
+</head>
+<body style="background: #fff;">
+	<div id="page" class="page">
+		<p class="zfcg marL" style="margin-top: 1rem;">十二生肖温馨提示：</p>
+		<div align="center">
+			<img src="./images/xiaolian.png" alt="" class="dgimg"/>
+			<p class="zfcg">充值成功！</p>
+			<div class="complete">确定</div>
+		</div>				
+	</div>
+	<script type="text/javascript" src="/js/public.js"></script>
+	<script type="text/javascript">		
+		//获取路径？后字段
+		function GetQueryString(name) {
+		    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+			var r = window.location.search.substr(1).match(reg);
+		    if (r != null) return decodeURI(r[2]);
+		    return '';
+		}		
+		var token = GetQueryString('token');
+		
+		$(".complete").on("click",function(){
+			window.location.href="Ji_Fen.html?token=" + token;
+		})
+						
+	</script>
+</body>
+</html>
+
+
+
+

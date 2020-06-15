@@ -1,0 +1,28 @@
+1.网站如何登录后台?
+答:您的地址/adminx
+   账户:9ccms  密码:9ccms
+
+2.公告内容在哪里修改?
+答:基本设置内有公告信息
+
+3.白名单进不去怎么办?
+答:\JCSQL\Admin\Security\AdminUser.php
+进去修改即可
+
+4.安装环境是哪些?
+答:NGINX/APACHE/IIS   推荐使用PHP5.6  权限755
+
+5.资源是自动更新的吗?
+答:是的,每天凌晨十二点钟自动更新
+
+6.程序支持伪静态吗?
+答:支持
+https://bbs.9ccms.net/?thread-264.htm
+
+7.新版本可以直接覆盖1.7吗?
+答:不可以,新架构不能覆盖.
+
+8.文件锁如何删除？
+答：后台根目录删除文件【lock.lock】，或者进入JCSQL/Admin/Errorlp，删除IP锁文件
+
+更多问题请访问:bbs.9ccms.net

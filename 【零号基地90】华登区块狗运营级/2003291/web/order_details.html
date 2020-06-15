@@ -1,0 +1,518 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="HandheldFriendly" content="True">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>Lucky zodiac</title>
+<link rel="stylesheet" type="text/css" media="all" href="./css/reset.css" />
+<link rel="stylesheet" type="text/css" media="all" href="./css/style.css" />
+<link rel="stylesheet" type="text/css" media="all" href="css/zodiac_style.css" />
+
+<script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
+<script src="./js/js.js" type="text/javascript"></script>
+<script src="./js/layui.all.js" type="text/javascript"></script>
+<style>
+	#file1{
+		opacity: 0;
+		width: 1.32rem;
+		height: 1.32rem;
+		position:absolute;
+		z-index: 2;
+	}	
+	
+	.zhezhao{
+		width: 100%;
+		height: 100%;
+		background: black;
+		opacity: 0.3;
+		position:fixed;
+		top:0;
+		left:0;
+		display: none;
+		z-index: 999;
+	}
+	
+	.tanchuang{
+		width: 90%;
+		background: white;
+		position:fixed;
+		top:1rem;
+		left:5%;
+		display: block;
+		z-index: 1000;
+		border-radius: .15rem;
+		padding: .5rem;
+		box-sizing: border-box;
+		display: none;
+		z-index: 1000;		
+	}
+	
+	.fdimg{
+      width: 100%;
+  }
+	.loadimg{
+		width: 200px;
+		position: fixed;
+		top:3.2rem;
+		left:calc((100% - 200px) / 2);
+		z-index: 10000;
+	}
+	
+	.paypwd{
+		width: 90%;
+		background: white;
+		position:fixed;
+		top:4rem;
+		left:5%;
+		display: block;
+		z-index: 1000;
+		border-radius: .15rem;
+		padding: .5rem;
+		box-sizing: border-box;
+		display: none;
+		z-index: 1000;
+	}
+	.pheight{
+		height: .8rem;
+	    border-bottom: 1px solid #ece8e8;
+	}
+	.order11{
+		width: 7.5rem;
+	    height: 1rem;
+	    background: white;
+	    color: black;
+	    font-size: .34rem;
+	    font-weight: 700;
+	    padding-left: .3rem;
+	    box-sizing: border-box;
+	    border-bottom: 1px solid #ece8e8;
+	}
+	
+	.order22{
+	    height: 1rem;
+	    background: white;
+	    color: black;
+	    font-size: .34rem;
+	    font-weight: 700;
+	    padding-left: .3rem;
+	    box-sizing: border-box;
+	    border-bottom: 1px solid #ece8e8;
+	}
+	
+	.backwhite{
+		background: white;
+	}
+</style>
+</head>
+<body>
+	<!-- 头部 -->
+	<div class="header">
+		<div class="duo"></div>
+		<a href="javascript:history.back(-1)" class="hele"></a>
+		<h1 class="hetitle">订单详情</h1>
+	</div>
+
+	<div id="page" class="page m3">			
+        <div class="content"></div>		
+		<div class="orderbtn disFlex flex-justify">
+			<div class="leftBtn"></div>
+			<div class="rightBtn"></div>
+		</div>
+	</div>
+	
+	<!--图片放大效果-->
+	<div class="zhezhao"></div>
+	<div class="tanchuang">
+		<img src="" alt="" class="fdimg"/>
+	</div>
+	
+	<div class="paypwd">
+		<div>
+			<p>请输入支付密码：</p>
+			<input type="password" class="nickipt" style="color: inherit;"/>
+		
+			<div class="aut disFlex flex-justify">				
+				<button class="cope" id="closeTc" style="width: 2rem;">取消</button>
+				<button class="cope rzbtn1" id="nickBtn" style="width: 2rem;">确定</button>
+			</div>
+		</div>
+	</div>
+	<script src="/js/public.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		function GetQueryString(name) {
+		    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+			var r = window.location.search.substr(1).match(reg);
+		    if (r != null) return decodeURI(r[2]);
+		    return '';
+		}
+		var id = GetQueryString('id');
+		var type = GetQueryString('type');
+		$(function(){					
+            $.ajax({
+                type:"post",
+                url:url+'/trade/orderdetail.html?token='+token,
+                async:false,
+                data:{
+                    token:token,
+                    id:id,
+                    type:type
+                },
+                dataType:'json',
+                success:function(result){
+                    if(result.status == "0001"){
+                    	var html = '';
+                        var data=result.data;
+                        html += '<div class="order11 disFlex align-items">订单基本信息</div>';
+                        html += '<div class="order disFlex align-items">';
+                        
+                        html += '<img src="./images/ddbh.png" alt="" class="bhimg"/>';
+                        html += '订单编号：<span>I'+data.in_userid+'O'+data.out_userid+'T</span><span class="orderNub">'+data.orderid+'</span></div>';
+                        
+                        
+                        html += '<div class="order_con11">';                       
+                        if(type == 1){
+//                      	html += '<div class="order_con11">';                        	
+                        	html += '<p class="backwhite font28 pheight disFlex align-items flex-justify" style="display:none;"><span class="colae">卖方ID</span><span>'+data.out_userid+'</span></p>';
+                            html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">转让方用户名</span><span class="col58">'+data.out_username+'</span></p>';
+                    		html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">转让方手机号</span><span class="col58">'+data.out_userphone+'</span></p>';                        	                        	
+//	                        html += '</div>'
+	                        
+	                        html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">订单状态</span><span class="colff0">'+data.status_text+'</span></p>';
+	                        html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">品名</span><span>'+data.zodiac_name+'</span></p>';
+	                        html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">价格</span><span class="colff0">'+data.hcg+'</span></p>';
+	                        html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">智能合约收益</span><span>'+data.due+'<span class="colfea">/'+data.award+'%</span></span></p>';
+	                        html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">可挖GTC</span><span>'+data.dragons+'</span></p>';
+	                        html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">订单金额</span><span>'+data.amount+'</span></p></div>';
+	                        	                        	                        	                                            
+	                        html += '<div class="order_con11 bor">';	                        
+	                        html += '<p class="order22 disFlex align-items bor" style="padding-left: 0;">转出方收款账号信息</p>'; 
+	                        if(data.alipay == "" || data.alipay == null || data.alipay == undefined){}else{
+	                        	html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">支付宝名称</span><span>'+data.alipay+'</span></p>';                        	
+	                        }
+	                        
+	                        if(data.alipay_img == "" || data.alipay_img == null || data.alipay_img == undefined){}else{
+	                        	html += '<p class="backwhite font28 pheight disFlex align-items flex-justify" style="height:inherit;padding: .1rem 0;"><span class="colae">支付宝收款码</span><img src="'+data.alipay_img+'" class="fdtp" style="width:1rem;height:1rem;"></p>';                       	                       	
+	                        }
+	                        
+	                        if(data.wechat == "" || data.wechat == null || data.wechat == undefined){}else{
+	                        	html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">微信名称</span><span>'+data.wechat+'</span></p>';
+	                        }
+	                        
+	                        if(data.wechat_img == "" || data.wechat_img == null || data.wechat_img == undefined){}else{
+	                        	html += '<p class="backwhite font28 pheight disFlex align-items flex-justify" style="height:inherit;padding: .1rem 0;><span class="colae">微信收款码</span><img src="'+data.wechat_img+'" class="fdtp" style="width:1rem;height:1rem;"></p>';
+	                        }
+	
+							if(data.bank == "" || data.bank == null || data.bank == undefined){}else{
+								html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">收款银行名称</span><span>'+data.bank+'</span></p>';
+							}
+	                        
+	                        if(data.bank_num == "" || data.bank_num == null || data.bank_num == undefined){}else{
+								html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">银行卡号</span><span>'+data.bank_num+'</span></p>';
+							}
+	                        
+	                        if(data.realname == "" || data.realname == null || data.realname == undefined){}else{
+								html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">绑定银行卡的真实姓名</span><span>'+data.realname+'</span></p>';
+							}
+	                        
+//	                        html += '<p class="font28 pheight disFlex align-items flex-justify"><span class="colae">产品ID</span><span>'+data.zodiac_issue_id+'</span></p>';
+	                        html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">订单创建时间</span><span>'+data.created_at+'</span></p>';
+//	                        html += '<p class="font28 pheight disFlex align-items flex-justify"><span class="colae">订单状态码</span><span>'+data.status_text+'</span></p>';                                                       
+	                                                                               
+	                        html += '</div>';
+	                        
+	                       
+	                        html += '<p class="order22 disFlex align-items bor">上传付款凭证</p>';
+                        	if(data.status == 7){
+                        		html += '<div class="backwhite order_con11 font28 disFlex align-items flex-justify" style="padding: .1rem 0.3rem;">';  
+	                       		html += '<span class="colae">付款凭证</span>';
+	                       		html += '<form id="form1" method="post" enctype="multipart/form-data">';
+	                       		html += '<input type="file" name="file" id="file1" value="支付宝"/>';
+	                       		html += '<img class="feedback4 imgg skimg1 alipay_img fdtp" style="margin:0;" src="./images/addtj.png" alt="" /></form>';  
+	                       		html += '</div>';                       		
+                        	}else{
+                        		html += '<div class="backwhite order_con11 font28 disFlex align-items flex-justify" style="padding: .1rem 0.3rem;">';
+                        		html += '<span class="colae">付款凭证</span>';
+                        		html += '<img  src="'+ data.img_url +'" class="fdtp" style="width:1.2rem;height:1.2rem;"></div>';
+                        		$(".rightBtn").hide();
+                        	}
+                       		
+                        }
+                        
+                        if(type == 2){
+                        	html += '<p class="backwhite font28 pheight disFlex align-items flex-justify" style="display:none;"><span class="colae">买方ID</span><span>'+data.in_userid+'</span></p>';
+	                        html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">转入方用户名</span><span class="col58">'+data.in_username+'</span></p>';
+	                        html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">转入方手机号</span><span class="col58">'+data.in_userphone+'</span></p>';
+	                        
+	                        html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">订单状态</span><span class="colff0">'+data.status_text+'</span></p>';
+	                        html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">品名</span><span>'+data.zodiac_name+'</span></p>';
+	                        html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">价格</span><span class="colff0">'+data.hcg+'</span></p>';
+	                        html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">智能合约收益</span><span>'+data.due+'<span class="colfea">/'+data.award+'%</span></span></p>';
+	                        html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">可挖GTC</span><span>'+data.dragons+'</span></p>';
+	                        html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">订单金额</span><span>'+data.amount+'</span></p></div>';	                        	                                             
+	                        html += '<div class="order_con11 bor">';
+	                        
+	                        html += '<p class="order22 disFlex align-items bor" style="padding-left: 0;">转让方收款账号信息</p>';
+	                        if(data.alipay == "" || data.alipay == null || data.alipay == undefined){}else{
+	                        	html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">支付宝名称</span><span>'+data.alipay+'</span></p>';                        	
+	                        }
+	                        
+	                        if(data.alipay_img == "" || data.alipay_img == null || data.alipay_img == undefined){}else{
+	                        	html += '<p class="backwhite font28 pheight disFlex align-items flex-justify" style="height:inherit;padding: .1rem 0;"><span class="colae">支付宝收款码</span><img src="'+data.alipay_img+'" class="fdtp" style="width:1rem;height:1rem;"></p>';                       	                       	
+	                        }
+	                        
+	                        if(data.wechat == "" || data.wechat == null || data.wechat == undefined){}else{
+	                        	html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">微信名称</span><span>'+data.wechat+'</span></p>';
+	                        }
+	                        
+	                        if(data.wechat_img == "" || data.wechat_img == null || data.wechat_img == undefined){}else{
+	                        	html += '<p class="backwhite font28 pheight disFlex align-items flex-justify" style="height:inherit;padding: .1rem 0;><span class="colae" >微信收款码</span><img src="'+data.wechat_img+'" class="fdtp" style="width:1rem;height:1rem;"></p>';
+	                        }
+	
+							if(data.bank == "" || data.bank == null || data.bank == undefined){}else{
+								html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">收款银行名称</span><span>'+data.bank+'</span></p>';
+							}
+	                        
+	                        if(data.bank_num == "" || data.bank_num == null || data.bank_num == undefined){}else{
+								html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">银行卡号</span><span>'+data.bank_num+'</span></p>';
+							}
+	                        
+	                        if(data.realname == "" || data.realname == null || data.realname == undefined){}else{
+								html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">绑定银行卡的真实姓名</span><span>'+data.realname+'</span></p>';
+							}
+	                        
+//	                        html += '<p class="font28 pheight disFlex align-items flex-justify"><span class="colae">产品ID</span><span>'+data.zodiac_issue_id+'</span></p>';
+	                        html += '<p class="backwhite font28 pheight disFlex align-items flex-justify"><span class="colae">订单创建时间</span><span>'+data.created_at+'</span></p>';
+//	                        html += '<p class="font28 pheight disFlex align-items flex-justify"><span class="colae">订单状态码</span><span>'+data.status_text+'</span></p>';                                                       
+	                                                                               
+	                        html += '</div>';
+                        	html += '<p class="order22 disFlex align-items bor">上传付款凭证</p>'; 
+                        	if(data.status == 2){
+                        		html += '<div class="backwhite order_con11 font28 disFlex align-items flex-justify" style="padding: .1rem 0.3rem;">';
+                        		html += '<span class="colae">付款凭证</span>';
+                        		if(data.img_url == "" || data.img_url == null || data.img_url == undefined){}else{
+                        			html += '<img src="'+ data.img_url +'" class="fdtp" style="width:1.2rem;height:1.2rem;">';
+                        		}       
+                        		html += '</div>';
+                        	}else if(data.status == 7){
+                        		html += '<div class="backwhite order_con11 font28 disFlex align-items flex-justify" style="padding: .1rem 0.3rem;">';
+                        		html += '<span class="colae">付款凭证</span>';
+                        		if(data.img_url == "" || data.img_url == null || data.img_url == undefined){}else{
+                        			html += '<img src="'+ data.img_url +'" class="fdtp" style="width:1.2rem;height:1.2rem;">';
+                        		}       
+                        		html += '</div>';
+                        		$(".rightBtn").hide();
+                        	}else if(data.status == 3){
+                        		html += '<div class="backwhite order_con11 font28 disFlex align-items flex-justify" style="padding: .1rem 0.3rem;">';
+                        		html += '<span class="colae">付款凭证</span>';
+                        		if(data.img_url == "" || data.img_url == null || data.img_url == undefined){}else{
+                        			html += '<img src="'+ data.img_url +'" class="fdtp" style="width:1.2rem;height:1.2rem;">';
+                        		}
+                        		html += '</div>';
+                        		$(".rightBtn").hide();
+                        	}else{
+                        		html += '<div class="backwhite order_con11 font28 disFlex align-items flex-justify" style="padding: .1rem 0.3rem;">';
+                        		html += '<span class="colae">付款凭证</span>';
+                        		if(data.img_url == "" || data.img_url == null || data.img_url == undefined){}else{
+                        			html += '<img src="'+ data.img_url +'" class="fdtp" style="width:1.2rem;height:1.2rem;">';
+                        		}
+                        		html += '</div>';
+                        		$(".rightBtn").hide();
+                        		                       		
+                        	}
+                       		
+                        }                                                
+                        $('.content').append(html);
+                        
+                        $(".leftBtn").html(data.left_btn);
+                        $(".rightBtn").html(data.right_btn);
+                        
+                        $(".leftBtn").on("click",function(){
+							var lftext = $(".leftBtn").html();
+							if(lftext == '卖家申诉'){
+                                window.location.href="yj_fankui.html?token=" + token + "&cs_type=3&cs_id="+data.orderid;
+                            }else{
+                                window.location.href="yj_fankui.html?token=" + token + "&cs_type=2&cs_id="+data.orderid;
+                            }
+                       })                       
+                        
+                        //支付宝上传图片选择文件改变后刷新预览图
+						$(".skimg1").on("click", function() {
+							$("#file1").click()
+						});
+						$("#file1").on("change", function() {
+							var formData = new FormData($("#form1")[0]);
+							formData.append("token", token);
+							$.ajax({
+								url:url + '/user/appupload.html?token='+token,
+								type: 'POST',
+								data: formData,
+								contentType: false,
+								processData: false,
+								dataType: "json",
+								beforeSend: function() {	
+									div = $("<div class='tk'></div>");
+									img = $("<img src='./images/timg.gif' class='loadimg'>");						
+									$("body").append(div);
+									$("body").append(img);
+								},
+								success: function(result) {
+									if(result.status == '0001') {
+										layer.msg(result.message);
+										$(".skimg1").attr("src", result.data.src);
+									} else {
+										isErr(result);
+									}
+								},
+						        complete: function() { //完成响应
+										$(".tk").hide();
+										$(".loadimg").hide();
+								},
+								error: function(data) {
+									console.info("error: " + data.responseText);
+								}
+							});
+						})
+						
+						var textcot = $(".rightBtn").text();
+						$(".rightBtn").on("click",function(){
+							$(".zhezhao").show();
+							$(".paypwd").show();
+						})
+						var prevent_repetition=true;
+						$("#nickBtn").on("click",function(){
+							if(prevent_repetition){
+								prevent_repetition=false;
+								
+								var jy_pwd = $(".nickipt").val();
+					        	if(!jy_pwd){
+					        		layer.msg("请输入支付密码");
+					        		prevent_repetition=true;
+					        		return false;
+					        	}
+								
+								if(textcot == '确认付款'){
+									var id = $(".orderNub").html();
+						        	var src = $(".skimg1").attr("src");						        							        	
+						        	if(src == './images/addtj.png'){
+						        		layer.msg('请上传付款凭证');
+						        		prevent_repetition=true;
+						        		return false;
+						        	}
+						        	$.ajax({
+						                type:"post",
+						                url:url+'/trade/buyconfirm.html?token='+token,
+						                async:false,
+						                data:{
+						                    token:token,
+						                    id:id,
+						                    src:src,
+						                    jy_pwd:jy_pwd
+						                },
+						                dataType:'json',
+						                success:function(result){
+						                    if(result.status == "0001"){
+												layer.msg(result.message,{time:1000},function(){
+													window.location.reload();
+												});
+						                    	
+						                    }else{
+						                        isErr(result);
+						                    }
+						                },
+						                error:function(){
+						                    layer.msg("响应失败");
+						                },
+										complete: function() {
+											prevent_repetition = true;
+										}
+						            })
+								}
+								
+								if(textcot == '确认收款'){
+									var id = $(".orderNub").html();
+						        	var src = $(".skimg1").attr("src");						        	
+						        	if(src == './images/addtj.png'){
+						        		layer.msg('请上传付款凭证');
+						        		prevent_repetition=true;
+						        		return false;
+						        	}
+						        	$.ajax({
+						                type:"post",
+						                url:url+'/trade/sellconfirm.html?token='+token,
+						                async:false,
+						                data:{
+						                    token:token,
+						                    id:id,
+						                    src:src,
+						                    jy_pwd:jy_pwd
+						                },
+						                dataType:'json',
+						                success:function(result){
+						                    if(result.status == "0001"){
+												layer.msg(result.message,{time:1000},function(){
+													window.location.reload();
+												});
+						                    	
+						                    }else{
+						                        isErr(result);
+						                    }
+						                },
+						                error:function(){
+						                    layer.msg("响应失败");
+						                },
+										complete: function() {
+											prevent_repetition = true;
+										}
+						            })
+								}
+							}											        	 
+				        })
+						
+						$("#closeTc").on("click",function(){
+							$(".nickipt").val('');
+							$(".zhezhao").hide();
+							$(".paypwd").hide();
+						})
+						
+						//点击图片放大效果
+						$(".fdtp").on("click",function(){
+								var url=$(this).attr("src");
+								if(url == './images/addtj.png'){
+									
+								}else{
+									$(".zhezhao").show();
+									$(".tanchuang").show();									
+									$(".fdimg").attr("src",url);
+								}								
+
+						})
+						
+						$(".zhezhao").on("click",function(){
+							$(".zhezhao").hide();
+							$(".tanchuang").hide();
+						})
+						
+						$(".tanchuang").on("click",function(){
+							$(".zhezhao").hide();
+							$(".tanchuang").hide();
+						})						
+                    }else{
+                        isErr(result);
+                    }
+                },
+                error:function(){
+                    layer.msg("响应失败");
+                }
+            })
+       })                                          
+	</script>
+</body>
+</html>
+
+
+
+

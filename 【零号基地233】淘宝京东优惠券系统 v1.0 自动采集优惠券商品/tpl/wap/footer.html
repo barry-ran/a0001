@@ -1,0 +1,37 @@
+<div class="hui-fooer-line"></div>
+<div id="hui-footer">
+    <a href="<{spUrl c=main a=mjiujiu}>">
+        <div class="hui-footer-icons"><img src="images/wap/footer_1.png" style="width: 26px;height: 26px;"/></div>
+        <div class="hui-footer-text" style="font-size: 12px;">9.9封顶</div>
+    </a>
+    <a href="<{spUrl c=main a=quan_top}>">
+        <div class="hui-footer-icons"><img src="images/wap/footer_3.png" style="width: 26px;height: 26px;"/></div>
+        <div class="hui-footer-text" style="font-size: 12px;">优选好券</div>
+    </a>
+    <div style="width:20%; text-align:center;">
+        &nbsp;
+    </div>
+    <a href="<{spUrl c=main a=mbangdan}>">
+        <div class="hui-footer-icons"><img src="images/wap/footer_2.png" style="width: 26px;height: 26px;"/></div>
+        <div class="hui-footer-text" style="font-size: 12px;">实时榜单</div>
+    </a>
+    <a id="nav-juhuasuan" href="<{spUrl c=main a=mjuhuasuan}>">
+        <div class="hui-footer-icons"><img src="images/wap/footer_4.png" style="width: 26px;height: 26px;"/></div>
+        <div class="hui-footer-text" style="font-size: 12px;">聚划算</div>
+    </a>
+</div>
+<div id="footer-logo">
+	<a href="<{spUrl c=main a=mindex}>"><img src="images/wap/footer-logo2.png" /></a>
+</div>
+
+
+<script src="js/wap/hui.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="js/wap/hui-accordion.js"></script>
+<script type="text/javascript" src="js/wap/hui-swipe.js"></script>
+<script type="text/javascript">
+hui.ready(function(){
+    hui.accordion(true, true);
+	hui('#nav-juhuasuan').pointMsg('hot', null, null, null, '1px');
+    hui.slideMenu(); //分类    
+});
+</script>

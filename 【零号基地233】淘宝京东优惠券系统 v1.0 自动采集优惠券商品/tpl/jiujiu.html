@@ -1,0 +1,102 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="images/favicon.ico" >
+<link rel="Shortcut Icon" href="images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="css/min.css" />
+<link rel="stylesheet" type="text/css" href="iconfont/iconfont.min.css" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script> 
+<script type="text/javascript" src="js/jquery.SuperSlide.min.js"></script> 
+
+<meta name="keywords" content="<{$config['config_keywords']}>" />
+<meta name="description" content="<{$config['config_description']}>" /> 
+<title>9.9专区-<{$config['config_name']}></title>
+<style>
+body{margin: 0;padding: 0;border: 0;}
+.dh{display: inline;}
+.dh a{padding: 7px 20px 0;color: #fff;font-size: 16px;line-height: 36px;}
+.dh a:hover{color:yellow;}
+.small_dh{display: inline;float: left;width: 50%;height: 42px;text-align: center;border-bottom: 1px dashed #e2e2e2;}
+.small_dh a{font-size: 14px;color: #000;height: 45px;line-height: 40px;text-align: center;}
+.small_dh a:hover{color:red;}
+.qudian{display: inline;}
+.qudian a:hover{color:#848484;}
+.small_daohang{float: left;height: 20px;line-height: 20px;padding: 0 10px;}
+.small_daohang a{display: block;height: 20px;line-height: 20px;font-size: 14px;color: #333;}
+.small_daohang a:hover{color:red;}
+.zz{margin: 0 14px 14px 0;border: #ffd2e8 solid 1.5px;width: 23%;float: left;position: relative;height: 415px;}
+.zzz:hover{border:#ed145b solid 1.5px;box-shadow:0px 0px 20px #b66262;position: relative;}
+    /*分页按钮CSS*/
+.saucy{margin:5px;padding:5px;text-align:center;color:#aaa;}
+.saucy a,.saucy strong{color:#666;border:1px solid #ddd;background:#fcfcfc;padding:4px 12px;margin:0 3px;text-decoration:none;border-radius:3px;text-shadow:1px 1px 0 white;box-shadow: inset 0 0 1px rgba(255,255,255,.2);background-image:-webkit-linear-gradient(top,#fcfcfc,#eaeaea);background-image:-moz-linear-gradient(top,#fcfcfc,#eaeaea);background-image:-o-linear-gradient(top,#fcfcfc,#eaeaea);background-image:-ms-linear-gradient(top,#fcfcfc,#eaeaea);}
+.saucy a:hover{background:#f80;border:1px solid #f80;color:#fff;padding:8px 12px;text-shadow:1px 1px 0 #f40;background-image:-webkit-linear-gradient(top,#f90,#f60);background-image:-moz-linear-gradient(top,#f90,#f60);background-image:-o-linear-gradient(top,#f90,#f60);background-image:-ms-linear-gradient(top,#f90,#f60);}
+.saucy a:active{background:#f60;border:1px solid #f60;color:#fff;}
+.saucy strong{background:#666;border:1px solid #666 ;color:#fff;text-shadow:1px 1px 0 #444;}
+    /*分页按钮CSS*/
+</style>
+</head>
+<body>
+<{include file="top.html"}> 
+
+        <div class="container-full" style="background-color: #F9F9F9;height: 50px;">
+                <div class="container">
+                       <p style="padding: 15px 0;">
+                               <span class="small_daohang" style="border-right: 1px solid #ccc;"><a href="<{spUrl c=main a=jiujiu}>" style="color: red;">9.9元专区</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=jiujiu typeid=1}>">女装</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=jiujiu typeid=2}>">母婴</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=jiujiu typeid=3}>">美妆</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=jiujiu typeid=4}>">居家日用</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=jiujiu typeid=5}>">鞋品</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=jiujiu typeid=6}>">美食</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=jiujiu typeid=7}>">文娱车品</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=jiujiu typeid=8}>">数码家电</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=jiujiu typeid=9}>">男装</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=jiujiu typeid=10}>">内衣</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=jiujiu typeid=11}>">箱包</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=jiujiu typeid=12}>">配饰</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=jiujiu typeid=13}>">户外运动</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=jiujiu typeid=14}>">家装家纺</a></span> 
+                                </p> 
+                 </div>
+                     </div>
+                     
+        	<div class="container-full">
+                 <div class="container" style="padding-top: 15px;">
+                   <{foreach from=$arrays_row item=value}>  
+                      <div class="zz"><div class="zzz"> 
+                       <a href="<{spUrl c=main a=shop_show taobaoid=$value.goodsId}>" target="_blank">
+                         <img src="<{$value.mainPic}>" style="width: 100%;"/>
+                                <p style="height: 35px;line-height: 18px;width: 100%;margin: 10px 10px 10px 5px;color: #000;">
+                                 <span style="width: 70%;float: left;font-weight: 400;height: 35px;overflow:hidden;"><{$value.title}></span>
+                                 <span style="width: 30%;float: left;text-align: center;color: red;">已售<br /><{$value.monthSales}></span>
+                                 </p>
+                                <p style="padding: 10px 10px 0px 5px;height: 48px;line-height: 40px;">
+                                 <span style="width: 80%;float: left;color: red;"><span style="font-size: 14px;font-weight: 600;">￥</span><span style="font-size: 30px;font-family: Arial;font-weight: 700;"><{$value.actualPrice}></span><span style="margin: 2px 0 0 5px;height: 40px;color: #bbb;text-decoration: line-through;font-size: 14px;">￥<{$value.originalPrice}></span></span>
+                                 <span style="width: 20%;float: left;text-align: center;color: red;"><button class="btn btn-danger radius">查看</button></span>
+                                    </p>
+                         </a>
+                         <div style="width: 83px;height: 44px;display: block;right: 0px;top: 0px;border-radius: 1px;text-align: center;background: #f9117e;color: #fff;z-index: 9;position: absolute;">领优惠券<br /><span style="font-weight: bold;font-size: 16px;">省 <{$value.couponPrice}> 元</span></div>
+                        <div style="width: 60px;height: 24px;background: url(images/juanhoujiage.png) no-repeat;position: absolute;left: 5px;bottom: 45px;z-index: 8;"></div>
+                    </div></div>
+                     <{/foreach}>     
+                 </div>
+        </div>
+        
+            <div style="width: 100%;float: left;">
+                    <div class="saucy">
+   <{if $pageid != 1}>    
+    <a href="<{spUrl c=main a=jiujiu pageid=$pageid-1 typeid=$typeid}>">上一页</a>  
+        <{else}><{/if}>            
+    <strong><{$pageid}></strong>  
+    <a href="<{spUrl c=main a=jiujiu pageid=$pageid+1 typeid=$typeid}>">下一页</a>
+         </div> 
+                        </div>
+    <{include file="footer.html"}>     
+
+</body>
+</html>

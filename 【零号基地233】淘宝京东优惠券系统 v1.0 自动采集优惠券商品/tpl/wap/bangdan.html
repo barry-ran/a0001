@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel="stylesheet" type="text/css" href="css/wap/hui.css" />   
+<title>榜单</title>
+<style>
+.fenlei{width: auto;line-height: 44px;margin: auto;color: #fff;font-size: 16px;text-align: center;}
+.fenlei a{padding: 0 2px 5px;margin: 0 8px;height: 33px;line-height: 33px;color: rgba(255,255,255,.6);}
+.zz{width: 100%;float: left;border-bottom: solid 1px #eee;margin-bottom: 5px;position: relative;background: #fff;}
+/* 必要的css  */
+.hui-news-list{padding:6px 10px;}
+.hui-news-list li{position:relative; width:100%; border-bottom:1px solid #E4E3E6; overflow:hidden;}
+.hui-news-list li:last-child{border:none;}
+.hui-news-list li a{display:block; overflow:hidden; padding:15px 0px;}
+.hui-news-list div{-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; word-break:break-word;}
+.hui-news-list-l{width:32%; float:left; line-height:1.6em; padding-right:10px; font-size:16px;}
+.hui-news-list-l span{color:#999999; font-size:11px;}
+.hui-news-list-r{width:68%; float:right;}
+.hui-news-list-r img{width:100%;}
+.hui-news-list-titile{line-height:1.6em; font-size:16px;}
+.hui-news-list-imgs{font-size:0px; padding-top:8px;}
+.hui-news-list-imgs img{display:block; width:33.3%; float:left; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; word-break:break-word; padding-right:5px;}
+.hui-news-list-img{font-size:0px; padding:8px 0px 5px 0px;}
+.hui-news-list-img img{width:100%;}
+.hui-news-list-info{color:#999999; font-size:11px; padding-top:8px; line-height:18px;}
+</style>
+</head>
+
+<body>
+
+<{include file="wap/top.html"}> 
+
+<header class="hui-header">
+    <div id="hui-back"></div>
+    <h1 style="font-size: 16px;"><img src="images/wap/bangdan.png" style="width: 80%;padding-top: 5px;"/></h1>
+    <div id="hui-header-menu" onclick="hui.showSlideMenu();"></div>
+</header>
+
+<div class="hui-wrap" style="padding-top: 44px;padding-bottom: 60px;">
+
+     <div id="fenlei" style="background: linear-gradient(90deg, #FF8C00 0%, #ff4a00 100%);">
+        <div>
+         <div class="fenlei"><a id="typeid" href="<{spUrl c=main a=mbangdan}>">实时</a></div>
+            <div class="fenlei"><a id="typeid1" href="<{spUrl c=main a=mbangdan typeid=1}>">女装</a></div>
+            <div class="fenlei"><a id="typeid2" href="<{spUrl c=main a=mbangdan typeid=2}>">母婴</a></div>
+            <div class="fenlei"><a id="typeid3" href="<{spUrl c=main a=mbangdan typeid=3}>">美妆</a></div>
+            <div class="fenlei"><a id="typeid4" href="<{spUrl c=main a=mbangdan typeid=4}>">居家日用</a></div>
+            <div class="fenlei"><a id="typeid5" href="<{spUrl c=main a=mbangdan typeid=5}>">鞋品</a></div>
+            <div class="fenlei"><a id="typeid6" href="<{spUrl c=main a=mbangdan typeid=6}>">美食</a></div>
+            <div class="fenlei"><a id="typeid7" href="<{spUrl c=main a=mbangdan typeid=7}>">文娱车品</a></div>
+            <div class="fenlei"><a id="typeid8" href="<{spUrl c=main a=mbangdan typeid=8}>">数码家电</a></div>
+            <div class="fenlei"><a id="typeid9" href="<{spUrl c=main a=mbangdan typeid=9}>">男装</a></div>
+            <div class="fenlei"><a id="typeid10" href="<{spUrl c=main a=mbangdan typeid=10}>">内衣</a></div>
+            <div class="fenlei"><a id="typeid11" href="<{spUrl c=main a=mbangdan typeid=10}>">箱包</a></div>
+            <div class="fenlei"><a id="typeid12" href="<{spUrl c=main a=mbangdan typeid=12}>">配饰</a></div>
+            <div class="fenlei"><a id="typeid13" href="<{spUrl c=main a=mbangdan typeid=13}>">户外运动</a></div>
+            <div class="fenlei"><a id="typeid14" href="<{spUrl c=main a=mbangdan typeid=14}>">家装家纺</a></div>
+        </div>
+    </div>
+    
+    <div class="hui-news-list" style="padding: 0px;">
+                     <ul>
+                     
+                        <{foreach from=$arrays_row item=value key=key}>   
+                        <a href="<{spUrl c=main a=mshop_show taobaoid=$value.goodsId}>">
+                            <li class="zz">
+                             <span style="padding-right: 20px;padding-bottom:5px;width: 42px;background: url(images/wap/bangdan_top.png) no-repeat;height: 20px;line-height: 20px;color: #fff;font-size: 11px;z-index: 2px;">&nbsp;NO.<{$key+1}></span>
+                            <div style="margin-top: -18px;">
+                                        <div class="hui-news-list-l">
+                     <img src="<{$value.mainPic}>" style="width: 120px;height: 120px;"/>
+                    </div>
+                    <div class="hui-news-list-r" style="padding-left:10px;">
+                         <p style="font-size: 14px;height: 20px;overflow:hidden;"><{$value.dtitle}></p>
+                         <p style="font-size: 14px;color: #888;padding-top: 10px;">近2小时疯抢<span style="color: #FF7800;padding: 0 3px;"><{$value.twoHoursSales}></span>件</p>
+                         <p style="font-size:11px; color:#aaa;padding-top: 10px;">原价: ¥ <{$value.originalPrice}></p>
+                         <p style="padding-top: 15px;color: red;font-size: 12px;">券后价 ¥ <span style="font-size: 20px;color: red;"><{$value.actualPrice}></span> <button type="button" class="hui-button hui-button-small hui-danger hui-fr" style="border-radius: 15px;margin-right: 10px;">立即抢</button></p>
+                                        </div>  
+                                </div>      
+                            </li>     
+                            </a> 
+                          <{/foreach}>       
+                            
+                     </ul>
+    </div>
+  
+    
+    <!-- 回到顶部 -->  
+   <div style="width:30px;overflow:hidden;position:fixed;right:10px;bottom:50px;z-index:10;">
+	<div style="width:100%;overflow:hidden;">
+		<div style="width:30px;height:30px;margin-bottom:10px;"><a href="#"><img src="images/top.png" style="width: 30px;height: 30px;opactiy:0.7"/></a></div>
+	</div>   
+</div>         
+<!-- 回到顶部 -->          
+    
+</div>
+<{include file="wap/footer.html"}> 
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/wap/hui-tab.js" type="text/javascript"></script>
+<script type="text/javascript">
+    hui.ready(function(){
+       hui('#fenlei').scrollX(4, '.fenlei');
+    });
+</script>
+<script>
+$(document).ready(function(){
+      $("#typeid<{$typeid}>").css({"border-bottom":"2px solid #f2f2f2","color":"#fff"});
+});
+</script> 
+</body>
+</html>

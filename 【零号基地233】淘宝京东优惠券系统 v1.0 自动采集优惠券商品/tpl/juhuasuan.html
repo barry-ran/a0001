@@ -1,0 +1,111 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="images/favicon.ico" >
+<link rel="Shortcut Icon" href="images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="css/min.css" />
+<link rel="stylesheet" type="text/css" href="iconfont/iconfont.min.css" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script> 
+<script type="text/javascript" src="js/jquery.SuperSlide.min.js"></script> 
+
+<meta name="keywords" content="<{$config['config_keywords']}>" />
+<meta name="description" content="<{$config['config_description']}>" /> 
+<title>聚划算-<{$config['config_name']}></title>
+<style>
+body{margin: 0;padding: 0;border: 0;}
+.dh{display: inline;}
+.dh a{padding: 7px 20px 0;color: #fff;font-size: 16px;line-height: 36px;}
+.dh a:hover{color:yellow;}
+.small_dh{display: inline;float: left;width: 50%;height: 42px;text-align: center;border-bottom: 1px dashed #e2e2e2;}
+.small_dh a{font-size: 14px;color: #000;height: 45px;line-height: 40px;text-align: center;}
+.small_dh a:hover{color:red;}
+.small_daohang{width: 70px;float: left;text-align: center;}
+.small_daohang a{color: #fff;text-decoration: none;opacity: 0.7;}
+.small_daohang a:hover{color:#fff;}
+.zz{width: 50%;float: left;padding: 20px 0 20px 20px;box-sizing: border-box;border-bottom: 1px solid #E9E9E9;background-color: #FFF;border-radius:20px}
+.zz a:hover{color:red;}
+
+    /*分页按钮CSS*/
+.saucy{margin:5px;padding:5px;text-align:center;color:#aaa;}
+.saucy a,.saucy strong{color:#666;border:1px solid #ddd;background:#fcfcfc;padding:4px 12px;margin:0 3px;text-decoration:none;border-radius:3px;text-shadow:1px 1px 0 white;box-shadow: inset 0 0 1px rgba(255,255,255,.2);background-image:-webkit-linear-gradient(top,#fcfcfc,#eaeaea);background-image:-moz-linear-gradient(top,#fcfcfc,#eaeaea);background-image:-o-linear-gradient(top,#fcfcfc,#eaeaea);background-image:-ms-linear-gradient(top,#fcfcfc,#eaeaea);}
+.saucy a:hover{background:#f80;border:1px solid #f80;color:#fff;padding:8px 12px;text-shadow:1px 1px 0 #f40;background-image:-webkit-linear-gradient(top,#f90,#f60);background-image:-moz-linear-gradient(top,#f90,#f60);background-image:-o-linear-gradient(top,#f90,#f60);background-image:-ms-linear-gradient(top,#f90,#f60);}
+.saucy a:active{background:#f60;border:1px solid #f60;color:#fff;}
+.saucy strong{background:#666;border:1px solid #666 ;color:#fff;text-shadow:1px 1px 0 #444;}
+    /*分页按钮CSS*/
+</style>
+<script>
+$(document).ready(function(){
+      $("#hr_class<{$typeid}>").attr("src", "images/huangtiao.png"); 
+});
+</script> 
+</head>
+<body>
+<{include file="top.html"}> 
+
+        <div class="container-full">
+                <div class="container">
+                        <img src="images/jhs_banner.png" style="width: 100%;"/>
+                 </div>
+                     </div>
+                     
+                      <div class="container-full" style="background: url(images/jhs_top_bg.png) center no-repeat;background-size: 100% 100%;">
+                <div class="container" style="height:390px;">
+                       <div style="height: 80px;padding-top: 30px;text-align: center;width: 88%;margin: auto;">
+              <span class="small_daohang"><a href="<{spUrl c=main a=juhuasuan}>"><p><img src="images/topico0.png" style="width: 25px;height: 25px;"/></p>精选<p><img id="hr_class" src=""/></p></a></span>
+               <span class="small_daohang"><a href="<{spUrl c=main a=juhuasuan typeid=1}>"><p><img src="images/topico1.png" style="width: 25px;height: 25px;"/></p>女装<p><img id="hr_class1" src=""/></p></a></span>
+                <span class="small_daohang"><a href="<{spUrl c=main a=juhuasuan typeid=2}>"><p><img src="images/topico2.png" style="width: 25px;height: 25px;"/></p>母婴<p><img id="hr_class2" src=""/></p></a></span>
+                 <span class="small_daohang"><a href="<{spUrl c=main a=juhuasuan typeid=3}>"><p><img src="images/topico3.png" style="width: 25px;height: 25px;"/></p>美妆<p><img id="hr_class3" src=""/></p></a></span>
+                  <span class="small_daohang"><a href="<{spUrl c=main a=juhuasuan typeid=4}>"><p><img src="images/topico4.png" style="width: 25px;height: 25px;"/></p>居家日用<p><img id="hr_class" src=""/></p></a></span>
+                   <span class="small_daohang"><a href="<{spUrl c=main a=juhuasuan typeid=5}>"><p><img src="images/topico5.png" style="width: 25px;height: 25px;"/></p>鞋品<p><img id="hr_class5" src=""/></p></a></span>
+                    <span class="small_daohang"><a href="<{spUrl c=main a=juhuasuan typeid=6}>"><p><img src="images/topico6.png" style="width: 25px;height: 25px;"/></p>美食<p><img id="hr_class6" src=""/></p></a></span>
+                     <span class="small_daohang"><a href="<{spUrl c=main a=juhuasuan typeid=7}>"><p><img src="images/topico7.png" style="width: 25px;height: 25px;"/></p>文娱车品<p><img id="hr_class7" src=""/></p></a></span>
+                      <span class="small_daohang"><a href="<{spUrl c=main a=juhuasuan typeid=8}>"><p><img src="images/topico8.png" style="width: 25px;height: 25px;"/></p>数码家电<p><img id="hr_class8" src=""/></p></a></span>
+                       <span class="small_daohang"><a href="<{spUrl c=main a=juhuasuan typeid=9}>"><p><img src="images/topico9.png" style="width: 25px;height: 25px;"/></p>男装<p><img id="hr_class9" src=""/></p></a></span>
+                        <span class="small_daohang"><a href="<{spUrl c=main a=juhuasuan typeid=10}>"><p><img src="images/topico10.png" style="width: 25px;height: 25px;"/></p>内衣<p><img id="hr_class10" src=""/></p></a></span>
+                         <span class="small_daohang"><a href="<{spUrl c=main a=juhuasuan typeid=11}>"><p><img src="images/topico11.png" style="width: 25px;height: 25px;"/></p>箱包<p><img id="hr_class11" src=""/></p></a></span>
+                          <span class="small_daohang"><a href="<{spUrl c=main a=juhuasuan typeid=12}>"><p><img src="images/topico12.png" style="width: 25px;height: 25px;"/></p>配饰<p><img id="hr_class12" src=""/></p></a></span>
+                           <span class="small_daohang"><a href="<{spUrl c=main a=juhuasuan typeid=13}>"><p><img src="images/topico13.png" style="width: 25px;height: 25px;"/></p>户外运动<p><img id="hr_class13" src=""/></p></a></span>
+                            <span class="small_daohang"><a href="<{spUrl c=main a=juhuasuan typeid=14}>"><p><img src="images/topico14.png" style="width: 25px;height: 25px;"/></p>家装家纺<p><img id="hr_class14" src=""/></p></a></span>
+                            </div>
+                 </div>
+                     </div>
+                     
+        	<div class="container-full" style="margin-top: -200px;">
+                 <div class="container" style="padding-top: 10px;">
+                     <{foreach from=$arrays_row item=value}> 
+                      <div class="zz">
+                       <a href="<{spUrl c=main a=shop_show taobaoid=$value.goodsId}>" target="_blank">
+                         <div class="col-sm-4"><img src="<{$value.mainPic}>" style="width: 100%;border-radius: 10px;"/></div>
+                         <div class="col-sm-8" style="border-right: 1px solid #E9E9E9;padding-right: 20px;">
+                                 <p style="font-size: 16px;line-height: 22px;overflow:hidden;height: 45px;"><{$value.title}></p>   
+                                 <p style="font-size: 14px;line-height: 20px;margin: 20px 0 0;"><i class="Hui-iconfont">&#xe6c1;</i>&nbsp;已售 <{$value.monthSales}> 件</p>
+                                 <p style="margin-top: 30px;height: 22px;line-height: 22px;"><img src="images/jhs_ju.png" style="width: 59px;height: 22px;margin-top: -5px;"/><span style="width: 69px;height: 19px;text-align: center;border: 1.5px solid #FC353A;font-size: 14px;color: red;">￥ &nbsp;<{$value.originalPrice}>&nbsp;</span></p>
+                                 <p style="position: relative;height: 26px;display: block;"><span style="font-size: 14px;color: rgba(153,153,153,1);">折后：</span>
+                              <span style="color: #fc4d52;font-size: 18px;height: 35px;line-height: 35px;margin: 5px 0 0 -4px;font-weight: 700;">￥&nbsp;<{$value.actualPrice}></span>
+                              <span style="background: url(images/quan.png) center rgba(255,248,248,1);background-size: 100% 100%;border-radius: 2px;font-weight: 400;padding: 3px 7px;margin: 3px 0;color: #FC4D52;text-align: center;float: right;"><{$value.couponPrice}> 元券</span>
+                              </p>
+                                    </div>
+                         </a>
+                    </div>
+                     <{/foreach}>     
+                 </div>
+        </div>
+        
+            <div style="width: 100%;float: left;">
+                    <div class="saucy">
+   <{if $pageid != 1}>    
+    <a href="<{spUrl c=main a=juhuasuan pageid=$pageid-1 typeid=$typeid}>">上一页</a>  
+        <{else}><{/if}>            
+    <strong><{$pageid}></strong>  
+    <a href="<{spUrl c=main a=juhuasuan pageid=$pageid+1 typeid=$typeid}>">下一页</a>
+         </div> 
+                        </div>
+    <{include file="footer.html"}>     
+
+</body>
+</html>

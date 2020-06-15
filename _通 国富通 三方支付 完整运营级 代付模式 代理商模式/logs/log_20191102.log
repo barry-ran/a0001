@@ -1,0 +1,215 @@
+/index.php
+/controller/css load fail.
+2019-11-02 01:13:07
+180.163.220.66
+
+/index.php
+/controller/css load fail.
+2019-11-02 01:13:12
+14.212.241.120
+
+/index.php
+/controller/css load fail.
+2019-11-02 03:24:16
+42.236.10.78
+
+/index.php
+/controller/css load fail.
+2019-11-02 20:14:12
+36.157.195.49
+
+/index.php
+/controller/css load fail.
+2019-11-02 20:16:00
+36.157.195.49
+
+/index.php
+/controller/css load fail.
+2019-11-02 20:16:07
+36.157.195.49
+
+/index.php
+/controller/view load fail.
+2019-11-02 20:17:10
+36.157.195.49
+
+/index.php
+/controller/view load fail.
+2019-11-02 20:17:10
+36.157.195.49
+
+/index.php
+/controller/css load fail.
+2019-11-02 20:21:41
+36.157.195.49
+
+/index.php
+/controller/css load fail.
+2019-11-02 20:21:44
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:23:55
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:23:55
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:23:56
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:24:27
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:24:27
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:24:29
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:24:43
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:24:43
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:24:44
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:24:49
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:24:50
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:24:50
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:24:53
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:24:54
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:24:54
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:24:59
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:25:00
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:25:00
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:25:05
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:25:06
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:25:06
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:25:13
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:25:13
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:25:14
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:25:33
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:25:33
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:25:33
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:25:49
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:25:49
+36.157.195.49
+
+/index.php
+/controller/static load fail.
+2019-11-02 20:25:50
+36.157.195.49
+
+/index.php
+/controller/css load fail.
+2019-11-02 20:31:28
+36.157.195.49
+
+/index.php
+error in /www/wwwroot/payapi/app/libs/Db.php 80
+SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+select id,paid,unpaid from wy_users  where is_agent=? and is_state=? and ship_type=? and ship_cycle=?    
+[file]/www/wwwroot/payapi/app/controller/admfor035/usership.php
+[line]130
+[class]WY\app\libs\Model
+2019-11-02 20:33:48
+36.157.195.49
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script type="text/javascript" src="http:./js/jquery-2.1.1.min.js"></script>
+    <script>
+        var url = 'http://lf2.221bk.cn';
+        var token = '2330aaea4fbb84a13ec90f263c67421b';
+        // var arg = decodeURIComponent("?token=" + token);
+        var arg = escape("?token=" + token);
+        // var arg = "?token=" + token;
+        $.ajax({
+            type:"post",
+            url:url+'/api/usermsg.html'+ arg,
+            async:false,
+            data:{
+                token:token,
+                page:1
+            },
+            dataType:'json',
+            success:function(result){
+                console.log(result);
+            },
+            error: function(){}
+        });
+    </script>
+</body>
+</html>

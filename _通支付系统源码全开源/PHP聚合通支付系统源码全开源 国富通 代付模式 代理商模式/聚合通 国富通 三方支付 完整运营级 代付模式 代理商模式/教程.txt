@@ -1,0 +1,21 @@
+环境：Centos+PHP5.6+mysql5.6+Apache
+1，上传web到网站根目录
+
+2，导入sjk.sql到数据库
+
+3，后台 /admin   admin   admin888
+ 
+4，修改数据库链接文件  web/app/config.php (后台地址也是这里修改)
+
+5.设置伪静态（Apache)：
+<IfModule mod_rewrite.c>
+ RewriteEngine on
+ RewriteBase /
+ RewriteCond %{REQUEST_FILENAME} !-d
+ RewriteCond %{REQUEST_FILENAME} !-f
+ RewriteRule ^(.*)$ index.php?s=/$1 [QSA,PT,L]
+</IfModule>
+
+
+
+<!-- 闲鱼资源网：精品资源分享网www.xianyuboke.com -->

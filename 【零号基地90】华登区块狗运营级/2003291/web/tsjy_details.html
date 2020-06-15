@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="HandheldFriendly" content="True">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>Lucky zodiac</title>
+<link rel="stylesheet" type="text/css" media="all" href="./css/reset.css" />
+<link rel="stylesheet" type="text/css" media="all" href="./css/style.css" />
+<link rel="stylesheet" type="text/css" media="all" href="./css/zodiac_style.css" />
+
+<script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
+<script src="./js/js.js" type="text/javascript"></script>
+<script src="./js/layui.all.js" type="text/javascript"></script>
+<style type="text/css">
+	.jyimg{
+		width:2rem;
+		height: 2rem;
+		margin: .3rem;
+	}
+</style>
+</head>
+<body>
+	<!-- 头部 -->
+	<div class="header">
+		<div class="duo"></div>
+		<a href="javascript:history.back(-1)" class="hele"></a>
+		<h1 class="hetitle">投诉建议详情</h1>
+	</div>
+
+	<div id="page" class="page m3">	
+		<div class="messdeta">
+			<p class="title" order_id="" style="color: white"></p>
+			<p class="conmsg" style="color: white"></p>	
+			<p><img src="./images/addtj.png" alt="" class="jyimg"/></p>
+          	<hr/>
+			<p class="marL col7f" style="color: white;">回复信息：</p>
+			<p class="hfmsg marT marL" style="color:red;text-indent:2em"></p>
+		</div>
+		<p class="colab marT20 wid" id="msgtime" style="width: 95%;"></p>				
+	</div>
+	
+	<script src="/js/public.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		function GetQueryString(name) {
+		    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+			var r = window.location.search.substr(1).match(reg);
+		    if (r != null) return decodeURI(r[2]);
+		    return '';
+		}		
+		var id = GetQueryString('id');
+
+        $.ajax({
+            type:"post",
+            url:url+'/user/complaincontent.html?token='+token,
+            async:false,
+            data:{
+                token:token,
+                id:id
+            },
+            dataType:'json',
+            success:function(result){
+                if(result.status == "0001"){
+                	$(".title").html(result.data.title).attr("order_id",result.data.order_id);
+                	$(".conmsg").html(result.data.content);
+                	$(".jyimg").attr("src",result.data.src);
+                	$(".hfmsg").html(result.data.replay);
+                	$("#msgtime").html(result.data.replayd_at);
+                }else{
+                    isErr(result);
+                }
+            },
+            error:function(){
+                layer.msg("响应失败");
+            }
+        })
+        
+	</script>
+</body>
+</html>
+
+
+
+
+
+

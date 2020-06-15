@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="author" content="blog.anchen8.net" />
+	<title>链接跳转中....请稍后</title>
+               <script src="js/jquery.min.js"></script>
+ <script type="text/javascript">
+$(document).ready(function(){
+    var sVal = <{$taobaoid}>;
+  	$.getJSON( 'https://acs.m.taobao.com/h5/mtop.taobao.detail.getdetail/6.0/?jsonp=1&data=%7B%22itemNumId%22%3A%22'+sVal+'%22%7D&callback=?' , function(res) 
+					{
+									var res = res;
+                                    var ress = JSON.stringify(res); 
+		                             $("#taobao_data").val(ress); 
+                                     $("form[name='zz']").submit(); 
+				    		});
+  
+  
+});
+</script>
+</head>
+
+<body style="background-image: url(images/super_taobao_pc.gif);background-repeat:no-repeat ;background-size:100% 100%;background-attachment: fixed">
+<form action="<{spUrl c=main a=shop_shows}>" method="POST" name="zz">
+<input type="hidden" value="" name="taobao_data" id="taobao_data"/>
+<input type="hidden" value="<{$taobaoid}>" name="taobaoid"/>
+</form>
+</body>
+</html>

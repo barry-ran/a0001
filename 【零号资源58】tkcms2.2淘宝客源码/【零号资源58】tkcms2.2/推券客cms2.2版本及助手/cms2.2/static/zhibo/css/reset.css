@@ -1,0 +1,90 @@
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	/*line-height: 1;*/
+}
+ol, ul ,li{
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+html * {
+	outline: 0;
+	-webkit-text-size-adjust: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);/*去除ios android 链接，按钮自带阴影的样式*/
+	
+}
+
+body {
+	font-family:"Helvetica Neue", Helvetica, "STHeiTi", sans-serif; /*使用无衬线字体*/
+	 -webkit-text-size-adjust: 100%!important; /*禁止IOS调整字体大小*/
+}
+
+a, img {
+    -webkit-touch-callout: none; /*禁止长按链接与图片弹出菜单*/
+}
+/*去掉webkit默认的表单样式
+button,input,optgroup,select,textarea {
+    -webkit-appearance:none; 
+}*/
+
+a,button,input,optgroup,select,textarea {
+    -webkit-tap-highlight-color:rgba(0,0,0,0); /*去掉a、input和button点击时的蓝色外边框和灰色半透明背景*/
+}
+input {
+	outline:none;
+}
+input::-webkit-input-placeholder {
+	font-size: 12px;
+    color:#999999; /*修改webkit中input的planceholder样式*/
+}
+
+input:focus::-webkit-input-placeholder {
+    color:#ccc; /*修改webkit中focus状态下input的planceholder样式*/
+}
+input::-webkit-input-speech-button {
+    display: none; /*隐藏Android的语音输入按钮*/
+}
+textarea{resize:none;overflow:hidden; outline:none;-webkit-appearance: none;/*去除自带阴影样式*/}
+a,input[type="text"],input[type="submit"]{
+	-webkit-appearance: none;/*去除ios input自带阴影样式*/
+}
+em{ font-style:normal;}
+

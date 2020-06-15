@@ -1,0 +1,13 @@
+array (
+  'dateTime' => '20180123155410',
+  'platOrderNum' => 'ALHF20180123150837331878',
+  'payMoney' => '1000',
+  'payFee' => '20',
+  'platPayResultCode' => 'PTN0004',
+  'sign' => 'ebf442a59af324df19599f961765ba69',
+  'signType' => 'MD5',
+  'orderNum' => '2018012315083544948',
+  'platPayResultRemark' => '支付成功',
+  'command' => 'BMPC007',
+  'groupCode' => 'G910000000001078',
+)

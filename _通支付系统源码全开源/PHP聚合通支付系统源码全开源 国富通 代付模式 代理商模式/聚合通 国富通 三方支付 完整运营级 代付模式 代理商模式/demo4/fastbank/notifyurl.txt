@@ -1,0 +1,10 @@
+array (
+  'status' => '1',
+  'customerid' => '10000',
+  'sdpayno' => '2018010915273036686',
+  'sdorderno' => '1515486229',
+  'total_fee' => '1.00',
+  'paytype' => 'fastbank',
+  'remark' => '',
+  'sign' => '8b7a8517a3e1643ef61de2d524ef7494',
+)

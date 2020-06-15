@@ -1,0 +1,1360 @@
+---------------------------------------------------------------
+
+[2020-04-20T13:00:54+08:00] 127.0.0.1 GET www.yyz.com/admin/login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.030597s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.085928s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000941s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:04:45+08:00] 127.0.0.1 GET www.yyz.com/admin/login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008385s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.002366s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000602s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:04:56+08:00] 127.0.0.1 POST www.yyz.com/admin/login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009013s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.024745s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `is_deleted` = 0  AND `username` = 'admin' ORDER BY `id` DESC LIMIT 1 [ RunTime:0.047601s ]
+[ sql ] [ SQL ] UPDATE `system_user`  SET `login_at` = now() , `login_ip` = '127.0.0.1' , `login_num` = login_num+1  WHERE  `id` = 10000 [ RunTime:0.088303s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000710s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_log` [ RunTime:0.014792s ]
+[ sql ] [ SQL ] INSERT INTO `system_log` (`node` , `action` , `content` , `geoip` , `username`) VALUES ('admin/login/index' , '系统管理' , '用户登录系统成功' , '127.0.0.1' , 'admin') [ RunTime:0.044647s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:04:57+08:00] 127.0.0.1 GET www.yyz.com/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006427s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.003116s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000592s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.094353s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` DESC,`id` ASC [ RunTime:0.104230s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:04:58+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001530s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.002821s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.034228s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001961s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.005718s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000551s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:04:58+08:00] 127.0.0.1 GET www.yyz.com/admin/index/main.html?spm=m-1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006422s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] select version() as ver [ RunTime:0.049006s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001155s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_goods_list` [ RunTime:0.029239s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_goods_list` [ RunTime:0.000355s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001321s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_goods_list` WHERE  `addtime` BETWEEN 1587312000 AND 1587359098 [ RunTime:0.047926s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001362s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_goods_list` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.001062s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001289s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.024791s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_users` [ RunTime:0.000463s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003696s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_users` WHERE  `addtime` BETWEEN 1587312000 AND 1587359098 [ RunTime:0.001732s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001237s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_users` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.017683s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001441s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.002046s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` [ RunTime:0.000469s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001546s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` WHERE  `addtime` BETWEEN 1587312000 AND 1587359098 [ RunTime:0.001418s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004766s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.001352s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001509s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_convey` [ RunTime:0.001672s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001321s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_convey` WHERE  `addtime` BETWEEN 1587312000 AND 1587359098 [ RunTime:0.001242s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001168s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_convey` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.001472s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001296s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.003272s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `status` = 2 [ RunTime:0.001263s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002361s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `status` = 2  AND `addtime` BETWEEN 1587312000 AND 1587359098 [ RunTime:0.001498s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001254s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `status` = 2  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000516s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008609s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.063362s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `status` = 2 [ RunTime:0.000694s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012299s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `status` = 2  AND `addtime` BETWEEN 1587312000 AND 1587359098 [ RunTime:0.001475s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001458s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `status` = 2  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.002350s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002693s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1 [ RunTime:0.001326s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001200s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359098 [ RunTime:0.001381s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001271s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.001335s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001281s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.022892s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `type` = 1  AND `is_sy` = 0 [ RunTime:0.000650s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001314s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `type` = 1  AND `is_sy` = 0  AND `addtime` BETWEEN 1587312000 AND 1587359098 [ RunTime:0.001269s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001394s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `type` = 1  AND `is_sy` = 0  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.001634s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001393s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_balance_log` [ RunTime:0.013469s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1 [ RunTime:0.000468s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001418s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359098 [ RunTime:0.001378s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001377s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.001595s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003188s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1 [ RunTime:0.002189s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001683s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359098 [ RunTime:0.001554s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001499s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.001544s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001197s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` [ RunTime:0.001808s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002842s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`freeze_balance`) AS tp_sum FROM `xy_users` [ RunTime:0.001554s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001303s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 23  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359098 [ RunTime:0.001654s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001279s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 22  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359098 [ RunTime:0.002126s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:05:28+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001679s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.002798s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000520s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001626s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.002757s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000524s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:05:58+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001707s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001824s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000676s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001220s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.002589s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000462s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:06:28+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001639s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.002519s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000525s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000992s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001696s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000392s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:06:41+08:00] 127.0.0.1 GET www.yyz.com/admin/index/info/10000.html?spm=m-1&open_type=modal
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002087s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.002813s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.001056s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:06:51+08:00] 127.0.0.1 GET www.yyz.com/admin/index/pass/10000.html?spm=m-1&open_type=modal
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002715s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.004142s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000885s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:06:58+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001521s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.002539s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000615s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001708s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.002727s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000520s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:07:28+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001482s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.002493s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000494s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001604s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.003279s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000737s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:07:59+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001653s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001699s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000498s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001483s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.002963s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000679s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:08:29+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001878s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001881s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000516s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001649s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001389s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.001824s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:08:59+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001587s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001469s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000481s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001611s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001551s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000640s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:09:11+08:00] 127.0.0.1 GET www.yyz.com/admin/login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001400s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.003198s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000668s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:09:18+08:00] 127.0.0.1 POST www.yyz.com/admin/login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001628s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.002789s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `is_deleted` = 0  AND `username` = 'admin' ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000954s ]
+[ sql ] [ SQL ] UPDATE `system_user`  SET `login_at` = now() , `login_ip` = '127.0.0.1' , `login_num` = login_num+1  WHERE  `id` = 10000 [ RunTime:0.091859s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000766s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_log` [ RunTime:0.002937s ]
+[ sql ] [ SQL ] INSERT INTO `system_log` (`node` , `action` , `content` , `geoip` , `username`) VALUES ('admin/login/index' , '系统管理' , '用户登录系统成功' , '127.0.0.1' , 'admin') [ RunTime:0.068175s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:09:18+08:00] 127.0.0.1 GET www.yyz.com/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003295s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.001490s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000534s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.024715s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` DESC,`id` ASC [ RunTime:0.003601s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:09:19+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001288s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.004898s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000578s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002177s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.002906s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000626s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:09:19+08:00] 127.0.0.1 GET www.yyz.com/admin/index/main.html?spm=m-1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001379s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] select version() as ver [ RunTime:0.000408s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000990s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_goods_list` [ RunTime:0.001146s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_goods_list` [ RunTime:0.000315s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001157s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_goods_list` WHERE  `addtime` BETWEEN 1587312000 AND 1587359359 [ RunTime:0.001306s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001071s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_goods_list` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.003794s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002131s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.001578s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_users` [ RunTime:0.000386s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001156s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_users` WHERE  `addtime` BETWEEN 1587312000 AND 1587359359 [ RunTime:0.001304s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001203s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_users` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.001659s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002672s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.003016s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` [ RunTime:0.000631s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013333s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` WHERE  `addtime` BETWEEN 1587312000 AND 1587359359 [ RunTime:0.000798s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001691s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000704s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001539s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_convey` [ RunTime:0.001953s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001296s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_convey` WHERE  `addtime` BETWEEN 1587312000 AND 1587359359 [ RunTime:0.000624s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001203s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_convey` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000531s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001032s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.005443s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `status` = 2 [ RunTime:0.000715s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001925s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `status` = 2  AND `addtime` BETWEEN 1587312000 AND 1587359359 [ RunTime:0.001477s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001403s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `status` = 2  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000490s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001265s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001858s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `status` = 2 [ RunTime:0.000428s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004842s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `status` = 2  AND `addtime` BETWEEN 1587312000 AND 1587359359 [ RunTime:0.002414s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001358s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `status` = 2  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000508s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001107s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1 [ RunTime:0.001206s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001119s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359359 [ RunTime:0.001236s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001159s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.003615s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002111s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.002618s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `type` = 1  AND `is_sy` = 0 [ RunTime:0.000494s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001426s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `type` = 1  AND `is_sy` = 0  AND `addtime` BETWEEN 1587312000 AND 1587359359 [ RunTime:0.001405s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001522s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `type` = 1  AND `is_sy` = 0  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.001312s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004196s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_balance_log` [ RunTime:0.003404s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1 [ RunTime:0.000554s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001483s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359359 [ RunTime:0.001758s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001242s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.001680s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001284s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1 [ RunTime:0.002149s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003656s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359359 [ RunTime:0.000910s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001463s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000576s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001548s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` [ RunTime:0.001354s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001394s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`freeze_balance`) AS tp_sum FROM `xy_users` [ RunTime:0.001519s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011779s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 23  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359359 [ RunTime:0.000659s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001427s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 22  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359359 [ RunTime:0.000646s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:09:49+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001622s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001582s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000475s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001224s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.000987s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000448s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:10:19+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001525s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001354s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000432s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001200s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001307s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000430s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:10:38+08:00] 127.0.0.1 GET www.yyz.com/admin/shop/goods_cate.html?spm=m-91-92-93
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001713s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_shop_goods_cate` [ RunTime:0.024987s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_shop_goods_cate` [ RunTime:0.000491s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_shop_goods_cate` LIMIT 0,20 [ RunTime:0.000662s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:10:41+08:00] 127.0.0.1 GET www.yyz.com/admin/config/info.html?spm=m-2-4-11
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001477s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.002034s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000510s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:10:44+08:00] 127.0.0.1 GET www.yyz.com/admin/users/index.html?spm=m-62-63-64
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001403s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.001487s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_users` `u` LEFT JOIN `xy_users` `u1` ON `u`.`parent_id`=`u1`.`id` [ RunTime:0.028681s ]
+[ sql ] [ SQL ] SELECT `u`.`id`,`u`.`tel`,`u`.`username`,`u`.`lixibao_balance`,`u`.`id_status`,`u`.`ip`,`u`.`is_jia`,`u`.`addtime`,`u`.`invite_code`,`u`.`freeze_balance`,`u`.`status`,`u`.`balance`,u1.username as parent_name FROM `xy_users` `u` LEFT JOIN `xy_users` `u1` ON `u`.`parent_id`=`u1`.`id` ORDER BY `u`.`id` DESC LIMIT 0,20 [ RunTime:0.001546s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:10:46+08:00] 127.0.0.1 GET www.yyz.com/admin/deal/order_list.html?spm=m-69-72-75
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001393s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.001002s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_convey` `xc` LEFT JOIN `xy_users` `u` ON `u`.`id`=`xc`.`uid` LEFT JOIN `xy_goods_list` `g` ON `g`.`id`=`xc`.`goods_id` [ RunTime:0.000797s ]
+[ sql ] [ SQL ] SELECT `xc`.*,`u`.`username`,`g`.`goods_name`,`g`.`goods_price` FROM `xy_convey` `xc` LEFT JOIN `xy_users` `u` ON `u`.`id`=`xc`.`uid` LEFT JOIN `xy_goods_list` `g` ON `g`.`id`=`xc`.`goods_id` ORDER BY `addtime` DESC LIMIT 0,20 [ RunTime:0.052112s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:10:49+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001636s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001216s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000499s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001201s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001024s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000455s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:10:52+08:00] 127.0.0.1 GET www.yyz.com/admin/users/index.html?spm=m-62-63-64
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001274s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.002917s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_users` `u` LEFT JOIN `xy_users` `u1` ON `u`.`parent_id`=`u1`.`id` [ RunTime:0.001792s ]
+[ sql ] [ SQL ] SELECT `u`.`id`,`u`.`tel`,`u`.`username`,`u`.`lixibao_balance`,`u`.`id_status`,`u`.`ip`,`u`.`is_jia`,`u`.`addtime`,`u`.`invite_code`,`u`.`freeze_balance`,`u`.`status`,`u`.`balance`,u1.username as parent_name FROM `xy_users` `u` LEFT JOIN `xy_users` `u1` ON `u`.`parent_id`=`u1`.`id` ORDER BY `u`.`id` DESC LIMIT 0,20 [ RunTime:0.000717s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:10:54+08:00] 127.0.0.1 GET www.yyz.com/admin/index/main.html?spm=m-1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001330s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] select version() as ver [ RunTime:0.000413s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001355s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_goods_list` [ RunTime:0.001349s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_goods_list` [ RunTime:0.000363s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001406s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_goods_list` WHERE  `addtime` BETWEEN 1587312000 AND 1587359454 [ RunTime:0.001739s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001558s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_goods_list` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000788s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003184s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.003683s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_users` [ RunTime:0.000440s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001536s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_users` WHERE  `addtime` BETWEEN 1587312000 AND 1587359454 [ RunTime:0.000650s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001227s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_users` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000548s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001210s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.001398s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` [ RunTime:0.000403s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002491s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` WHERE  `addtime` BETWEEN 1587312000 AND 1587359454 [ RunTime:0.001843s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011232s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000677s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002971s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_convey` [ RunTime:0.000616s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001801s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_convey` WHERE  `addtime` BETWEEN 1587312000 AND 1587359454 [ RunTime:0.000762s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001505s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_convey` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000866s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001650s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.002643s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `status` = 2 [ RunTime:0.000595s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001715s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `status` = 2  AND `addtime` BETWEEN 1587312000 AND 1587359454 [ RunTime:0.001087s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001577s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `status` = 2  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000597s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011797s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.002240s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `status` = 2 [ RunTime:0.000964s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002438s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `status` = 2  AND `addtime` BETWEEN 1587312000 AND 1587359454 [ RunTime:0.000817s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001799s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `status` = 2  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000603s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001541s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1 [ RunTime:0.001708s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001417s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359454 [ RunTime:0.001732s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004214s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000885s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001402s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.002088s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `type` = 1  AND `is_sy` = 0 [ RunTime:0.000487s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001549s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `type` = 1  AND `is_sy` = 0  AND `addtime` BETWEEN 1587312000 AND 1587359454 [ RunTime:0.001621s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001383s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `type` = 1  AND `is_sy` = 0  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000711s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013448s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_balance_log` [ RunTime:0.002758s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1 [ RunTime:0.001330s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002261s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359454 [ RunTime:0.001510s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001323s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000623s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001446s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1 [ RunTime:0.000486s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001592s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359454 [ RunTime:0.000827s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001522s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.001190s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002977s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` [ RunTime:0.000959s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001554s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`freeze_balance`) AS tp_sum FROM `xy_users` [ RunTime:0.001408s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001335s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 23  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359454 [ RunTime:0.000578s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001394s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 22  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359454 [ RunTime:0.000588s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:11:20+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001810s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001745s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000633s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011421s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001768s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000551s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:11:50+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001513s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001343s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000417s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001322s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001424s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000406s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:12:20+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002024s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001535s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000465s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001253s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001018s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000374s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:12:50+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001536s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001499s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000596s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001403s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001349s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000514s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:13:20+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001617s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001291s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000433s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001189s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.175494s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000507s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:13:50+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001781s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.002011s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000565s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001547s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001627s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000538s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:14:06+08:00] 127.0.0.1 POST www.yyz.com/index/user/do_login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001491s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.001954s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_users` WHERE  `tel` = '13800000000' [ RunTime:0.000561s ]
+[ sql ] [ SQL ] SELECT `id`,`pwd`,`salt`,`pwd_error_num`,`allow_login_time`,`status`,`login_status`,`headpic` FROM `xy_users` WHERE  `tel` = '13800000000' LIMIT 1 [ RunTime:0.000602s ]
+[ sql ] [ SQL ] UPDATE `xy_users`  SET `pwd_error_num` = 0 , `allow_login_time` = 0 , `login_status` = 1  WHERE  `id` = 20 [ RunTime:0.077282s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:14:09+08:00] 127.0.0.1 GET www.yyz.com/index/index/home.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.068544s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.116551s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.012691s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_index_msg` [ RunTime:0.023894s ]
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` [ RunTime:0.007595s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.002348s ]
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` WHERE  `id` = 20 [ RunTime:0.000707s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_banner` [ RunTime:0.015154s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_banner` [ RunTime:0.000521s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001208s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000651s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000993s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.056621s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004390s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.001214s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001725s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.011626s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002116s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.002903s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001578s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 11 LIMIT 1 [ RunTime:0.000884s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001255s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.001008s ]
+[ sql ] [ SQL ] SELECT `xc`.*,`u`.`username`,`u`.`tel` FROM `xy_convey` `xc` LEFT JOIN `xy_users` `u` ON `u`.`id`=`xc`.`uid` WHERE  `xc`.`status` = 1 ORDER BY `xc`.`id` DESC LIMIT 15 [ RunTime:0.000794s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001368s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_goods_cate` [ RunTime:0.034326s ]
+[ sql ] [ SQL ] SELECT `c`.`name`,`c`.`id`,`c`.`cate_info`,`c`.`cate_pic`,u.name as levelname,`u`.`pic`,`u`.`level` FROM `xy_goods_cate` `c` LEFT JOIN `xy_level` `u` ON `u`.`id`=`c`.`level_id` ORDER BY `c`.`id` ASC [ RunTime:0.041312s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001664s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao_list` [ RunTime:0.026671s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_lixibao_list` ORDER BY `id` ASC LIMIT 1 [ RunTime:0.000526s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003257s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `uid` = 20  AND `status` = 1  AND `addtime` BETWEEN  AND 1587359649 [ RunTime:0.000740s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001639s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `uid` = 20  AND `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000673s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001207s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `uid` = 20  AND `status` = 1 [ RunTime:0.000531s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001197s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 20 LIMIT 1 [ RunTime:0.001848s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000915s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000383s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:14:20+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001535s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.002913s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000714s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001948s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001683s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000575s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:14:50+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001973s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.007731s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000770s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001695s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.002358s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000654s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:14:55+08:00] 127.0.0.1 GET www.yyz.com/index/order/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001494s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.026490s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000643s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.001599s ]
+[ sql ] [ SQL ] SELECT `balance` FROM `xy_users` WHERE  `id` = 20 LIMIT 1 [ RunTime:0.000711s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.001357s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_convey` `xc` LEFT JOIN `xy_goods_list` `xg` ON `xc`.`goods_id`=`xg`.`id` WHERE  `xc`.`uid` = 20 [ RunTime:0.000667s ]
+[ sql ] [ SQL ] SELECT `xc`.*,`xg`.`goods_name`,`xg`.`shop_name`,`xg`.`goods_price`,`xg`.`goods_pic` FROM `xy_convey` `xc` LEFT JOIN `xy_goods_list` `xg` ON `xc`.`goods_id`=`xg`.`id` WHERE  `xc`.`uid` = 20 ORDER BY `xc`.`addtime` DESC LIMIT 0,20 [ RunTime:0.013003s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:15:17+08:00] 127.0.0.1 GET www.yyz.com/index/rot_order/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004432s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.011896s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000861s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.004120s ]
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `uid` = 20  AND `addtime` BETWEEN 1587312000 AND 1587359717   AND `status` IN (1,3,5) [ RunTime:0.029190s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.003659s ]
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` WHERE  `id` = 20 [ RunTime:0.000950s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` WHERE  `uid` = 20  AND `addtime` BETWEEN 1587312000 AND 1587359717   AND `status` IN (0,1,3,5) [ RunTime:0.000861s ]
+[ sql ] [ SQL ] SELECT SUM(`freeze_balance`) AS tp_sum FROM `xy_users` WHERE  `id` = 20 [ RunTime:0.002332s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_reward_log` [ RunTime:0.028250s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_reward_log` WHERE  `uid` = 20  AND `addtime` BETWEEN 1587225600 AND 1587311999   AND `status` = 1 [ RunTime:0.000645s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_reward_log` WHERE  `uid` = 20  AND `addtime` BETWEEN  AND 1587359717   AND `status` = 1 [ RunTime:0.000496s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_goods_cate` [ RunTime:0.001431s ]
+[ sql ] [ SQL ] SELECT `c`.`name`,`c`.`cate_info`,`c`.`cate_pic`,u.name as levelname,`u`.`pic`,`u`.`level`,`u`.`bili`,`u`.`order_num` FROM `xy_goods_cate` `c` LEFT JOIN `xy_level` `u` ON `u`.`id`=`c`.`level_id` WHERE  `c`.`id` = 1 LIMIT 1 [ RunTime:0.001940s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001372s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_index_msg` [ RunTime:0.001276s ]
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 9 LIMIT 1 [ RunTime:0.000556s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001496s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `uid` = 20  AND `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000974s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002461s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `uid` = 20  AND `status` = 1 [ RunTime:0.000970s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001417s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.002797s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` ORDER BY `level` ASC [ RunTime:0.000800s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001323s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 20 LIMIT 1 [ RunTime:0.001143s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011640s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `order_num` FROM `xy_level` WHERE  `level` = 3 LIMIT 1 [ RunTime:0.001704s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:15:20+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001478s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.002706s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000616s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002380s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001375s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000445s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:15:33+08:00] 127.0.0.1 GET www.yyz.com/index/order/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001588s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.001911s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000693s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.001812s ]
+[ sql ] [ SQL ] SELECT `balance` FROM `xy_users` WHERE  `id` = 20 LIMIT 1 [ RunTime:0.000555s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.001761s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xy_convey` `xc` LEFT JOIN `xy_goods_list` `xg` ON `xc`.`goods_id`=`xg`.`id` WHERE  `xc`.`uid` = 20 [ RunTime:0.000850s ]
+[ sql ] [ SQL ] SELECT `xc`.*,`xg`.`goods_name`,`xg`.`shop_name`,`xg`.`goods_price`,`xg`.`goods_pic` FROM `xy_convey` `xc` LEFT JOIN `xy_goods_list` `xg` ON `xc`.`goods_id`=`xg`.`id` WHERE  `xc`.`uid` = 20 ORDER BY `xc`.`addtime` DESC LIMIT 0,20 [ RunTime:0.001263s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.002587s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000606s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:15:35+08:00] 127.0.0.1 GET www.yyz.com/index/rot_order/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001297s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.001342s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000426s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.044091s ]
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `uid` = 20  AND `addtime` BETWEEN 1587312000 AND 1587359735   AND `status` IN (1,3,5) [ RunTime:0.000738s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.001751s ]
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` WHERE  `id` = 20 [ RunTime:0.000459s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` WHERE  `uid` = 20  AND `addtime` BETWEEN 1587312000 AND 1587359735   AND `status` IN (0,1,3,5) [ RunTime:0.000682s ]
+[ sql ] [ SQL ] SELECT SUM(`freeze_balance`) AS tp_sum FROM `xy_users` WHERE  `id` = 20 [ RunTime:0.000394s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_reward_log` [ RunTime:0.001741s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_reward_log` WHERE  `uid` = 20  AND `addtime` BETWEEN 1587225600 AND 1587311999   AND `status` = 1 [ RunTime:0.000481s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_reward_log` WHERE  `uid` = 20  AND `addtime` BETWEEN  AND 1587359735   AND `status` = 1 [ RunTime:0.000396s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_goods_cate` [ RunTime:0.001536s ]
+[ sql ] [ SQL ] SELECT `c`.`name`,`c`.`cate_info`,`c`.`cate_pic`,u.name as levelname,`u`.`pic`,`u`.`level`,`u`.`bili`,`u`.`order_num` FROM `xy_goods_cate` `c` LEFT JOIN `xy_level` `u` ON `u`.`id`=`c`.`level_id` WHERE  `c`.`id` = 1 LIMIT 1 [ RunTime:0.001862s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011329s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_index_msg` [ RunTime:0.001799s ]
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 9 LIMIT 1 [ RunTime:0.000725s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001485s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `uid` = 20  AND `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000652s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001192s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `uid` = 20  AND `status` = 1 [ RunTime:0.044747s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001599s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.002750s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` ORDER BY `level` ASC [ RunTime:0.001059s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001818s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 20 LIMIT 1 [ RunTime:0.001043s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001166s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `order_num` FROM `xy_level` WHERE  `level` = 3 LIMIT 1 [ RunTime:0.000520s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:15:37+08:00] 127.0.0.1 GET www.yyz.com/index/support/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001613s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.001633s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000465s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001351s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_cs` [ RunTime:0.024108s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_cs` WHERE  `status` = 1 [ RunTime:0.000674s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001196s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_index_msg` [ RunTime:0.001012s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `status` = 1 [ RunTime:0.000598s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:15:39+08:00] 127.0.0.1 GET www.yyz.com/index/rot_order/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001489s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.001527s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000425s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.001092s ]
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `uid` = 20  AND `addtime` BETWEEN 1587312000 AND 1587359739   AND `status` IN (1,3,5) [ RunTime:0.000615s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.001589s ]
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` WHERE  `id` = 20 [ RunTime:0.000496s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` WHERE  `uid` = 20  AND `addtime` BETWEEN 1587312000 AND 1587359739   AND `status` IN (0,1,3,5) [ RunTime:0.000573s ]
+[ sql ] [ SQL ] SELECT SUM(`freeze_balance`) AS tp_sum FROM `xy_users` WHERE  `id` = 20 [ RunTime:0.000379s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_reward_log` [ RunTime:0.001769s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_reward_log` WHERE  `uid` = 20  AND `addtime` BETWEEN 1587225600 AND 1587311999   AND `status` = 1 [ RunTime:0.000477s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_reward_log` WHERE  `uid` = 20  AND `addtime` BETWEEN  AND 1587359739   AND `status` = 1 [ RunTime:0.000691s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_goods_cate` [ RunTime:0.002747s ]
+[ sql ] [ SQL ] SELECT `c`.`name`,`c`.`cate_info`,`c`.`cate_pic`,u.name as levelname,`u`.`pic`,`u`.`level`,`u`.`bili`,`u`.`order_num` FROM `xy_goods_cate` `c` LEFT JOIN `xy_level` `u` ON `u`.`id`=`c`.`level_id` WHERE  `c`.`id` = 1 LIMIT 1 [ RunTime:0.000820s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001356s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_index_msg` [ RunTime:0.001693s ]
+[ sql ] [ SQL ] SELECT `content` FROM `xy_index_msg` WHERE  `id` = 9 LIMIT 1 [ RunTime:0.000639s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001341s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `uid` = 20  AND `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000680s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.039136s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `uid` = 20  AND `status` = 1 [ RunTime:0.000808s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001565s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.001943s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_level` ORDER BY `level` ASC [ RunTime:0.000591s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001210s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT * FROM `xy_users` WHERE  `id` = 20 LIMIT 1 [ RunTime:0.015542s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001392s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT `order_num` FROM `xy_level` WHERE  `level` = 3 LIMIT 1 [ RunTime:0.009737s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:15:52+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.019957s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001940s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000534s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001489s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001462s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000527s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:16:00+08:00] 127.0.0.1 GET www.yyz.com/index/support/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002236s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.001989s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000632s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002169s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_cs` [ RunTime:0.015168s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_cs` WHERE  `status` = 1 [ RunTime:0.000727s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001753s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_index_msg` [ RunTime:0.001536s ]
+[ sql ] [ SQL ] SELECT * FROM `xy_index_msg` WHERE  `status` = 1 [ RunTime:0.000537s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:16:20+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009582s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.002397s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.001319s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011062s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.053236s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000621s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:16:24+08:00] 127.0.0.1 GET www.yyz.com/index/my/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001630s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_script` [ RunTime:0.001766s ]
+[ sql ] [ SQL ] SELECT `script` FROM `xy_script` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000505s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001354s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.007043s ]
+[ sql ] [ SQL ] SELECT `username`,`tel`,`level`,`id`,`headpic`,`balance`,`freeze_balance`,`lixibao_balance`,`invite_code`,`show_td` FROM `xy_users` WHERE  `id` = 20 LIMIT 1 [ RunTime:0.000814s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001606s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.001527s ]
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `uid` = 20 [ RunTime:0.000598s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001947s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_level` [ RunTime:0.001534s ]
+[ sql ] [ SQL ] SELECT `name` FROM `xy_level` WHERE  `level` = 3 LIMIT 1 [ RunTime:0.001840s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001620s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.001864s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `status` = 1  AND `uid` = 20 [ RunTime:0.000728s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:16:50+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001807s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001800s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000808s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002966s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001895s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000507s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:17:02+08:00] 127.0.0.1 GET www.yyz.com/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001526s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.002966s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000856s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.004492s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` DESC,`id` ASC [ RunTime:0.001217s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000982s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000414s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:17:03+08:00] 127.0.0.1 GET www.yyz.com/admin/index/main.html?spm=m-1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002295s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] select version() as ver [ RunTime:0.000509s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001921s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_goods_list` [ RunTime:0.002076s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_goods_list` [ RunTime:0.000428s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001243s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_goods_list` WHERE  `addtime` BETWEEN 1587312000 AND 1587359822 [ RunTime:0.000938s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001048s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_goods_list` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.003796s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001709s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.002191s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_users` [ RunTime:0.000490s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001252s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_users` WHERE  `addtime` BETWEEN 1587312000 AND 1587359822 [ RunTime:0.000454s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001057s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_users` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000498s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001157s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.000915s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` [ RunTime:0.000334s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005429s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` WHERE  `addtime` BETWEEN 1587312000 AND 1587359822 [ RunTime:0.000750s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001570s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000577s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001075s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_convey` [ RunTime:0.000384s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000976s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_convey` WHERE  `addtime` BETWEEN 1587312000 AND 1587359822 [ RunTime:0.000406s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000984s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_convey` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000398s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011739s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001197s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `status` = 2 [ RunTime:0.000420s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001453s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `status` = 2  AND `addtime` BETWEEN 1587312000 AND 1587359823 [ RunTime:0.000511s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001048s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `status` = 2  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000419s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001147s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001296s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `status` = 2 [ RunTime:0.001549s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003750s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `status` = 2  AND `addtime` BETWEEN 1587312000 AND 1587359823 [ RunTime:0.000630s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001277s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `status` = 2  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.001264s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011688s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1 [ RunTime:0.000690s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001336s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359823 [ RunTime:0.000534s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001315s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000510s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001377s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.002666s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `type` = 1  AND `is_sy` = 0 [ RunTime:0.000501s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004745s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `type` = 1  AND `is_sy` = 0  AND `addtime` BETWEEN 1587312000 AND 1587359823 [ RunTime:0.002392s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001297s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `type` = 1  AND `is_sy` = 0  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.001288s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001466s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_balance_log` [ RunTime:0.002280s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1 [ RunTime:0.000447s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004660s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359823 [ RunTime:0.000608s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002744s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000950s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001957s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1 [ RunTime:0.000503s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001276s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359823 [ RunTime:0.000461s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001393s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000540s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004263s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` [ RunTime:0.000731s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002696s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`freeze_balance`) AS tp_sum FROM `xy_users` [ RunTime:0.000606s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001376s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 23  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359823 [ RunTime:0.000506s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001336s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 22  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359823 [ RunTime:0.000514s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:17:03+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001807s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001403s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000606s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001579s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001437s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000681s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:17:32+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001595s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001183s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000481s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001480s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001328s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000479s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:18:02+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001261s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001137s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000451s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001138s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.000965s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000445s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:18:32+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001470s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001256s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000471s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001449s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.002526s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000592s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:18:45+08:00] 127.0.0.1 GET www.yyz.com/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001502s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.002691s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000905s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.004622s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` DESC,`id` ASC [ RunTime:0.016209s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.002099s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000606s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:18:46+08:00] 127.0.0.1 GET www.yyz.com/admin/index/main.html?spm=m-1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002100s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] select version() as ver [ RunTime:0.001148s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001884s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_goods_list` [ RunTime:0.002227s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_goods_list` [ RunTime:0.000628s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001773s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_goods_list` WHERE  `addtime` BETWEEN 1587312000 AND 1587359926 [ RunTime:0.001614s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002047s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_goods_list` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.001297s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005455s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.002302s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_users` [ RunTime:0.000973s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001362s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_users` WHERE  `addtime` BETWEEN 1587312000 AND 1587359926 [ RunTime:0.001257s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001036s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_users` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000473s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001458s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.002565s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` [ RunTime:0.002481s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002163s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` WHERE  `addtime` BETWEEN 1587312000 AND 1587359926 [ RunTime:0.000589s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001139s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000430s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001121s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_convey` [ RunTime:0.000395s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001072s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_convey` WHERE  `addtime` BETWEEN 1587312000 AND 1587359926 [ RunTime:0.000598s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001055s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_convey` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000429s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001087s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.004247s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `status` = 2 [ RunTime:0.000695s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012658s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `status` = 2  AND `addtime` BETWEEN 1587312000 AND 1587359926 [ RunTime:0.002091s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002483s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `status` = 2  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000605s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012403s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001826s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `status` = 2 [ RunTime:0.000778s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001886s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `status` = 2  AND `addtime` BETWEEN 1587312000 AND 1587359926 [ RunTime:0.000554s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001492s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `status` = 2  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000649s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001424s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1 [ RunTime:0.000484s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001109s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359926 [ RunTime:0.000446s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006091s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000771s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002157s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.001754s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `type` = 1  AND `is_sy` = 0 [ RunTime:0.000505s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001371s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `type` = 1  AND `is_sy` = 0  AND `addtime` BETWEEN 1587312000 AND 1587359926 [ RunTime:0.001305s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001164s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `type` = 1  AND `is_sy` = 0  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.004488s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002337s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_balance_log` [ RunTime:0.000928s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1 [ RunTime:0.000400s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001841s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359926 [ RunTime:0.000700s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001811s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000566s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001430s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1 [ RunTime:0.004274s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002327s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359926 [ RunTime:0.000734s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001486s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000518s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001299s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` [ RunTime:0.000470s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001270s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`freeze_balance`) AS tp_sum FROM `xy_users` [ RunTime:0.001281s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001278s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 23  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359926 [ RunTime:0.000488s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006046s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 22  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359926 [ RunTime:0.000947s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:18:46+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001783s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.003285s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000500s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001408s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001054s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000516s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:19:16+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001741s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001327s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000540s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001549s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001535s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000585s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:19:31+08:00] 127.0.0.1 GET www.yyz.com/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001914s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.001518s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000949s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.003536s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` DESC,`id` ASC [ RunTime:0.000773s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:19:31+08:00] 127.0.0.1 GET www.yyz.com/admin/index/main.html?spm=m-1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002338s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] select version() as ver [ RunTime:0.000680s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002412s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_goods_list` [ RunTime:0.003026s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_goods_list` [ RunTime:0.004215s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002195s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_goods_list` WHERE  `addtime` BETWEEN 1587312000 AND 1587359971 [ RunTime:0.001294s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_goods_list` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.001246s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001908s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.002400s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_users` [ RunTime:0.000750s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001997s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_users` WHERE  `addtime` BETWEEN 1587312000 AND 1587359971 [ RunTime:0.000680s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003960s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_users` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000614s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001696s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.002264s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` [ RunTime:0.000704s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003790s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` WHERE  `addtime` BETWEEN 1587312000 AND 1587359971 [ RunTime:0.000716s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001989s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000489s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001232s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_convey` [ RunTime:0.000467s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001113s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_convey` WHERE  `addtime` BETWEEN 1587312000 AND 1587359971 [ RunTime:0.000429s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001141s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_convey` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000393s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001278s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.003346s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `status` = 2 [ RunTime:0.001738s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001872s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `status` = 2  AND `addtime` BETWEEN 1587312000 AND 1587359971 [ RunTime:0.000685s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001908s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `status` = 2  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000717s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001461s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001383s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `status` = 2 [ RunTime:0.000451s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006676s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `status` = 2  AND `addtime` BETWEEN 1587312000 AND 1587359971 [ RunTime:0.000645s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001774s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `status` = 2  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000554s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001391s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1 [ RunTime:0.000476s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001345s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359971 [ RunTime:0.000524s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001381s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000604s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011220s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.001285s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `type` = 1  AND `is_sy` = 0 [ RunTime:0.000481s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001294s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `type` = 1  AND `is_sy` = 0  AND `addtime` BETWEEN 1587312000 AND 1587359971 [ RunTime:0.000541s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001257s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `type` = 1  AND `is_sy` = 0  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000782s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005176s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_balance_log` [ RunTime:0.002077s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1 [ RunTime:0.000767s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002014s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359971 [ RunTime:0.000612s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001377s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000448s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005506s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1 [ RunTime:0.000798s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001927s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359971 [ RunTime:0.000649s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001508s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000487s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001514s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` [ RunTime:0.000453s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001144s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`freeze_balance`) AS tp_sum FROM `xy_users` [ RunTime:0.000373s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004442s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 23  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359971 [ RunTime:0.017271s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002169s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 22  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587359971 [ RunTime:0.000589s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:19:31+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001649s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.004281s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000667s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001849s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001446s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000481s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:20:01+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001852s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001880s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000887s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001938s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001593s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000703s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:20:31+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001517s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001279s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000518s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001339s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001197s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000549s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:20:49+08:00] 127.0.0.1 GET www.yyz.com/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001748s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.003261s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.001623s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.004318s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` DESC,`id` ASC [ RunTime:0.001496s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.002513s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.001003s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:20:50+08:00] 127.0.0.1 GET www.yyz.com/admin/index/main.html?spm=m-1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002175s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] select version() as ver [ RunTime:0.000419s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001889s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_goods_list` [ RunTime:0.001973s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_goods_list` [ RunTime:0.000762s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003335s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_goods_list` WHERE  `addtime` BETWEEN 1587312000 AND 1587360050 [ RunTime:0.001254s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003640s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_goods_list` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.001089s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001539s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.001889s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_users` [ RunTime:0.000494s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001631s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_users` WHERE  `addtime` BETWEEN 1587312000 AND 1587360050 [ RunTime:0.000688s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001774s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_users` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000727s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001718s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.002507s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` [ RunTime:0.000491s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001497s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` WHERE  `addtime` BETWEEN 1587312000 AND 1587360050 [ RunTime:0.000601s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001572s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000641s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001547s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_convey` [ RunTime:0.000597s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001736s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_convey` WHERE  `addtime` BETWEEN 1587312000 AND 1587360050 [ RunTime:0.000737s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003987s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_convey` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000790s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001655s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.002719s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `status` = 2 [ RunTime:0.000580s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002004s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `status` = 2  AND `addtime` BETWEEN 1587312000 AND 1587360050 [ RunTime:0.000901s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002853s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `status` = 2  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000778s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009123s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001694s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `status` = 2 [ RunTime:0.001004s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006750s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `status` = 2  AND `addtime` BETWEEN 1587312000 AND 1587360050 [ RunTime:0.000613s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002543s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `status` = 2  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000628s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001765s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1 [ RunTime:0.000667s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005217s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587360050 [ RunTime:0.000843s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013535s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.007000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008419s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.139892s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `type` = 1  AND `is_sy` = 0 [ RunTime:0.000848s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002925s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `type` = 1  AND `is_sy` = 0  AND `addtime` BETWEEN 1587312000 AND 1587360050 [ RunTime:0.000683s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004204s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `type` = 1  AND `is_sy` = 0  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000687s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004610s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_balance_log` [ RunTime:0.001687s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1 [ RunTime:0.000979s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003059s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587360050 [ RunTime:0.000724s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002036s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000632s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007783s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1 [ RunTime:0.000696s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004264s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587360050 [ RunTime:0.000669s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002492s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000634s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003758s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` [ RunTime:0.000638s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003149s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`freeze_balance`) AS tp_sum FROM `xy_users` [ RunTime:0.000935s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001748s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 23  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587360050 [ RunTime:0.000752s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002013s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 22  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587360050 [ RunTime:0.000574s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:20:50+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001745s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001818s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000733s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003134s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001702s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.001206s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:20:59+08:00] 127.0.0.1 GET www.yyz.com/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001294s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.001653s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` DESC,`id` ASC [ RunTime:0.000894s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:21:30+08:00] 127.0.0.1 POST www.yyz.com/admin/login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001970s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.002028s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `is_deleted` = 0  AND `username` = 'admin' ORDER BY `id` DESC LIMIT 1 [ RunTime:0.003833s ]
+[ sql ] [ SQL ] UPDATE `system_user`  SET `login_at` = now() , `login_ip` = '127.0.0.1' , `login_num` = login_num+1  WHERE  `id` = 10000 [ RunTime:0.178097s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000672s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_log` [ RunTime:0.001268s ]
+[ sql ] [ SQL ] INSERT INTO `system_log` (`node` , `action` , `content` , `geoip` , `username`) VALUES ('admin/login/index' , '系统管理' , '用户登录系统成功' , '127.0.0.1' , 'admin') [ RunTime:0.064899s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:21:30+08:00] 127.0.0.1 GET www.yyz.com/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001420s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.002016s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000734s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.001143s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` DESC,`id` ASC [ RunTime:0.019825s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:21:30+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004372s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001313s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000510s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001669s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001512s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000457s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:21:30+08:00] 127.0.0.1 GET www.yyz.com/admin/index/main.html?spm=m-1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004335s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] select version() as ver [ RunTime:0.000395s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001596s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_goods_list` [ RunTime:0.001383s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_goods_list` [ RunTime:0.000457s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001477s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_goods_list` WHERE  `addtime` BETWEEN 1587312000 AND 1587360090 [ RunTime:0.000963s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001553s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_goods_list` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.001249s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001718s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_users` [ RunTime:0.002859s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_users` [ RunTime:0.000659s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003003s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_users` WHERE  `addtime` BETWEEN 1587312000 AND 1587360090 [ RunTime:0.000984s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001433s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_users` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000504s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001315s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_convey` [ RunTime:0.001196s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` [ RunTime:0.000416s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001499s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` WHERE  `addtime` BETWEEN 1587312000 AND 1587360090 [ RunTime:0.000525s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002735s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_convey` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000893s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001641s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_convey` [ RunTime:0.000543s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001442s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_convey` WHERE  `addtime` BETWEEN 1587312000 AND 1587360090 [ RunTime:0.000644s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001562s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_convey` WHERE  `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000653s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002331s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001457s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `status` = 2 [ RunTime:0.000537s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011241s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `status` = 2  AND `addtime` BETWEEN 1587312000 AND 1587360090 [ RunTime:0.001339s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001387s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_recharge` WHERE  `status` = 2  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000510s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001348s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.002230s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `status` = 2 [ RunTime:0.000738s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001591s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `status` = 2  AND `addtime` BETWEEN 1587312000 AND 1587360090 [ RunTime:0.000635s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001444s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_deposit` WHERE  `status` = 2  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000522s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012555s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1 [ RunTime:0.001454s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001454s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587360090 [ RunTime:0.000459s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001196s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`commission`) AS tp_sum FROM `xy_convey` WHERE  `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000396s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001179s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_lixibao` [ RunTime:0.000901s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `type` = 1  AND `is_sy` = 0 [ RunTime:0.000412s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001202s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `type` = 1  AND `is_sy` = 0  AND `addtime` BETWEEN 1587312000 AND 1587360090 [ RunTime:0.000465s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004001s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_lixibao` WHERE  `type` = 1  AND `is_sy` = 0  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000810s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001387s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_balance_log` [ RunTime:0.001068s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1 [ RunTime:0.000452s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001254s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587360090 [ RunTime:0.000441s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001124s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000475s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001317s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1 [ RunTime:0.000593s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001620s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587360090 [ RunTime:0.000771s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005724s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 6  AND `status` = 1  AND `addtime` BETWEEN 1587225600 AND 1587311999 [ RunTime:0.000747s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011405s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`balance`) AS tp_sum FROM `xy_users` [ RunTime:0.000755s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003757s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`freeze_balance`) AS tp_sum FROM `xy_users` [ RunTime:0.000667s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001285s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 23  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587360090 [ RunTime:0.000472s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001497s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `xy_balance_log` WHERE  `type` = 22  AND `status` = 1  AND `addtime` BETWEEN 1587312000 AND 1587360090 [ RunTime:0.000522s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:22:00+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001588s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001275s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000575s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001371s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001284s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000454s ]
+---------------------------------------------------------------
+
+[2020-04-20T13:22:30+08:00] 127.0.0.1 GET www.yyz.com/admin/index/order_info.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001386s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_deposit` [ RunTime:0.001141s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_deposit` WHERE  `status` = 1 [ RunTime:0.000413s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001299s ] mysql:host=localhost;port=3306;dbname=zzmaku;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xy_recharge` [ RunTime:0.001145s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `xy_recharge` WHERE  `status` = 1 [ RunTime:0.000445s ]
+---------------------------------------------------------------
+
+[2020-04-20T18:45:48+08:00] 127.0.0.1 GET 127.0.0.1//admin/login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.036002s ] mysql:host=localhost;port=3306;dbname=ziyuan;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.007001s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.001000s ]

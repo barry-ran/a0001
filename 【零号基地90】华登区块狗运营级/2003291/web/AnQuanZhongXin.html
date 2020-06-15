@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="HandheldFriendly" content="True">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>Lucky zodiac</title>
+<link rel="stylesheet" type="text/css" media="all" href="./css/reset.css" />
+<link rel="stylesheet" type="text/css" media="all" href="./css/style.css" />
+<link rel="stylesheet" type="text/css" media="all" href="./css/zodiac_style.css" />
+
+<script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
+<script src="./js/js.js" type="text/javascript"></script>
+<script src="/js/public.js" type="text/javascript"></script>
+<script src="./js/layui.all.js" type="text/javascript"></script>
+
+</head>
+<body>
+	<!-- 头部 -->
+	<div class="header">
+		<div class="duo"></div>
+		<a href="javascript:history.back(-1)" class="hele"></a>
+		<h1 class="hetitle">安全中心</h1>
+	</div>
+
+	<div id="page" class="page m3">			
+		<a href="javascript:;" class="setmsg disFlex align-items flex-justify" id="xgdlmm">
+			<span class="font28">修改登录密码</span>			
+			<img src="./images/right.png" alt="" class="rtimg"/>	
+		</a>
+		
+		<a href="javascript:;" class="setmsg disFlex align-items flex-justify" id="xgzfmm">
+			<span class="font28">修改支付密码</span>			
+			<img src="./images/right.png" alt="" class="rtimg"/>	
+		</a>
+		
+	</div>
+	<script src="/js/public.js" type="text/javascript"></script>
+	<script type="text/javascript">		
+		$(function(){
+			$.ajax({
+	            type:"post",
+	            url:url+'/user/safecenter.html?token='+token,
+	            async:false,
+	            data:{
+	                token:token	                
+	            },
+	            dataType:'json',
+	            success:function(result){
+	                if(result.status == "0001"){
+	                	for(var i=0;i<$(".setmsg").length;i++){
+							// var url=$(".setmsg").eq(i).attr("href");
+							$(".setmsg").eq(i).attr("data-phone", result.data.phone);
+						}
+	                }else{
+	                    isErr(result);
+	                }
+	            },
+	            error:function(){
+	                layer.msg("响应失败");
+	            },
+				complete: function() {
+					prevent_repetition = true;
+				}
+	        })
+		})
+								
+		
+	
+		$("#xgdlmm").on("click",function(){
+			var phone=$(this).attr("data-phone");
+			window.location.href="xg_denglumima.html?token=" + token  + "&phone=" + phone;
+		})
+		
+		$("#xgzfmm").on("click",function(){
+			var phone=$(this).attr("data-phone");
+			window.location.href="xg_zhifumima.html?token=" + token  + "&phone=" + phone;
+		})		
+		
+	</script>
+</body>
+</html>
+
+
+

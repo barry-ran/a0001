@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteRule ^(.*)-([0-9]*)-([0-9]*)-([0-9]*).html$ index.php?type=$1&id=$2&page=$3&M_id=$4
+RewriteRule ^(.*)-([0-9]*).html$ index.php?type=$1&id=$2
+RewriteRule ^(.*)-tag-(.*).html$ index.php?type=$1&tag=$2

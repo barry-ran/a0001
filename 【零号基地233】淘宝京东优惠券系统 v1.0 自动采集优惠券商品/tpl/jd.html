@@ -1,0 +1,107 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="images/favicon.ico" >
+<link rel="Shortcut Icon" href="images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="css/min.css" />
+<link rel="stylesheet" type="text/css" href="iconfont/iconfont.min.css" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script> 
+<script type="text/javascript" src="js/jquery.SuperSlide.min.js"></script> 
+
+<meta name="keywords" content="<{$config['config_keywords']}>" />
+<meta name="description" content="<{$config['config_description']}>" /> 
+<title>京东优惠券-<{$config['config_name']}></title>
+<style>
+body{margin: 0;padding: 0;border: 0;}
+.dh{display: inline;}
+.dh a{padding: 7px 20px 0;color: #fff;font-size: 16px;line-height: 36px;}
+.dh a:hover{color:yellow;}
+.small_dh{display: inline;float: left;width: 50%;height: 42px;text-align: center;border-bottom: 1px dashed #e2e2e2;}
+.small_dh a{font-size: 14px;color: #000;height: 45px;line-height: 40px;text-align: center;}
+.small_dh a:hover{color:red;}
+.small_daohang{width: 80px;float: left;text-align: center;}
+.small_daohang a{color: #fff;text-decoration: none;opacity: 0.7;}
+.small_daohang a:hover{color:#fff;}
+.zz{width: 50%;float: left;padding: 20px 0 20px 20px;box-sizing: border-box;border-bottom: 1px solid #E9E9E9;background-color: #FFF;border-radius:20px}
+.zz a:hover{color:red;}
+
+    /*分页按钮CSS*/
+.saucy{margin:5px;padding:5px;text-align:center;color:#aaa;}
+.saucy a,.saucy strong{color:#666;border:1px solid #ddd;background:#fcfcfc;padding:4px 12px;margin:0 3px;text-decoration:none;border-radius:3px;text-shadow:1px 1px 0 white;box-shadow: inset 0 0 1px rgba(255,255,255,.2);background-image:-webkit-linear-gradient(top,#fcfcfc,#eaeaea);background-image:-moz-linear-gradient(top,#fcfcfc,#eaeaea);background-image:-o-linear-gradient(top,#fcfcfc,#eaeaea);background-image:-ms-linear-gradient(top,#fcfcfc,#eaeaea);}
+.saucy a:hover{background:#f80;border:1px solid #f80;color:#fff;padding:8px 12px;text-shadow:1px 1px 0 #f40;background-image:-webkit-linear-gradient(top,#f90,#f60);background-image:-moz-linear-gradient(top,#f90,#f60);background-image:-o-linear-gradient(top,#f90,#f60);background-image:-ms-linear-gradient(top,#f90,#f60);}
+.saucy a:active{background:#f60;border:1px solid #f60;color:#fff;}
+.saucy strong{background:#666;border:1px solid #666 ;color:#fff;text-shadow:1px 1px 0 #444;}
+    /*分页按钮CSS*/
+</style>
+<script>
+$(document).ready(function(){
+      $("#hr_class<{$typeid}>").attr("src", "images/huangtiao.png"); 
+});
+</script> 
+</head>
+<body>
+<{include file="top.html"}> 
+
+
+                     
+                      <div class="container-full" style="background: url(images/jhs_top_bg.png) center no-repeat;background-size: 100% 100%;">
+                <div class="container" style="height:390px;">
+                       <div style="height: 80px;padding-top: 30px;text-align: center;width: 88%;margin: auto;">
+              <span class="small_daohang"><a href="<{spUrl c=main a=jd_sdk  typeid=1}>"><p style="margin: 5px;font-size: 16px;">好券商品</p><p><img id="hr_class1" src=""/></p></a></span>
+               <span class="small_daohang"><a href="<{spUrl c=main a=jd_sdk typeid=2}>"><p style="margin: 5px;font-size: 16px;">超级卖场</p><p><img id="hr_class2" src=""/></p></a></span>
+                <span class="small_daohang"><a href="<{spUrl c=main a=jd_sdk typeid=10}>"><p style="margin: 5px;font-size: 16px;">9.9专区</p><p><img id="hr_class10" src=""/></p></a></span>
+                 <span class="small_daohang"><a href="<{spUrl c=main a=jd_sdk typeid=22}>"><p style="margin: 5px;font-size: 16px;">热销爆品</p><p><img id="hr_class22" src=""/></p></a></span>
+                   <span class="small_daohang"><a href="<{spUrl c=main a=jd_sdk typeid=24}>"><p style="margin: 5px;font-size: 16px;">数码家电</p><p><img id="hr_class24" src=""/></p></a></span>
+                    <span class="small_daohang"><a href="<{spUrl c=main a=jd_sdk typeid=25}>"><p style="margin: 5px;font-size: 16px;">超市</p><p><img id="hr_class25" src=""/></p></a></span>
+                     <span class="small_daohang"><a href="<{spUrl c=main a=jd_sdk typeid=26}>"><p style="margin: 5px;font-size: 16px;">母婴玩具</p><p><img id="hr_class26" src=""/></p></a></span>
+                      <span class="small_daohang"><a href="<{spUrl c=main a=jd_sdk typeid=27}>"><p style="margin: 5px;font-size: 16px;">家具日用</p><p><img id="hr_class27" src=""/></p></a></span>
+                       <span class="small_daohang"><a href="<{spUrl c=main a=jd_sdk typeid=28}>"><p style="margin: 5px;font-size: 16px;">美妆穿搭</p><p><img id="hr_class28" src=""/></p></a></span>
+                        <span class="small_daohang"><a href="<{spUrl c=main a=jd_sdk typeid=29}>"><p style="margin: 5px;font-size: 16px;">医药保健</p><p><img id="hr_class29" src=""/></p></a></span>
+                         <span class="small_daohang"><a href="<{spUrl c=main a=jd_sdk typeid=30}>"><p style="margin: 5px;font-size: 16px;">图书文具</p><p><img id="hr_class30" src=""/></p></a></span>
+                          <span class="small_daohang"><a href="<{spUrl c=main a=jd_sdk typeid=33}>"><p style="margin: 5px;font-size: 16px;">秒杀商品</p><p><img id="hr_class33" src=""/></p></a></span>
+                           <span class="small_daohang"><a href="<{spUrl c=main a=jd_sdk typeid=34}>"><p style="margin: 5px;font-size: 16px;">拼购商品</p><p><img id="hr_class34" src=""/></p></a></span>
+                            </div>
+                 </div>
+                     </div>
+                     
+        	<div class="container-full" style="margin-top: -200px;">
+                 <div class="container" style="padding-top: 10px;">
+                     <{foreach from=$jd_data item=value}> 
+                      <div class="zz">
+          
+                         <div class="col-sm-4"><a href="<{spUrl c=main a=jd_jump jdid=$value.skuId}>" target="_blank"><img src="<{$value.imageInfo.imageList[0]['url']}>" style="width: 100%;border-radius: 10px;"/></a></div>
+                         <div class="col-sm-8" style="border-right: 1px solid #E9E9E9;padding-right: 20px;">
+                                 <p style="overflow:hidden;height: 45px;"><a href="<{spUrl c=main a=jd_jump jdid=$value.skuId}>" target="_blank" style="font-size: 16px;line-height: 22px;"><{$value.skuName}></a></p>   
+                                 <p style="font-size: 14px;line-height: 20px;margin: 20px 0 0;"><i class="Hui-iconfont">&#xe6c1;</i>&nbsp;好评率 <{$value.goodCommentsShare}>%&nbsp;<span style="float: right;">推广量：<{$value.inOrderCount30Days}></span></p>
+                                 <p style="margin-top: 30px;height: 22px;line-height: 22px;"><img src="images/jd_01.png" style="width: 59px;height: 22px;margin-top: -5px;"/><span style="width: 69px;height: 19px;text-align: center;border: 1.5px solid #FC353A;font-size: 14px;color: red;">￥ &nbsp;<{$value.priceInfo.price}>&nbsp;</span></p>
+                                 <p style="position: relative;height: 26px;display: block;"><span style="font-size: 14px;color: rgba(153,153,153,1);">券后：</span>
+                              <span style="color: #fc4d52;font-size: 18px;height: 35px;line-height: 35px;margin: 5px 0 0 -4px;font-weight: 700;">￥&nbsp;<{if $value.priceInfo.lowestCouponPrice != null}><{$value.priceInfo.lowestCouponPrice}><{else}><{$value.priceInfo.price}><{/if}> </span>
+                              <span style="background: url(images/quan.png) center rgba(255,248,248,1);background-size: 100% 100%;border-radius: 2px;font-weight: 400;padding: 3px 7px;margin: 3px 0;color: #FC4D52;text-align: center;float: right;"><{if $value.yhq_money != null}><{$value.yhq_money}><{else}>0<{/if}> 元券</span>
+                              </p>
+                              <p style="color: rgba(153,153,153,1);"><{if $value.yhq_money != null}>使用时间:<{$value.yhq_start_time}> ~ <{$value.yhq_end_time}><{else}>无优惠券<{/if}></p>
+                              <p style="text-align: right;"><a href="<{$value.couponInfo.couponList[0]['link']}>" target="_blank"><button class="btn btn-warning radius">先领券</button></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<{spUrl c=main a=jd_jump jdid=$value.skuId}>" target="_blank"><button class="btn btn-warning radius">后购买</button></a></span></p>
+                                    </div>
+                        
+                    </div>
+                     <{/foreach}>     
+                 </div>
+        </div>
+        
+            <div style="width: 100%;float: left;">
+                    <div class="saucy">
+   <{if $pageid != 1}>    
+    <a href="<{spUrl c=main a=jd_sdk pageid=$pageid-1 typeid=$typeid}>">上一页</a>  
+        <{else}><{/if}>            
+    <strong><{$pageid}></strong>  
+    <a href="<{spUrl c=main a=jd_sdk pageid=$pageid+1 typeid=$typeid}>">下一页</a>
+         </div> 
+                        </div>
+    <{include file="footer.html"}>     
+
+</body>
+</html>

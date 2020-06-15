@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel="stylesheet" type="text/css" href="css/wap/hui.css" />   
+<title><{$config['config_name']}></title>
+</head>
+<style>
+.hui-speed-dial li{width: 20%;font-size: 12px;text-align: center;float: left;margin-top: 25px;font-weight: 400;}
+.fenlei_small{width: 29.3%;float: left;border-bottom: 1px dashed #FFE4C4;margin: 2%;}
+</style>
+<body>
+
+<header class="hui-header">
+ <!--   <span><img src="images/wap/top_01.png" style="width: 26px;height: 26px;padding: 9px;" onclick="hui.shwoBlackMasker();"/></span>   -->
+    <h1 style="font-size: 16px;"><{$config['config_name']}></h1>
+</header>
+
+	<!-- 演示消息内容 -->
+    <!--
+<div id="hui-black-mask" style="display: none;">
+	<div id="hui-black-mask-content">
+		<div id="hui-black-action">
+			<div id="hui-black-close"></div>
+		</div>
+		<div style="text-align:center;"><img src="images/wap/gift.png" style="230px"/></div>
+		<div style="text-align:center; color:#FFFFFF; line-height:60px;">
+			一个演示广告
+		</div>
+	</div>
+</div>
+-->
+	<!-- 演示消息内容 -->
+
+<div class="hui-wrap" style="padding-top: 44px;padding-bottom: 60px;">
+
+	<div class="hui-swipe" id="swipe">
+	    	<div class="hui-swipe-items">
+              <{foreach from=$ad item=value}>
+	            <div class="hui-swipe-item"><a href="<{$value.ad_url}>" target="_blank"><img src="<{$value.ad_images}>" style="width: 100%;"/></a></div>
+             <{/foreach}>
+	        </div>
+	    </div>
+        
+	<div id="hui-header-sreach" style="margin: 0px;border: 3px solid #ff4a00;width: 98%;">
+        <div id="hui-header-sreach-icon"></div>
+        <form action="<{spUrl c=main a=mshop_list}>" method="POST"><input type="search" id="searchKey" placeholder="请输入商品关键字" style="width: 200%;" name="keywords"/></form>
+    </div>
+    
+    <div class="hui-speed-dial" style="background: #fff;padding-bottom: 20px;">
+             <ul style="line-height: 15px;">
+             <li class="fenlei_big"><a href="<{spUrl c=main a=mtwenty}>"><img src="images/wap/index_fenlei_01.gif" style="width: 40px;height: 40px;"/><br/><span style="font-size: 12px;">精品</span></a></li>
+             <li class="fenlei_big"><a href="<{spUrl c=main a=mtwenty typeid=1}>"><img src="images/wap/index_fenlei_01.jpg" style="width: 40px;height: 40px;"/><br/><span style="font-size: 12px;">女装</span></a></li>
+             <li class="fenlei_big"><a href="<{spUrl c=main a=mtwenty typeid=2}>"><img src="images/wap/index_fenlei_04.jpg" style="width: 40px;height: 40px;"/><br/><span style="font-size: 12px;">母婴</span></a></li>
+             <li class="fenlei_big"><a href="<{spUrl c=main a=mtwenty typeid=3}>"><img src="images/wap/index_fenlei_11.jpg" style="width: 40px;height: 40px;"/><br/><span style="font-size: 12px;">美妆</span></a></li>
+             <li class="fenlei_big"><a href="<{spUrl c=main a=mtwenty typeid=4}>"><img src="images/wap/index_fenlei_09.jpg" style="width: 40px;height: 40px;"/><br/><span style="font-size: 12px;">日用</span></a></li>
+             <li class="fenlei_big"><a href="<{spUrl c=main a=mtwenty typeid=5}>"><img src="images/wap/index_fenlei_07.jpg" style="width: 40px;height: 40px;"/><br/><span style="font-size: 12px;">鞋品</span></a></li>
+             <li class="fenlei_big"><a href="<{spUrl c=main a=mtwenty typeid=6}>"><img src="images/wap/index_fenlei_08.jpg" style="width: 40px;height: 40px;"/><br/><span style="font-size: 12px;">美食</span></a></li>
+             <li class="fenlei_big"><a href="<{spUrl c=main a=mtwenty typeid=7}>"><img src="images/wap/index_fenlei_13.jpg" style="width: 40px;height: 40px;"/><br/><span style="font-size: 12px;">文体</span></a></li>
+             <li class="fenlei_big"><a href="<{spUrl c=main a=mtwenty typeid=8}>"><img src="images/wap/index_fenlei_10.jpg" style="width: 40px;height: 40px;"/><br/><span style="font-size: 12px;">数码</span></a></li>
+             <li class="fenlei_big"><a href="<{spUrl c=main a=mtwenty typeid=9}>"><img src="images/wap/index_fenlei_02.jpg" style="width: 40px;height: 40px;"/><br/><span style="font-size: 12px;">男装</span></a></li>
+             <li class="fenlei_big"><a href="<{spUrl c=main a=mtwenty typeid=10}>"><img src="images/wap/index_fenlei_03.jpg" style="width: 40px;height: 40px;"/><br/><span style="font-size: 12px;">内衣</span></a></li>
+             <li class="fenlei_big"><a href="<{spUrl c=main a=mtwenty typeid=11}>"><img src="images/wap/index_fenlei_14.jpg" style="width: 40px;height: 40px;"/><br/><span style="font-size: 12px;">箱包</span></a></li>
+             <li class="fenlei_big"><a href="<{spUrl c=main a=mtwenty typeid=12}>"><img src="images/wap/index_fenlei_06.jpg" style="width: 40px;height: 40px;"/><br/><span style="font-size: 12px;">配饰</span></a></li>
+             <li class="fenlei_big"><a href="<{spUrl c=main a=mtwenty typeid=13}>"><img src="images/wap/index_fenlei_15.jpg" style="width: 40px;height: 40px;"/><br/><span style="font-size: 12px;">运动</span></a></li>
+             <li class="fenlei_big"><a href="<{spUrl c=main a=mtwenty typeid=14}>"><img src="images/wap/index_fenlei_12.jpg" style="width: 40px;height: 40px;"/><br/><span style="font-size: 12px;">家装</span></a></li>
+             </ul>   
+                </div>
+                
+                <div style="background:#FFF; padding:0px 15px; margin:10px;" class="hui-flex">
+		<div style="height:46px; width:20px;">
+			<img src="images/wap/spiker.png" width="20" style="padding:13px 0px;" />
+		</div>
+		<div class="hui-scroll-news" id="scrollnew">
+              <{foreach from=$article item=value}>      
+			<div class="hui-scroll-news-items"><a href="<{spUrl c=main a=marticle_show ma_id=$value.ma_id}>"><{$value.ma_name}></a></div>
+             <{/foreach}> 
+		</div>
+	</div>
+    
+            <div class="hui-speed-dial">
+                     <ul>
+                        <{foreach from=$arrays_row item=value}>   
+                              <a href="<{spUrl c=main a=mshop_show taobaoid=$value.goodsId}>">     
+                     <li style="width: 47%;margin-top: .1rem;border-radius: 3px;background: #fff;margin: 2% 0 0 2%;position: relative;">
+                            <img src="<{$value.mainPic}>" style="width: 100%;"/>   
+                            <p style="font-size: 12px;font-family: 黑体-简;font-weight: 300;color: #808080;height: 26px;line-height: 26px;overflow: hidden;text-indent: 5px;"><{$value.title}></p> 
+                            <p style="text-align: left;"><span style="font-size: 10px;font-weight: 400;color: #666;">券后&nbsp;</span><span style="font-size: 12px;font-weight: 500;color: #FF2B22;margin-left: 1px;">¥</span>
+                            <span style="font-size: 19px;font-weight: 500;color: #FF2B22;"><{$value.actualPrice}></span>&nbsp;<span style="color: #bbb;text-decoration: line-through;font-size: 12px;">￥<{$value.originalPrice}></span>
+                            </p>
+                            <p style="height: 26px;line-height: 18px;text-align: left;font-size: 12px;color: #808080;">销量:<{$value.monthSales}>
+                            <span style="float: right;">
+                            <{if $value.shopType == '1'}>   <img src="images/tmall.png" style="width: 15px;height: 15px;"/>&nbsp;<{else}><{/if}>
+                          <{if $value.activityType == '3'}>  <img src="images/juhuasuan.png" style="width: 15px;height: 15px;"/><{else}><{/if}>
+                            </span>
+                            </p>
+   <div style="width: 50px;height: 45px;display: block;right: 0px;top: 0px;border-radius: 1px;text-align: center;background: red;color: yellow;z-index: 9;position: absolute;font-size: 12px;line-height: 14px;">优惠券<br><span style="font-weight: bold;font-size: 12px;color: #fff;"><{$value.couponPrice}>元</span><img src="images/wap/qulingquan.png" style="width: 100%;"/></div>
+                                </li>
+                                </a>
+                        <{/foreach}> 
+                     </ul>
+                            </div>
+    
+</div>
+<{include file="wap/footer.html"}> 
+
+<script type="text/javascript">
+hui.ready(function(){    
+var swipe = new huiSwpie('#swipe');
+swipe.autoPlay = true;
+swipe.run();
+
+hui.scrollNews(scrollnew); //广播
+// hui.blackMask(); //全屏广告
+});
+</script>
+
+</body>
+</html>

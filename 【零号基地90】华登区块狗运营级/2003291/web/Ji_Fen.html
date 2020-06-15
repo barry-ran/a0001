@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="HandheldFriendly" content="True">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>宠物分</title>
+<link rel="stylesheet" type="text/css" media="all" href="./css/reset.css" />
+<link rel="stylesheet" type="text/css" media="all" href="./css/style.css" />
+<link rel="stylesheet" type="text/css" media="all" href="./css/zodiac_style.css" />
+
+<script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
+<script src="./js/js.js" type="text/javascript"></script>
+<script src="./js/layui.all.js" type="text/javascript"></script>
+
+</head>
+<body>
+	<!-- 头部 -->
+	<div class="header">
+		<div class="duo"></div>
+		<a href="javascript:history.back(-1)" class="hele"></a>
+		<h1 class="hetitle">GTC</h1>
+	</div>
+
+	<div id="page" class="page m3">	
+		<div class="sxbi">
+			<p class="font72 weit"></p>
+			<div class="disFlex flex-justify">
+				<a href="javascript:;" class="get" id="recharge">充值</a>
+				<a href="javascript:;" class="send" id="send">转赠</a>
+			</div>			
+		</div>
+		
+		<!--<div class="integral disFlex align-items flex-justify">
+			<p class="selection  record chongxiao" typeid="1">猪猪币明细</p>
+			<p class="integral_p record shouyi" typeid="2">产品收益</p>
+			<p class="integral_p">奖励记录</p>			
+		</div>				-->
+		<div class="integral" typeid="1" style="line-height: .8rem;padding-left: .3rem;box-sizing: border-box;">猪猪币明细</div>
+		
+		
+		<!--充消记录-->		
+		<div class="cxjilu"></div>
+		
+		<div class="" style="display: inline-block;text-align: center;width:100%;padding:.2rem 0;">
+			<span class="notMore">拖动加载更多</span>
+		</div>
+		
+	</div>
+	<script src="/js/public.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		//获取路径？后字段
+		function GetQueryString(name) {
+		    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+			var r = window.location.search.substr(1).match(reg);
+		    if (r != null) return decodeURI(r[2]);
+		    return '';
+		}		
+		var ljnub = GetQueryString('ljnub');
+		
+		$(".font72").html(ljnub);
+		
+		$(function(){
+            tabData();
+        });
+        
+        //下拉
+        var typeid = $(".integral").attr("typeid");
+        var page = 1;
+        function tabData() {
+            $.ajax({
+                type:"post",
+                url:url+'/user/hcgrechargelist.html?token='+token,
+                async:false,
+                data:{
+                    token:token,
+                    page:page,
+                    typeid:typeid
+                },
+                dataType:'json',
+                success:function(result){
+                    if(result.status == "0001"){
+                    	var data=result.data;
+                    	var scale = result.scale;
+                    	$("#recharge").attr("date-arg", scale);
+
+                        if(result.data.length!=0){
+                            var html = '';
+                            var data=result.data;
+                            for(var i in data){
+                                html += '<div class="about disFlex align-items flex-justify">';
+								html += '<div><p class="font30">'+data[i].event_type+'</p><p class="colab font24 marT">'+data[i].created_at+'</p></div>';
+								html += '<p class="font36 colfea weit">'+data[i].amount+'</p>';
+								html += '</div>';
+                            }
+                            $('.cxjilu').append(html);
+//                          $('.message').on('click',function () {
+//                              var id = $(this).attr('flag');
+//                              window.location.href='tsjy_details.html?id='+id;
+//                          })
+						}else {
+                            $('.notMore').css('display', 'block').html("没有更多！");
+						}
+                    }else{
+                        isErr(result);
+                    }
+                },
+                error:function(){
+                    layer.msg("响应失败");
+                }
+            })
+        }
+        // 下拉加载更多
+        $(window).scroll(function() {
+            if($(document).scrollTop() >= $(document).height() - $(window).height() - 1) {
+			//console.log('我到底了');
+                if($('.notMore').css('display') != "block") {
+                    page++;
+                    tabData();
+                }
+            }
+        })
+        
+        $("#recharge").on("click",function(){
+        	var arg = $("#recharge").attr("date-arg");
+		   window.location.href="LongZhuChongZhi.html?token=" + token + "&scale=" + arg;
+		})
+		
+		$("#send").on("click",function(){
+			window.location.href="jf_zhuanzeng.html?token=" + token;
+		})
+	</script>
+</body>
+</html>
+
+
+
+

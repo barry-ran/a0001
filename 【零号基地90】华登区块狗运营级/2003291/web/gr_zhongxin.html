@@ -1,0 +1,313 @@
+<html class="pixel-ratio-3 retina ios ios-13 ios-13-2-3 ios-gt-12 ios-gt-11 ios-gt-10 ios-gt-9 ios-gt-8 ios-gt-7 ios-gt-6"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="yes" name="apple-touch-fullscreen">
+  <meta content="telephone=no,email=no" name="format-detection">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script type="text/javascript" src="./assets/jquery-2.1.4.js"></script>
+  <script type="text/javascript" src="./assets/jquery-weui.js?v=1"></script>
+  <link rel="stylesheet" type="text/css" href="./assets/weui.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/jquery-weui.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/body.css?v=5">
+  <link rel="stylesheet" type="text/css" href="./assets/iconfont.css?v=5">
+  <title>幸运十二生肖</title>
+  <meta name="keywords" content="幸运十二生肖">
+  <meta name="description" content="幸运十二生肖">  
+  <body class=" foot-body">
+  
+  <style type="text/css">
+  html,body{height:100%;}
+  body {  background:#18173F url(./images/bg.jpg?v=3) no-repeat center top; background-attachment: fixed; background-size:100% 100%; }
+  body:before { background:#18173F url(./images/bg.jpg?v=3) no-repeat center top; background-attachment: fixed; background-size:100% 100%; }
+  .title{height:53px;color:#fff;text-align: center;line-height: 53px;}
+  .title .wallet{font-weight: bold;letter-spacing:3px;}
+  .mine{width:91%;border-radius: 10px;margin: auto;height:58px;background-image: linear-gradient(#473D8C, #937cb3);}
+  .member-rent .rent-group{padding-top: 0px;line-height: 13px;}
+  .rent-group .img{width:53px;height:53px;}
+  .rent-group .img1{width:44px;height:44px;}
+  .member-rent .set{line-height:20px;}
+  .set_logo{width:40px;height:40px;}
+  </style>
+  <div class="member">
+      <div class="member-head">
+          <div class="title">
+              <span class="wallet">我的钱包</span>
+              <span><a href="./set.html" id="setbtn" class="member-notice"><i class="iconfont icon-31shezhi orange" style="color: #fff"></i></a></span>
+          </div>
+          <div class="mine">
+              <img src="./assets/touxiang.jpg" class="face">
+              <div class="member-group">
+              	<span class="usort"> ID/手机号：</span>
+               <span class="usort" id="username"></span>
+                  <span class="nickname">
+                      <span class="usort">级别：</span><strong id="level">普通玩家</strong>
+                  </span>
+              </div>
+          </div>
+      </div>
+  
+      <div class="mincome-body">
+          <div class="mincome">
+            <a class="mincome-item" href="javascript:;" >
+                  <span class="item-name" style="font-size: 13px">GTC: </span>
+                  <span class="item-num dig_one" id="cash_wa"></span>
+            </a>
+            <a class="mincome-item jifens" href="javascript:;" id="jifen">
+                  <span class="item-name" style="font-size: 13px">积分: </span>
+                  <span class="item-num point" id="hcg_wa"></span>
+            </a>
+          </div>
+          <div class="mincome">
+              <a class="mincome-item" href="javascript:;">
+                  <span class="item-name" style="font-size: 13px">LUCKY: </span>
+                  <span class="item-num dig_two" id="gtc"></span>
+              </a>
+              <a class="mincome-item tgsys" href="javascript:;" id="tuijian">
+                  <span class="item-name" style="font-size: 13px">推荐收益: </span>
+                  <span class="item-num balance" id="care_wa"></span>
+              </a>
+          </div>
+          <div class="mincome">
+              <a class="mincome-item ljsys" href="javascript:;" id="leiji">
+                  <span class="item-name" style="font-size: 13px">累计收益: </span>
+                  <span class="item-num income" id="recommend_award"></span>
+              </a>
+              <a class="mincome-item">
+                  <span class="item-name" style="font-size: 13px">总资产: </span>
+                  <span class="item-num game_amount" id="total_award"></span>
+              </a>
+          </div>
+      </div>
+      <div class="member-rent">
+          <a class="rent-group" href="javascript:;" id="lingyang">
+              <p class="rent-icon">
+                  <img src="./assets/order1.png" class="img">
+              </p>
+              <p class="desc" style="font-size: 13px">领养记录</p>
+          </a>
+          <a class="rent-group set" href="javascript:;" id="zhuanrna">
+              <p class="rent-icon" style="text-align: center;margin-top:2%;">
+                  <img src="./assets/rent.png" class="img1">
+              </p>
+              <p class="desc" style="font-size: 13px">转让记录</p>
+          </a>
+          <a class="rent-group set" href="javascript:;" id="yuyue">
+              <p class="rent-icon" style="text-align: center;margin-top:2%;">
+                  <img src="./assets/reserve.png" class="img1">
+              </p>
+              <p class="desc" style="font-size: 13px">预约记录</p>
+          </a>
+      </div>
+  </div>
+  
+  <div class="hortal-body">
+      <div class="hortal-main">
+          <div class="hortal">
+              <a class="hortal-item" href="javascript:;" id="anquan">
+                  <div class="hortal-icon">
+                      <img src="./assets/safe.png" class="set_logo">
+                  </div>
+                  <div class="hortal-label" style="font-size: 13px">安全中心</div>
+              </a>
+              <a class="hortal-item" href="javascript:;" id="yhk">
+                  <div class="hortal-icon">
+                      <img src="./assets/wdyhk.png" class="set_logo">
+                  </div>
+                  <div class="hortal-label" style="font-size: 13px">我的银行卡</div>
+              </a>
+              <a class="hortal-item" href="javascript:;" id="shiming">
+                  <div class="hortal-icon">
+                      <img src="./assets/smrz.png" class="set_logo">
+                  </div>
+                  <div class="hortal-label" style="font-size: 13px">实名认证</div>
+              </a>
+          </div>
+          <div class="hortal">
+              <a class="hortal-item" href="javascript:;" id="team">
+                  <div class="hortal-icon">
+                      <img src="./assets/wdtd.png" class="set_logo">
+                  </div>
+                  <div class="hortal-label" style="font-size: 13px">我的团队</div>
+              </a>
+              <a class="hortal-item" href="javascript:;" id="yaoqing">
+                  <div class="hortal-icon">
+                      <img src="./assets/yqhy.png" class="set_logo">
+                  </div>
+                  <div class="hortal-label" style="font-size: 13px">邀请好友</div>
+              </a>
+              <a class="hortal-item" href="javascript:;" id="xiaoxi">
+                  <div class="hortal-icon">
+                      <img src="./assets/xtxx.png" class="set_logo">
+                  </div>
+                  <div class="hortal-label" style="font-size: 13px">系统消息</div>
+              </a>
+          </div>
+      </div>
+  </div>
+  
+  
+
+  <div class="weui-tabbar">
+    <a href="./index.html" class="weui-tabbar__item " id="sy">
+      <div class="weui-tabbar__icon">
+        <img src="./assets/xysx.png" class="set_logo">
+      </div>
+      <p class="weui-tabbar__label">十二生肖</p>
+      </a>
+      <a href="./fw_zhongxin.html" class="weui-tabbar__item " id="fwzx">
+      <div class="weui-tabbar__icon">
+        <img src="./assets/server.png" class="set_logo">
+      </div>
+      <p class="weui-tabbar__label">服务中心</p>
+      </a>
+      <a href="./gr_zhongxin.html" class="weui-tabbar__item weui-bar__item--on">
+      <div class="weui-tabbar__icon">
+        <img src="./assets/wdqb.png" class="set_logo">
+      </div>
+      <p class="weui-tabbar__label">我的钱包</p>
+      </a>
+  </div>
+  </body></html>
+  	<script src="/js/public.js" type="text/javascript"></script>
+	<script>		
+	    $(function(){
+			$.ajax({
+                type:"post",
+                url:url+'/user/mycontent.html?token='+token,
+                async:false,
+                data:{
+                    token:token
+                },
+                dataType:'json',
+                success:function(result){
+                    if(result.status == "0001"){                   	                                	
+                    	$("#userid").attr("id",result.data.userid);
+						$("#username").html(result.data.username);
+                      	$("#is_active").html(result.data.is_active);
+						$("#cash_wa").html(result.data.cash_wa);
+						$("#hcg_wa").html(result.data.hcg_wa);
+						$("#gtc").html(result.data.gtc);
+						
+						$("#care_wa").html(result.data.care_wa);
+						$("#total_award").html(result.data.total_award);
+						$("#recommend_award").html(result.data.recommend_award);
+						
+						// var url1 = $(".ljsy").attr('href');
+						$(".ljsys").attr('data-ljnub', result.data.recommend_award);
+						
+//						var url2 = $(".jfsy").attr('href');
+//						$(".jfsy").attr('href',url2 + '?ljnub='+result.data.total_award);
+						
+						// var url3 = $(".tgsy").attr('href');
+						$(".tgsys").attr('data-ljnub', result.data.care_wa);
+						
+//						var url4 = $(".dragon").attr('href');
+//						$(".dragon").attr('href',url4 + '?ljnub='+result.data.cash_wa);
+						
+						// var url5 = $(".longzhu").attr('href');
+						$(".jifens").attr('data-ljnub', result.data.hcg_wa);
+						
+//						var url6 = $(".kmd").attr('href');
+//						$(".kmd").attr('href',url6 + '?ljnub='+result.data.gtc);
+						
+						// var html = '';
+      //                  var data=result.data.list;
+      //                  for(var i in data){
+						// 	html += '<a href=" '+data[i].url +' " class="record colff lylist"  list_num = " '+ data[i].list_num +'">';								
+						// 	html += '<img src=" '+data[i].img +' " alt="" class="lyimg"/>';
+						// 	html += '<p>'+data[i].name+'</p>';
+						// 	html += '</a>';
+      //                  }
+      //                  $('#lyjl').append(html);
+						
+						// var html1 = '';
+      //                  var data=result.data.app;
+      //                  for(var i in data){
+						// 	if(data[i].list_num == 6){
+						// 		html1 += '<a href=" '+data[i].url +'&id=42 " style="padding-top:.5rem;" class="record colff lylist"  list_num = " '+ data[i].list_num +'">';	
+						// 	}else{
+						// 		html1 += '<a href=" '+data[i].url +' " style="padding-top:.5rem;" class="record colff lylist"  list_num = " '+ data[i].list_num +'">';	
+						// 	}
+						// 	html1 += '<img src=" '+data[i].img +' " alt="" class="lyimg"/>';
+						// 	html1 += '<p>'+data[i].name+'</p>';
+						// 	html1 += '</a>';
+      //                  }
+      //                  $('#security').append(html1);
+                    }else{
+                        isErr(result);
+                    }
+                },
+                error:function(){
+                    layer.msg("响应失败");
+                }
+            })
+		})
+		
+		$("#sy").on("click",function(){
+			window.location.href="index.html?token=" + token;
+		})
+		
+		$("#fwzx").on("click",function(){
+			window.location.href="fw_zhongxin.html?token=" + token;
+		})
+		
+		$("#setbtn").on("click",function(){
+			window.location.href="set.html?token=" + token;
+		})
+		
+		$("#jifen").on("click",function(){
+			var ljnub = $(this).attr("data-ljnub");
+			window.location.href="Ji_Fen.html?token=" + token + "&ljnub=" + ljnub;
+		})
+		
+		$("#lingyang").on("click",function(){
+			var ljnub = $(this).attr("data-ljnub");
+			window.location.href="lingyang_jilu.html?token=" + token + "&ljnub=" + ljnub;
+		})
+		
+		$("#leiji").on("click",function(){
+			var ljnub = $(this).attr("data-ljnub");
+			window.location.href="LeiJiShouYi.html?token=" + token + "&ljnub=" + ljnub;
+		})
+		
+		$("#tuijian").on("click",function(){
+			var ljnub = $(this).attr("data-ljnub");
+			window.location.href="TuiGuangShouYi.html?token=" + token + "&ljnub=" + ljnub;
+		})
+		$("#zhuanrna").on("click",function(){
+			var ljnub = $(this).attr("data-ljnub");
+			window.location.href="zr_jilu.html?token=" + token + "&ljnub=" + ljnub;
+		})
+		$("#yuyue").on("click",function(){
+			var ljnub = $(this).attr("data-ljnub");
+			window.location.href="yuyue_jilu.html?token=" + token + "&ljnub=" + ljnub;
+		})
+		$("#anquan").on("click",function(){
+			var ljnub = $(this).attr("data-ljnub");
+			window.location.href="AnQuanZhongXin.html?token=" + token + "&ljnub=" + ljnub;
+		})
+		$("#yhk").on("click",function(){
+			var ljnub = $(this).attr("data-ljnub");
+			window.location.href="tj_yinhangka.html?token=" + token + "&ljnub=" + ljnub;
+		})
+		$("#shiming").on("click",function(){
+			var ljnub = $(this).attr("data-ljnub");
+			window.location.href="sm_renzheng.html?token=" + token + "&ljnub=" + ljnub;
+		})
+		$("#team").on("click",function(){
+			var ljnub = $(this).attr("data-ljnub");
+			window.location.href="MyTeam.html?token=" + token + "&ljnub=" + ljnub;
+		})
+		$("#yaoqing").on("click",function(){
+			var ljnub = $(this).attr("data-ljnub");
+			window.location.href="FenXiangHaoYou.html?token=" + token + "&ljnub=" + ljnub;
+		})
+		$("#xiaoxi").on("click",function(){
+			var ljnub = $(this).attr("data-ljnub");
+			window.location.href="xt_xiaoxi.html?token=" + token +'&id=42';
+		})
+	</script>
+

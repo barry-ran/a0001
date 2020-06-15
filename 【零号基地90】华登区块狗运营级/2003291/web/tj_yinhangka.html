@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="HandheldFriendly" content="True">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>Lucky zodiac</title>
+<link rel="stylesheet" type="text/css" media="all" href="./css/reset.css" />
+<link rel="stylesheet" type="text/css" media="all" href="./css/style.css" />
+<link rel="stylesheet" type="text/css" media="all" href="./css/zodiac_style.css" />
+
+<script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
+<script src="./js/js.js" type="text/javascript"></script>
+<script src="./js/layui.all.js" type="text/javascript"></script>
+
+</head>
+<body>
+	<!-- 头部 -->
+	<div class="header">
+		<div class="duo"></div>
+		<a href="javascript:history.back(-1)" class="hele"></a>
+		<h1 class="hetitle">银行卡</h1>
+	</div>
+
+	<div id="page" class="page m3">	
+		<p class="colfea marL marT20" style="margin-bottom: .2rem;">提示：至少添加2个收款方式</p>
+		<div class="yinhangka"></div>
+		<div class="weixin"></div>
+		<div class="zhifubao"></div>		
+		<div class="aut" id="addcard">
+			<button class="cope rzbtn1">点击添加</button>
+		</div>				
+	</div>
+	<script src="/js/public.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$.ajax({
+            type:"post",
+            url:url+'/user/receiptlist.html?token='+token,
+            async:false,
+            data:{
+                token:token
+            },
+            dataType:'json',
+            success:function(result){
+                if(result.status == "0001"){
+                	var banklist=result.data.banklist;
+                	var wechat=result.data.wechat;
+                	var alipay=result.data.alipay;
+					var html11 = '';
+					if(banklist.length){
+						for(var i in banklist){
+							html11 += '<div class="addcard disFlex align-items flex-justify yhkid" listid = " '+banklist[i].id+'">';
+							html11 += '<img src="./images/yl.png" alt="" class="ylimg"/>';
+							html11 += '<div><p><span class="colab">账户名称：</span><span>'+banklist[i].truename+'</span></p>';
+							html11 += '<p class="marT20"><span class="colab">账号：</span><span>'+banklist[i].bank_number+'</span></p>';
+							html11 += '<p class="marT20"><span class="colab">账户类型：</span><span>'+banklist[i].type+'</span></p>';
+							html11 += '<p class="marT20"><span class="colab">银行名称：</span><span>'+banklist[i].bank+'</span></p></div>';
+							html11 += '<img src="./images/sc.png" alt="" class="scimg bankdel"/></div>'
+						}
+						$('.yinhangka').append(html11);
+					}
+					
+					var html22 = '';
+					if(wechat){		
+						html22 += '<div class="addcard disFlex align-items flex-justify" typeid=" '+1+' ">';
+						html22 += '<img src="./images/wechat.png" alt="" class="zfbimg"/>';
+						html22 += '<div><p><span class="colab">微信收款人名称：</span><span>'+wechat.name+'</span></p>';
+						html22 += '<p class="marT20"><span class="colab">微信账号：</span><span>'+wechat.account+'</span></p>';
+						html22 += '<p class="marT20"><span class="colab">账户类型：</span><span>'+wechat.type+'</span></p>';
+						html22 += '<p class="marT20 disFlex align-items"><span class="colab">收款码：</span><img src=" '+wechat.url+' " style="width:1rem; height:1rem;"></p></div>';
+						html22 += '<img src="./images/sc.png" alt="" class="scimg wxdel"/></div>'						
+						$('.weixin').append(html22);
+					}
+					
+					var html33 = '';
+					if(alipay){
+						html33 += '<div class="addcard disFlex align-items flex-justify" typeid=" '+2+' ">';
+						html33 += '<img src="./images/zfb.png" alt="" class="zfbimg"/>';
+						html33 += '<div><p><span class="colab">支付宝收款人名称：</span><span>'+alipay.name+'</span></p>';
+						html33 += '<p class="marT20"><span class="colab">支付宝账号：</span><span>'+alipay.account+'</span></p>';
+						html33 += '<p class="marT20"><span class="colab">账户类型：</span><span>'+alipay.type+'</span></p>';
+						html33 += '<p class="marT20 disFlex align-items"><span class="colab">收款码：</span><img src=" '+alipay.url+'" style="width:1rem; height:1rem;"></p></div>';
+						html33 += '<img src="./images/sc.png" alt="" class="scimg zfbdel"/></div>'
+						$('.zhifubao').append(html33);
+					}
+
+                }else{
+                    isErr(result);
+                }
+            },
+            error:function(){
+                layer.msg("响应失败");
+            }
+        })
+		
+		$("#addcard").on("click",function(){
+			window.location.href="Add_shoukuanfangshi.html?token="+token;
+		})
+		
+		//删除银行卡
+		$(".bankdel").on("click",function(){
+			var id = $(this).parent().attr('listid');
+			$.ajax({
+	            type:"post",
+	            url:url+'/user/bank.html?token='+token,
+	            async:false,
+	            data:{
+	                token:token,
+	                id:id
+	            },
+	            dataType:'json',
+	            success:function(result){
+	                if(result.status == "0001"){
+	                	layer.msg(result.message,{time:1000},function(){
+	                		window.location.reload();
+	                	});
+	                	
+	                }else{
+	                    isErr(result);
+	                }
+	            },
+	            error:function(){
+	                layer.msg("响应失败");
+	            }
+	        })
+		})
+		
+		//删除微信
+		$(".wxdel").on("click",function(){
+			var typeid = $(this).parent().attr('typeid');
+			$.ajax({
+	            type:"post",
+	            url:url+'/user/delaccount.html?token='+token,
+	            async:false,
+	            data:{
+	                token:token,
+	                typeid:typeid
+	            },
+	            dataType:'json',
+	            success:function(result){
+	                if(result.status == "0001"){
+	                	layer.msg(result.message,{time:1000},function(){
+	                		// window.location.reload();
+	                	});
+	                	
+	                }else{
+	                    isErr(result);
+	                }
+	            },
+	            error:function(){
+	                layer.msg("响应失败");
+	            }
+	        })
+		})
+		
+		//删除支付宝
+		$(".zfbdel").on("click",function(){
+			var typeid = $(this).parent().attr('typeid');
+			$.ajax({
+	            type:"post",
+	            url:url+'/user/delaccount.html?token='+token,
+	            async:false,
+	            data:{
+	                token:token,
+	                typeid:typeid
+	            },
+	            dataType:'json',
+	            success:function(result){
+	                if(result.status == "0001"){
+	                	layer.msg(result.message,{time:1000},function(){
+	                		// window.location.reload();
+	                	});
+	                	
+	                }else{
+	                    isErr(result);
+	                }
+	            },
+	            error:function(){
+	                layer.msg("响应失败");
+	            }
+	        })
+		})
+	</script>
+</body>
+</html>
+
+
+

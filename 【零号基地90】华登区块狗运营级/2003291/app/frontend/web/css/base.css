@@ -1,0 +1,24 @@
+	@media only screen and (min-width: 1200px) {
+   		
+    }
+
+    @media only screen and (min-width: 641px) {
+ 
+    }
+    html{
+        /*height: auto !important;*/
+        overflow: hidden;
+    }
+    
+	html,body{
+		max-width: none;margin: 0 auto;
+/*		overflow: auto;*/
+/*                overflow-x: hidden;*/
+            
+	}
+        body{
+            height: 100%;position: relative;
+/*            overflow-x: hidden;*/
+            overflow: visible;
+        }
+

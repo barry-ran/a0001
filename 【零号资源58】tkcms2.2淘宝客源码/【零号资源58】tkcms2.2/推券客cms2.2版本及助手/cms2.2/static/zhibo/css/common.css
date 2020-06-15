@@ -1,0 +1,50 @@
+body,html{
+	width:100%;height: 100%;
+}
+body{
+	font-family:"microsoft yahei";
+	background: #f0f0f5;
+	font-size: 62.5%;/*12/16=0.75rem*/
+	/*基数37.5*/
+}
+
+div {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+a{
+	text-decoration: none;
+	font-size: 100%;
+}
+a:hover{
+	text-decoration: none;
+	transition:all 0.5s ease 0s;
+}
+.fl{float: left;}
+.fr{float: right;}
+.clearfix{
+	zoom:1;
+}
+.clearfix::after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+.viewport{ width:10rem; margin:0 auto; overflow-x:hidden;position: relative;}
+
+html,body{max-width: 750px;width: 100%;margin: 0 auto;}
+.input-box-bot,.live-box{max-width: 750px;width: 100%;margin: 0 auto;left: 0;right: 0;}
+.white-nav.am-header-default .am-header-title{font-size: 0.48rem;}
+.footer ul li a i,.white-nav.am-header-default .am-header-nav>a,.backTop a i{font-size: 0.64rem;}
+.footer ul li a span{font-size: 0.267rem;}
+.footimg{width: 0.667rem;height: 0.667rem;}
+.home{background-position:0 0;}
+.gift{background-position:-0.667rem 0;}
+.live{width: 0.933rem;height: 0.933rem;background-position:-1.867rem 0;margin-top: -0.267rem;}
+.sousuo{background-position:-2rem 0;}
+.wode{background-position:-2.667rem 0;}
+

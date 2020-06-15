@@ -1,0 +1,26 @@
+﻿上传网站文件
+
+导入数据库 ziyuan.sql
+
+网站运行目录 /public
+
+修改/config/database.php 中的数据库连接信息
+
+配置伪静态规则（THINKPHP）
+ <IfModule mod_rewrite.c>
+  Options +FollowSymlinks -Multiviews
+  RewriteEngine On
+
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*)$ index.php [L,E=PATH_INFO:$1]
+</IfModule>
+
+
+后台：/admin/login.html  用户名：admin  密码：ziyuan
+
+前端：/index/user/login.html  用户名：13800000000   密码：123456  
+注：切记在手机测试或PC浏览器模拟手机大小测试不然是显示PC端的首页
+
+
+

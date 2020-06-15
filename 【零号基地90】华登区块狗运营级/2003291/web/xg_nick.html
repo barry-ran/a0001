@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="HandheldFriendly" content="True">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>Lucky zodiac</title>
+<link rel="stylesheet" type="text/css" media="all" href="./css/reset.css" />
+<link rel="stylesheet" type="text/css" media="all" href="./css/style.css" />
+<link rel="stylesheet" type="text/css" media="all" href="./css/zodiac_style.css" />
+
+<script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
+<script src="./js/js.js" type="text/javascript"></script>
+<script type="text/javascript" src="./js/layui.all.js" ></script>
+
+</head>
+<body>
+	<!-- 头部 -->
+	<div class="header">
+		<div class="duo"></div>
+		<a href="javascript:history.back(-1)" class="hele"></a>
+		<h1 class="hetitle">修改昵称</h1>
+	</div>
+
+	<div id="page" class="page m3">	
+		<div class="modify">
+			<p>请输入要修改的昵称：</p>
+			<input type="text" class="nickipt" />
+		
+			<div class="aut">
+				<button class="cope rzbtn1" id="nickBtn">确定</button>
+			</div>
+		</div>
+		
+	</div>
+	
+	<script type="text/javascript" src="/js/public.js"></script>
+	<script type="text/javascript">
+		
+		//确认按钮		
+		var prevent_repetition=true;
+		$("#nickBtn").on("click",function(){
+			if(prevent_repetition){
+				prevent_repetition=false;
+				var nickname = $(".nickipt").val();
+				
+				if(!nickname){
+					layer.msg('请输入新的昵称');
+					prevent_repetition=true;
+					return false;
+				}
+										
+				$.ajax({
+		            type:"post",
+		            url:url+'/user/alternickname.html?token='+token,
+		            async:false,
+		            data:{
+		                token:token,
+		                nickname:nickname
+		            },
+		            dataType:'json',
+		            success:function(result){
+		            	if(result.status == "0001"){
+		            		layer.msg(result.message,{time:1000},function(){
+								window.location.href="set.html?token=" + token;
+							});		            		
+		            	}else{
+							isErr(result);
+						}
+		                
+		            },
+		            error:function(){
+		                layer.msg("响应失败");
+		            },
+		            complete: function() {
+						prevent_repetition = true;
+					}
+		        })
+			}
+			
+		})							
+	</script>
+</body>
+</html>
+
+
+
+

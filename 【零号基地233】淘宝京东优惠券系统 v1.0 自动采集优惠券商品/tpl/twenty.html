@@ -1,0 +1,151 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="images/favicon.ico" >
+<link rel="Shortcut Icon" href="images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="css/min.css" />
+<link rel="stylesheet" type="text/css" href="iconfont/iconfont.min.css" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script> 
+<script type="text/javascript" src="js/jquery.SuperSlide.min.js"></script> 
+
+<meta name="keywords" content="<{$config['config_keywords']}>" />
+<meta name="description" content="<{$config['config_description']}>" /> 
+<title>好货精选-<{$config['config_name']}></title>
+<style>
+body{margin: 0;padding: 0;border: 0;}
+.dh{display: inline;}
+.dh a{padding: 7px 20px 0;color: #fff;font-size: 16px;line-height: 36px;}
+.dh a:hover{color:yellow;}
+.small_dh{display: inline;float: left;width: 50%;height: 42px;text-align: center;border-bottom: 1px dashed #e2e2e2;}
+.small_dh a{font-size: 14px;color: #000;height: 45px;line-height: 40px;text-align: center;}
+.small_dh a:hover{color:red;}
+.qudian{display: inline;}
+.qudian a:hover{color:#848484;}
+.small_daohang{float: left;height: 20px;line-height: 20px;padding: 0 10px;}
+.test{display: block;height: 20px;line-height: 20px;font-size: 14px;color: #333;}
+.test:hover{color:red;}
+.small_daohangs{float: left;height: 20px;line-height: 20px;padding: 0 10px;}
+.small_daohangs a{display: block;height: 20px;line-height: 20px;font-size: 14px;color: #333;}
+.small_daohangs a:hover{color:red;}
+.zz{width: 17.5%;float: left;border-bottom: 1px solid #F1F1F1;border-right: 1px solid #F1F1F1;padding: 15px;background: #fff;height: 370px;}
+.zz:hover{box-shadow: 0 0 15px rgba(0,0,0,.1);}
+.zz span:hover{color: red;text-decoration: none;}
+.zz a:hover{ text-decoration:none; }
+    /*分页按钮CSS*/
+.saucy{margin:5px;padding:5px;text-align:center;color:#aaa;}
+.saucy a,.saucy strong{color:#666;border:1px solid #ddd;background:#fcfcfc;padding:4px 12px;margin:0 3px;text-decoration:none;border-radius:3px;text-shadow:1px 1px 0 white;box-shadow: inset 0 0 1px rgba(255,255,255,.2);background-image:-webkit-linear-gradient(top,#fcfcfc,#eaeaea);background-image:-moz-linear-gradient(top,#fcfcfc,#eaeaea);background-image:-o-linear-gradient(top,#fcfcfc,#eaeaea);background-image:-ms-linear-gradient(top,#fcfcfc,#eaeaea);}
+.saucy a:hover{background:#f80;border:1px solid #f80;color:#fff;padding:8px 12px;text-shadow:1px 1px 0 #f40;background-image:-webkit-linear-gradient(top,#f90,#f60);background-image:-moz-linear-gradient(top,#f90,#f60);background-image:-o-linear-gradient(top,#f90,#f60);background-image:-ms-linear-gradient(top,#f90,#f60);}
+.saucy a:active{background:#f60;border:1px solid #f60;color:#fff;}
+.saucy strong{background:#666;border:1px solid #666 ;color:#fff;text-shadow:1px 1px 0 #444;}
+    /*分页按钮CSS*/
+</style>
+<script>
+$(document).ready(function(){
+      $("#typeid<{$typeid}>").css({"color":"red","display":"block","height":"20px","line-height":"20px","font-size":"14px"});
+});
+</script> 
+</head>
+<body>
+<{include file="top.html"}> 
+
+        <div class="container-full">
+                <div class="container" style="background-color: #FFB6C1;height: 50px;">
+                       <p style="padding: 15px 0;">           
+                               <span class="small_daohang" style="padding-right: 25px;"><a id="typeid"  class="test">分类：</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=twenty typeid=1 sort=$sort  tmall=$tmall goldseller=$goldseller}>" id="typeid1" class="test">女装</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=twenty typeid=2 sort=$sort  tmall=$tmall goldseller=$goldseller}>" id="typeid2" class="test">母婴</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=twenty typeid=3 sort=$sort  tmall=$tmall goldseller=$goldseller}>" id="typeid3" class="test">美妆</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=twenty typeid=4 sort=$sort  tmall=$tmall goldseller=$goldseller}>" id="typeid4" class="test">居家日用</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=twenty typeid=5 sort=$sort  tmall=$tmall goldseller=$goldseller}>" id="typeid5" class="test">鞋品</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=twenty typeid=6 sort=$sort  tmall=$tmall goldseller=$goldseller}>" id="typeid6" class="test">美食</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=twenty typeid=7 sort=$sort  tmall=$tmall goldseller=$goldseller}>" id="typeid7" class="test">文娱车品</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=twenty typeid=8 sort=$sort  tmall=$tmall goldseller=$goldseller}>" id="typeid8" class="test">数码家电</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=twenty typeid=9 sort=$sort  tmall=$tmall goldseller=$goldseller}>" id="typeid9" class="test">男装</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=twenty typeid=10 sort=$sort  tmall=$tmall goldseller=$goldseller}>" id="typeid10" class="test">内衣</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=twenty typeid=11 sort=$sort  tmall=$tmall goldseller=$goldseller}>" id="typeid11" class="test">箱包</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=twenty typeid=12 sort=$sort  tmall=$tmall goldseller=$goldseller}>" id="typeid12" class="test">配饰</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=twenty typeid=13 sort=$sort  tmall=$tmall goldseller=$goldseller}>" id="typeid13" class="test">户外运动</a></span>  
+                               <span class="small_daohang"><a href="<{spUrl c=main a=twenty typeid=14 sort=$sort  tmall=$tmall goldseller=$goldseller}>" id="typeid14" class="test">家装家纺</a></span>  
+                               
+                <{if $sort == 6}>
+<style>.sort_css_one{color: red;}</style>
+                     <{elseif  $sort == 2}>
+<style>.sort_css_two{color: red;}</style>
+                      <{elseif  $sort == 1}>
+<style>.sort_css_three{color: red;}</style>
+                       <{elseif  $sort == 0}>
+<style>.sort_css_four{color: red;}</style> 
+                   <{else}>
+                   <{/if}>                  
+                   <span style="border-left: #FFF0F5 1px solid;float: right;font-size: 12px;padding: 0 10px;"> <a href="<{spUrl c=main a=twenty typeid=$typeid sort=6  tmall=$tmall goldseller=$goldseller}>" class="sort_css_one">价格</a> </span>  
+                   <span style="border-left: #FFF0F5 1px solid;float: right;font-size: 12px;padding: 0 10px;"> <a href="<{spUrl c=main a=twenty typeid=$typeid sort=2  tmall=$tmall goldseller=$goldseller}>" class="sort_css_two">销量</a> </span> 
+                   <span style="border-left: #FFF0F5 1px solid;float: right;font-size: 12px;padding: 0 10px;"> <a href="<{spUrl c=main a=twenty typeid=$typeid sort=1  tmall=$tmall goldseller=$goldseller}>" class="sort_css_three">最新</a> </span> 
+                   <span style="border-left: #FFF0F5 1px solid;float: right;font-size: 12px;padding: 0 10px;"> <a href="<{spUrl c=main a=twenty typeid=$typeid sort=0  tmall=$tmall goldseller=$goldseller}>" class="sort_css_four">综合</a> </span>        
+                                </p> 
+                 </div>
+                     </div>
+                     
+                     
+                      <div class="container-full" style="margin-top: 5px">
+                <div class="container" style="background-color: #FFF0F5;height: 30px;">
+                       <p style="padding: 5px 0;">
+                          <{if $tmall == 1}>     
+                               <span class="small_daohangs"><a href="<{spUrl c=main a=twenty typeid=$typeid sort=$sort tmall=0 goldseller=$goldseller}>" style="color: red;"><i class="Hui-iconfont">&#xe6a8;</i>&nbsp;天猫商品</a></span> 
+                              <{else}>   
+                               <span class="small_daohangs"><a href="<{spUrl c=main a=twenty typeid=$typeid sort=$sort tmall=1 goldseller=$goldseller}>"><i class="Hui-iconfont">&#xe608;</i>&nbsp;天猫商品</a></span> 
+                               <{/if}> 
+                               
+                            <{if $goldseller == 1}>    
+                            <span class="small_daohangs"><a href="<{spUrl c=main a=twenty typeid=$typeid sort=$sort  tmall=$tmall goldseller=0}>" style="color: red;"><i class="Hui-iconfont">&#xe6a8;</i>&nbsp;金牌卖家</a></span> 
+                             <{else}>  
+                               <span class="small_daohangs"><a href="<{spUrl c=main a=twenty typeid=$typeid sort=$sort  tmall=$tmall goldseller=1}>"><i class="Hui-iconfont">&#xe608;</i>&nbsp;金牌卖家</a></span>   
+                               <{/if}>
+                          </p> 
+                 </div>
+                     </div>
+                     
+                     
+                     
+        	<div class="container-full">
+                 <div class="container" style="padding-top: 15px;">
+    <{foreach from=$arrays_row item=value}>
+                      <div class="zz">
+                       <a href="<{spUrl c=main a=shop_show taobaoid=$value.goodsId}>" target="_blank">
+                         <img src="<{$value.mainPic}>" style="width: 100%;height: 222.25px;"/>
+                                <p style="height: 18px;width: 100%;color: #494949;font-size: 14px;padding-bottom: 11px;line-height: 18px;padding-top: 18px;">
+                                 <span><{$value.title}></span>
+                                 </p>
+                                 <p style="height: 18px;color: #b0b0b0;font-size: 12px;"><span>原价：<{$value.originalPrice}></span><span style="float: right;">销量：<{$value.monthSales}></span></p>
+                              <p style="position: relative;height: 26px;display: block;">
+                              <span style="color: #fc4d52;font-size: 18px;height: 35px;line-height: 35px;margin: 5px 0 0 -4px;">￥<{$value.actualPrice}></span>
+                              <span style="background: url(images/quan.png) center rgba(255,248,248,1);background-size: 100% 100%;border-radius: 2px;font-weight: 400;padding: 3px 7px;margin: 3px 0;color: #FC4D52;text-align: center;float: right;"><{$value.couponPrice}> 元券</span>
+                              </p>
+                              <p style="text-align: right;">
+                          <{if $value.shopType == 1}><img src="images/tmall.png" style="width: 15px;height: 15px;"/><{else}><{/if}>
+                          <{if $value.activityType == 3}>&nbsp;<img src="images/juhuasuan.png" style="width: 15px;height: 15px;"/><{else}><{/if}>
+                          <{if $value.goldSellers == 1}>&nbsp;<img src="images/goldseller.png" style="width: 15px;height: 15px;"/><{else}><{/if}>
+                              </p>
+                         </a>
+                    </div>
+     <{/foreach}>                               
+                 </div>
+        </div>
+        
+            <div style="width: 100%;float: left;">
+                    <div class="saucy">
+   <{if $pageid != 1}>    
+    <a href="<{spUrl c=main a=twenty pageid=$pageid-1 typeid=$typeid sort=$sort  tmall=$tmall goldseller=$goldseller}>">上一页</a>  
+        <{else}><{/if}>            
+    <strong><{$pageid}></strong>  
+    <a href="<{spUrl c=main a=twenty pageid=$pageid+1 typeid=$typeid sort=$sort  tmall=$tmall goldseller=$goldseller}>">下一页</a>
+         </div> 
+                        </div>
+    <{include file="footer.html"}>     
+
+</body>
+</html>

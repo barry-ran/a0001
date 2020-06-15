@@ -1,0 +1,19 @@
+body {
+    background-color: #F1F1F1;
+    color: #4D4D4D;
+}
+
+.safeLogout button {
+    background: #1AB1FF;
+    width: 90%;
+}
+
+.changebtn button{
+    background: #ffc706;
+    margin-top: -5px;
+}
+
+.userGo .accordion{
+    background: #FFFFFF;
+}
+

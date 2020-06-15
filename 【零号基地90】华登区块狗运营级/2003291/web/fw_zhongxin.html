@@ -1,0 +1,98 @@
+<html class="pixel-ratio-3 retina ios ios-13 ios-13-2-3 ios-gt-12 ios-gt-11 ios-gt-10 ios-gt-9 ios-gt-8 ios-gt-7 ios-gt-6"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="yes" name="apple-touch-fullscreen">
+<meta content="telephone=no,email=no" name="format-detection">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="text/javascript" src="./assets/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="./assets/jquery-weui.js?v=1"></script>
+<link rel="stylesheet" type="text/css" href="./assets/weui.min.css">
+<link rel="stylesheet" type="text/css" href="./assets/jquery-weui.min.css">
+<link rel="stylesheet" type="text/css" href="./assets/body.css?v=5">
+<link rel="stylesheet" type="text/css" href="./assets/iconfont.css?v=5">
+<title>幸运十二生肖</title>
+<meta name="keywords" content="幸运十二生肖">
+<meta name="description" content="幸运十二生肖">
+
+<body class=" foot-body">
+
+<style type="text/css">
+body { background:#18173F url(./images/bg.jpg?v=1) no-repeat ; background-size:100% auto; }
+body:before { background:#18173F url(./images/bg.jpg?v=1) no-repeat ;  background-size:100% auto; }
+.logo{width:100%;height:100px;text-align: center;margin-top:11%;margin-bottom: 5%;}
+.logo img{width:auto;height:87px;padding-left: 15px;}
+.member { width:55%;height:139px; background:none;margin:auto; text-align: center;}
+.member img{width:auto;height:120px;}
+</style>
+<div class="logo">
+   <img src="./assets/logo (1).png">
+</div>
+<div class="member">
+    <a class="rent-group" href="javascript:;" id="bzzx">
+        <img src="./assets/help.png">
+    </a>
+</div>
+<div class="member">
+    <a class="rent-group" href="javascript:;" id="xszx">
+         <img src="./assets/kefu.png">
+    </a>
+</div>
+<div class="member">
+<!--    <a class="rent-group" href="/mobile/index/service_list">-->
+    <a class="rent-group" id="yjfk">
+        <img src="./assets/gongdan.png">
+    </a>
+</div>
+
+
+
+<div class="weui-tabbar">
+  <a href="javascript:;" class="weui-tabbar__item " id="sy">
+    <div class="weui-tabbar__icon">
+      <img src="./assets/xysx.png" class="set_logo">
+    </div>
+    <p class="weui-tabbar__label">十二生肖</p>
+    </a>
+    <a href="javascript:;" class="weui-tabbar__item weui-bar__item--on" id="fwzx">
+    <div class="weui-tabbar__icon">
+      <img src="./assets/server.png" class="set_logo">
+    </div>
+    <p class="weui-tabbar__label">服务中心</p>
+    </a>
+    <a href="javascript:;" class="weui-tabbar__item" id="slt">
+    <div class="weui-tabbar__icon">
+      <img src="./assets/wdqb.png" class="set_logo">
+    </div>
+    <p class="weui-tabbar__label">我的钱包</p>
+    </a>
+</div>
+
+</body></html>
+	<script type="text/javascript" src="/js/public.js"></script>
+
+<script>
+
+  //  帮助中心
+  $("#bzzx").on("click",function(){
+    window.location.href="message_details.html?token=" + token + "&id=4";
+  })
+      //  线上咨询
+  $("#xszx").on("click",function(){
+    window.location.href="XianShangKeFu.html?token=" + token;
+  })
+      //  意见反馈
+  $("#yjfk").on("click",function(){
+    window.location.href="yj_fankui.html?token=" + token;
+  })
+      //  首页
+  $("#sy").on("click",function(){
+    window.location.href="index.html?token=" + token;
+  })
+      //  Lucky zodiac
+  $("#slt").on("click",function(){
+    window.location.href="gr_zhongxin.html?token=" + token;
+  })
+</script>

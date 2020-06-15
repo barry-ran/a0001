@@ -1,0 +1,11 @@
+array (
+  'dateTime' => '20180109150230',
+  'platOrderNum' => 'UN5TF2018010915013878259',
+  'platPayResultCode' => 'PTN0004',
+  'sign' => '38a39ccdc22affaa7cb2085d1d884eb4',
+  'signType' => 'MD5',
+  'orderNum' => '1515485577',
+  'platPayResultRemark' => '支付成功',
+  'command' => 'GWQP008',
+  'groupCode' => 'G10002052',
+)

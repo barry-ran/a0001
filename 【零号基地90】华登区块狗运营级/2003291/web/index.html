@@ -1,0 +1,472 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="HandheldFriendly" content="True">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>Lucky zodiac</title>
+	<link rel="stylesheet" type="text/css" media="all" href="./css/reset.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="./css/style.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="./css/zodiac_style.css?s1.1.1" />
+	<link rel="stylesheet" type="text/css" media="all" href="./css/swiper-3.3.1.min.css" />
+  <script type="text/javascript" src="./assets/jquery-2.1.4.js"></script>
+  <script type="text/javascript" src="./assets/jquery-weui.js?v=1"></script>
+  <link rel="stylesheet" type="text/css" href="./assets/weui.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/jquery-weui.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/body.css?v=5">
+  <link rel="stylesheet" type="text/css" href="./assets/iconfont.css?v=5">
+	<script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
+	<script src="./js/js.js" type="text/javascript"></script>
+	<script src="./js/layui.all.js" type="text/javascript"></script>
+
+	<style type="text/css">
+	*{
+		    box-sizing: border-box;
+	}
+
+	body{
+			overflow: auto;
+    background: #40407B url(../images/bg.jpg?v=1) no-repeat center top;
+    background-attachment: fixed;
+    background-size: 100% auto;
+		    line-height: 1.6;
+		        font-size: 16px;
+    font-family: -apple-system-font,Helvetica Neue,sans-serif;
+	}
+		.swiper-container {
+			width: 6.9rem;
+			height: 3rem;
+			margin: auto;
+			border-radius: .2rem;
+			margin-top: .2rem;
+			margin-bottom: .2rem;
+		}
+
+		.swiper-container img{
+			width:6.9rem;
+			height: 3rem;
+		}
+
+		.swiper-slide{
+			width: 6.9rem !important;
+			margin-right: 0px !important;
+		}
+
+		.zhezhao,.zhezhao11{
+			width: 100%;
+			height: 100%;
+			background: black;
+			opacity: 0.8;
+			position:fixed;
+			top:0;
+			left:0;
+			z-index: 999;
+			display: none;
+		}
+
+		.tanchuang{
+			width: 80%;
+			height: 10.96rem;
+			position:fixed;
+			top:30%;
+			left:10%;
+			z-index: 1000;
+			display: none;
+			text-align: center;
+			background: url(./images/qianggouzhong.png)no-repeat;
+			background-size: 100%;
+		}
+
+		.fail,.fail22{
+			color: white;
+			margin-top: 5rem;
+			font-size: .5rem;
+		}
+		.tanchuangqgz{
+			width: 80%;
+			height: 10.96rem;
+			position:fixed;
+			top:0;
+			left:10%;
+			z-index: 1000;
+			display: none;
+			text-align: center;
+			background: url(./images/qianggouzhong.png)no-repeat;
+			background-size: 100%;
+		}
+
+		.tanchuang22{
+			width: 80%;
+			height: 10.96rem;
+			position:fixed;
+			top:0;
+			left:10%;
+			z-index: 1000;
+			display: none;
+			text-align: center;
+			background: url(./images/qgzt1.png)no-repeat;
+			background-size: 100%;
+		}
+
+		.ddimg{
+			width: 5.5rem;
+			height: 10.96rem;
+		}
+
+		.rob,.rob22{
+			width: 2.22rem;
+			height: .66rem;
+			background: #f1bd1d;
+			border-radius: .33rem;
+			text-align: center;
+			line-height: .66rem;
+			color: white;
+			margin: auto;
+			margin-top:0.2rem;
+		}
+
+		.xuline{
+			margin: auto;
+			border-bottom: 1px dotted #b5d2d2;
+		}
+		#Advance{
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<!-- 头部 -->
+<div class="i-title"><img src="./assets/logo.png" alt="幸运十二生肖"></div>
+<div class="i-goods-body" style="height: 706px;">
+	<img src="./assets/banner.jpg" class="i-adv">
+	<div class="i-body" style="height: 706px;">
+		<div class="goods-main">
+
+		 </div>
+  </div>
+</div>
+
+
+
+<!-- footer -->
+  <div class="weui-tabbar">
+    <a href="./index.html" class="weui-tabbar__item  weui-bar__item--on">
+      <div class="weui-tabbar__icon">
+        <img src="./assets/xysx.png" class="set_logo">
+      </div>
+      <p class="weui-tabbar__label">十二生肖</p>
+      </a>
+      <a href="./fw_zhongxin.html" class="weui-tabbar__item ">
+      <div class="weui-tabbar__icon">
+        <img src="./assets/server.png" class="set_logo">
+      </div>
+      <p class="weui-tabbar__label">服务中心</p>
+      </a>
+      <a href="./gr_zhongxin.html" class="weui-tabbar__item">
+      <div class="weui-tabbar__icon">
+        <img src="./assets/wdqb.png" class="set_logo">
+      </div>
+      <p class="weui-tabbar__label">我的钱包</p>
+      </a>
+  </div>
+<!--弹窗-->
+<div class="zhezhao11"></div>
+<div class="zhezhao"></div>
+<div class="tanchuang">
+	<p class="fail"></p>
+	<div class="rob"></div>
+</div>
+
+<div class="tanchuang22">
+	<p class="fail22" style="margin-top: 5rem;">预约成功</p>
+	<div class="rob22">确定</div>
+</div>
+
+<div class="tanchuangqgz"></div>
+<!--<div class="tanchuangqgcg">-->
+<!--		<div class="rob"></div>-->
+<!--</div>-->
+<!--<div class="tanchuangqgsb">-->
+<!--		<div class="rob"></div>-->
+<!--</div>-->
+
+<script type="text/javascript" src="./js/swiper-3.3.1.min.js"></script>
+<script type="text/javascript" src="/js/public.js"></script>
+<script>
+    $(function(){
+        tabData();
+        	$('.i-goods-body,.i-body').css('height', $(window).height() - 106 + 'px');
+
+    });
+    //下拉
+    var page = 1;
+    function tabData() {
+        $.ajax({
+            type:"post",
+            url:url+'/api/usermsg.html?token='+token,
+            async:false,
+            data:{
+                token:token,
+                page:page
+            },
+            dataType:'json',
+            success:function(result){
+                if(result.status == "0001"){
+                    var data11=result.data.banner;
+                    var html11 = '';
+                    for(var i in data11){
+                        $('.swiper-wrapper').html('');
+                        html11 += '<div class="swiper-slide"><img src="'+ data11[i].img +'"></div>';
+                    }
+                    $('.swiper-wrapper').html(html11);
+                    var mySwiper = new Swiper('.swiper-container',{
+                        autoplay: 3000,   //自动轮播参数
+                        pagination: '.swiper-pagination',   //分页器class
+                        loop:true,   //无限循环
+                        grabCursor: true,    //鼠标放上时变成手的形状
+                        paginationClickable :true,   //点击分页切换图像
+                        autoplayDisableOnInteraction : false,//点击屏幕后仍然可以自动播放
+                        // 如果需要前进后退按钮
+                        nextButton: '.swiper-button-next',
+                        prevButton: '.swiper-button-prev'
+                    });
+
+                    if(result.data.list.data.length!=0){
+                        var myDate = new Date;
+                        var h = myDate.getHours();//获取当前小时数(0-23)
+                        var m = myDate.getMinutes();//获取当前分钟数(0-59)
+
+                        var html = '';
+                        var data22=result.data.list.data;
+
+                        for(var i in data22){
+                            var name = data22[i].name;
+                            var aa = name.split("生肖");
+
+                            djsHour = data22[i].begin_at_hour;
+                            djsMinute = data22[i].begin_at_minu;
+                            if(data22[i].begin_at_minu == 0){
+                                begin_at_minu = '00';
+                            }else{
+                                begin_at_minu = data22[i].begin_at_minu;
+                            }
+                            if(data22[i].end_at_minu == 0){
+                                end_at_minu = '00';
+                            }else{
+                                end_at_minu = data22[i].end_at_minu;
+                            }
+                            var nub = parseInt(data22[i].kmd * 100);
+
+                            html = `<div class="goods-item">
+                            <div class="goods-item-body" id='${data22[i].zodiac_id}'>
+            <ul>
+              <li>
+                <span class="label">价格:</span>
+                <strong>${data22[i].hcg_min}-${data22[i].hcg_max}</strong>
+              </li>
+              <li>
+                <span class="label">领养时间:</span>
+                <strong>${data22[i].begin_at_hour}:${begin_at_minu}-${data22[i].end_at_hour}:${end_at_minu}</strong>
+              </li>
+              <li>
+                <span class="label">预约/即抢积分:</span>
+                <strong>${data22[i].subscribe} / ${data22[i].seckill}</strong>
+              </li>
+              <li>
+                <span class="label">智能合约收益:</span>
+                <strong>${data22[i].due}天/${data22[i].award}</strong>%
+              </li>
+              <li>
+                <span class="label">可挖GTC:</span>
+                <strong>${data22[i].cash}</strong>%
+              </li>
+            </ul>
+            <div class="item-logo">
+              <div class="img"><img src='${data22[i].picture}'></div>
+              <div class="btn">
+                <p>${aa[1]}</p>`;
+                
+                if(data22[i].color == 1){
+                  html += `<p class="item-btn goods-id-23 djs_btn Advance" data1="${data22[i].active_status}" zodiac_grade_id="" data="${data22[i].flagtime}"><button class="gbtn gbtn-gray statc3 click" is_click="${data22[i].is_click}">${data22[i].active_status}</button></p></div></div></div></div>`
+                            }
+                if(data22[i].color == 2){
+                              html += `<p class="item-btn goods-id-23 djs_btn wait" data1="${data22[i].active_status}" zodiac_grade_id="" data="${data22[i].flagtime}"><button class="gbtn gbtn-green statc2 click" is_click="${data22[i].is_click}">${data22[i].active_status}</button></p></div></div></div></div>`
+                            }
+
+                if(data22[i].color == 3){
+                              html += `<p class="item-btn goods-id-23 buy" data1="${data22[i].active_status}" zodiac_grade_id="" data="${data22[i].flagtime}"><button class="gbtn gbtn-red statc4 click" is_click="${data22[i].is_click}">${data22[i].active_status}</button></p></div></div></div></div>`
+                            }
+
+                if(data22[i].color == 4){
+                              html += `<p class="item-btn goods-id-23 growup" data1="${data22[i].active_status}" zodiac_grade_id="" data="${data22[i].flagtime}"><button class="gbtn gbtn-blue statc1 click" is_click="${data22[i].is_click}">${data22[i].active_status}</button></p></div></div></div></div>`
+                            }
+ $('.goods-main').append(html);
+                        }
+                       
+
+//							倒计时
+                        for(var i=0;i<$(".djs_btn").length;i++){
+                            console.log($(".djs_btn").eq(i).parent().attr("id"))
+                            var times=new Date().getTime();
+                            var time1=$(".djs_btn").eq(i).attr("data");
+                            if(((Number(time1)-180)*1000 > times) || ((Number(time1)-180)*1000 <=  times && times <= Number(time1)*1000)){
+                                kj(time1,i);
+                            }
+                        }
+                    }
+                }else{
+                    isErr(result);
+                }
+            },
+            error:function(){
+                layer.msg("响应失败");
+            }
+        })
+    }
+
+
+    function kj(time11,k){
+        var kk_time= parseInt(((time11*1000) - new Date().getTime())/1000);
+        // kk_time += 5;
+        var t = setInterval(function(){
+            if(kk_time < 180){
+                var ht=$(".djs_btn").eq(k).attr("data1");
+                $(".djs_btn").eq(k).find("button").text(kk_time+'秒');//+"s后可抢购"
+                $(".djs_btn").eq(k).find("button").attr("disabled","disabled");
+                if(kk_time <= 0){
+                    clearInterval(t);
+                    $(".djs_btn").eq(k).removeClass("Advance");
+                    $(".djs_btn").eq(k).addClass("buy");
+                    $(".djs_btn").eq(k).find("button").removeAttr("disabled");
+                    $(".djs_btn").eq(k).find("button").addClass("statc4");
+                    $(".djs_btn").eq(k).find("button").text("开枪");
+
+                    <!-- location.href = 'index.html?token='+token; -->
+                }
+            }
+            kk_time--;
+        },1000)
+    }
+
+    $("#cancel").on("click",function(){
+        $('.zhezhao').hide();
+        $('.tanchuang').hide();
+    })
+    //抢购接口
+    var prevent_repetition=true;
+    $(document).on("click",".buy",  function(){
+			if(prevent_repetition){      	
+            prevent_repetition=false;
+            var zodiac_id = $(this).parents('.goods-item-body').attr("id");
+            var zodiac_grade_id = $(this).attr("zodiac_grade_id");
+            var jymm = 111111;
+            $.ajax({
+                type:"post",
+                url:url+'/trade/tradebuy.html?token='+token,
+                async:false,
+                data:{
+                    token:token,
+                    zodiac_id:zodiac_id,
+                    zodiac_grade_id:zodiac_grade_id,
+                    jymm:jymm
+                },
+                dataType:'json',
+                success:function(result){
+                    if(result.status == "0001"){
+                        $('.zhezhao').show();
+                        $('.tanchuangqgz').show();
+                        setTimeout(function(){
+                            $('.zhezhao').hide();
+                            $('.tanchuangqgz').hide();
+                        },60000)
+
+                        $(".fail").html(result.message);
+                        $('.zhezhao11').show();
+                        $('.tanchuang').show();
+
+                        var sendSta = $(".fail").html();
+                        if(sendSta == '抢购成功'){
+                            $(".rob").text("去领养");
+                            $(".rob").on("click",function(){
+
+                                $('.zhezhao11').hide();
+                                $('.tanchuang').hide();
+                                window.location.href="lingyang_jilu.html?token=" + token;
+                            })
+                        }else{
+                            $(".rob").text("确定");
+                            $(".rob").on("click",function(){
+
+                                $('.zhezhao11').hide();
+                                $('.tanchuang').hide();
+                                window.location.reload();
+                            })
+                        }
+
+                    }else{
+                        isErr(result);
+                    }
+                },
+                error:function(){
+                    layer.msg("响应失败");
+                },
+                complete: function() {
+                    prevent_repetition = true;
+                }
+            })
+        }
+    })
+    //预约产品接口
+    var prevent_repetition=true;
+    $(document).on("click",".Advance",function(){
+        if(prevent_repetition){
+            prevent_repetition=false;
+            var zodiac_id = $(this).parents('.goods-item-body').attr("id");
+
+            $.ajax({
+                type:"post",
+                url:url+'/trade/applyzodiac.html?token='+token,
+                data:{
+                    token:token,
+                    zodiac_id:zodiac_id
+                },
+                dataType:'json',
+                success:function(result){
+                    if(result.status == "0001"){
+                        $('.zhezhao').show();
+                        $('.tanchuang22').show();
+                    }else{
+                        isErr(result);
+                    }
+                },
+                error:function(){
+                    layer.msg("响应失败");
+                },
+                complete: function() {
+                    prevent_repetition = true;
+                }
+            })
+        }
+
+    })
+
+    $(".rob22").on("click",function(){
+        $('.zhezhao').hide();
+        $('.tanchuang22').hide();
+        window.location.reload();
+    })
+
+    $("#fwzx").on("click",function(){
+        window.location.href="fw_zhongxin.html?token=" + token;
+    })
+
+    $("#slt").on("click",function(){
+        window.location.href="gr_zhongxin.html?token=" + token;
+    })
+</script>
+</body>
+</html>
+

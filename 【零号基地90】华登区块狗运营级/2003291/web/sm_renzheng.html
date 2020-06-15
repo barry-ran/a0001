@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="HandheldFriendly" content="True">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>Lucky zodiac</title>
+<link rel="stylesheet" type="text/css" media="all" href="./css/reset.css" />
+<link rel="stylesheet" type="text/css" media="all" href="./css/style.css" />
+<link rel="stylesheet" type="text/css" media="all" href="./css/zodiac_style.css" />
+
+<script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
+<script src="./js/js.js" type="text/javascript"></script>
+<script type="text/javascript" src="./js/layui.all.js" ></script>
+
+</head>
+<body>
+	<!-- 头部 -->
+	<div class="header">
+		<div class="duo"></div>
+		<a href="javascript:history.back(-1)" class="hele"></a>
+		<h1 class="hetitle">实名认证</h1>
+	</div>
+	<div id="page" class="page m3">	
+      <!--	<p style="color:#feac0f;text-indent:1em;margin-bottom: .1rem;">提示 : 请先绑定收款方式再进行实名认证！</p> -->
+
+		<div  class="system disFlex align-items">
+			<span>真实姓名</span>
+			<input type="text" placeholder="请输入本人真实姓名"  class="smipt realName flex_1"/>
+		</div>
+		
+		<div class="system disFlex align-items">
+			<span>身份证号</span>
+			<input type="text" placeholder="请输入身份证号码" class="smipt numberId flex_1" maxlength="18" />
+		</div>
+		
+		<p class="font24 zfbcode">注：实名认证后不得修改，请谨慎填写！</p>
+		
+		<div class="aut"  id="tjbtn">
+			<button class="cope rzbtn1">提交完成认证</button>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="/js/public.js"></script>
+	<script type="text/javascript">
+		    $.ajax({
+                type:"post",
+                url:url+'/user/realnamepage.html?token='+token,
+                async:false,
+                data:{
+                    token:token
+                },
+                dataType:'json',
+                success:function(result){
+                    if(result.status == "0001"){
+                    	
+						if(result.isactivate == 1){
+							if(result.is_pass == 0){
+								$(".realName").val(result.data.name).attr("disabled","disabled");
+								$(".numberId").val(result.data.idNo).attr("disabled","disabled");
+								$(".rzbtn1").html("审核中").attr("disabled","disabled");
+							}
+							
+							if(result.is_pass == 1){
+								$(".realName").val(result.data.name);
+								$(".numberId").val(result.data.idNo);
+								$(".zfbcode").html('失败原因: '+result.reason);
+								$(".rzbtn1").html("重新提交");
+								//如果状态为0，点击认证按钮进行实名认证
+								var prevent_repetition=true;
+								$(".rzbtn1").on("click",function(){
+									if(prevent_repetition){
+										prevent_repetition=false;
+										var idNo = $(".numberId").val();
+										var name = $(".realName").val();
+										
+										if(!idNo){
+											layer.msg("请输入身份证号");
+											prevent_repetition=true;
+											return false;
+										}
+										
+										if(!name){
+											layer.msg("请输入您的姓名");
+											prevent_repetition=true;
+											return false;
+										}									
+										
+										$.ajax({
+											type:"post",
+											url:url + "/user/realname.html?token="+token,
+											async:false,
+											data:{
+												token:token,
+												idNo:idNo,
+												name:name							
+											},
+											dataType:'json',
+											success:function(result){
+												if(result.status == "0001"){
+													layer.msg(result.message,{time:500},function(){
+														window.location.reload();
+													});
+												}else{
+													isErr(result);
+												}
+											},
+											error:function(){
+												layer.msg("响应失败");
+											},
+											complete: function() {
+												prevent_repetition = true;
+											}
+										});
+								}
+								
+							})
+							}
+							if(result.is_pass == 2){
+								$(".realName").val(result.data.name).attr("disabled","disabled");
+								$(".numberId").val(result.data.idNo).attr("disabled","disabled");
+								
+								$("#tjbtn").hide();
+								$(".zfbcode").hide();
+							}
+							
+							
+						}else{
+							//如果状态为0，点击认证按钮进行实名认证
+							var prevent_repetition=true;
+							$("#tjbtn").on("click",function(){
+								if(prevent_repetition){
+									prevent_repetition=false;
+									var idNo = $(".numberId").val();
+									var name = $(".realName").val();
+									
+									if(!idNo){
+										layer.msg("请输入身份证号");
+										prevent_repetition=true;
+										return false;
+									}
+									
+									if(!name){
+										layer.msg("请输入您的姓名");
+										prevent_repetition=true;
+										return false;
+									}									
+									
+									$.ajax({
+										type:"post",
+										url:url + "/user/realname.html?token="+token,
+										async:false,
+										data:{
+											token:token,
+											idNo:idNo,
+											name:name							
+										},
+										dataType:'json',
+										success:function(result){
+											if(result.status == "0001"){
+												layer.msg(result.message,{time:500},function(){
+													window.location.reload();
+												});
+											}else{
+												isErr(result);
+											}
+										},
+										error:function(){
+											layer.msg("响应失败");
+										},
+										complete: function() {
+											prevent_repetition = true;
+										}
+									});
+								}
+								
+							})
+							
+						}
+						
+                    }else{
+                        isErr(result);
+                    }
+                },
+                error:function(){
+                    layer.msg("响应失败");
+                }
+            })
+	</script>
+</body>
+</html>

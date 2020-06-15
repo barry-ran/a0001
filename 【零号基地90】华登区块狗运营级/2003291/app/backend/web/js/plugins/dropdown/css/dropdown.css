@@ -1,0 +1,17 @@
+/* 
+    Created on : 2016-7-8, 10:35:12
+    Author     : shuang
+*/
+.dropdown .arrow { border-color: #000 #e5e5e5 #e5e5e5;border-style: solid;border-width: 5px;height: 0;position: relative;width: 0;left: -20px; top: 2px;display: inline-block;}
+.dropdown{color: #656565;font-size: 14px;}
+.dropdown .text{background-color: #fff;border-radius: 5px 0 0 5px;border-style: solid;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;border-width: 1px 0 1px 1px;padding:6px 12px;display: inline-block;width:200px; font-family: airal,"Microsoft YaHei",微软雅黑;height: 34px;line-height: 34px;}
+.dropdown .aca{background-color: #e5e5e5;border-radius: 0 5px 5px 0;text-indent: -9999px;width: 30px;display: inline-block; font-family: airal,"Microsoft YaHei",微软雅黑;height: 34px; line-height: 34px;border-color: #ccc;border-style: solid;border-width: 1px 1px 1px 0;}
+.dropdown-menu {margin:0  5px 0 1px;border:0;}
+.dropdown-menu a {color: #656565;display: block;padding: 6px 12px;text-decoration: none;}
+.dropdown-menu a:link, .dropdown-menu a:visited {color: #35a1d4;outline: 0 none;}
+.dropdown-menu li {line-height: 30px;list-style: none;}
+.dropdown-menu li a:hover{background: #f5f5f5 none repeat scroll 0 0;color:#000;}
+.dropdown-menu li a span.levelClass1{display: block;margin-left:10px;padding-left:10px;border-left: 1px solid #1fa27c;}
+.dropdown-menu li a span.levelClass2{display: block;margin-left:20px;padding-left:10px;border-left: 1px solid #1fa27c;}
+.dropdown .text , .dropdown .aca, .dropdown .arrow{cursor: pointer;}
+.dropdown-menu .drop-selected{background-color: #f5f5f5;}

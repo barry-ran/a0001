@@ -1,0 +1,13 @@
+array (
+  'dateTime' => '20180202111721',
+  'platOrderNum' => 'UWHF20180202111646324941',
+  'payMoney' => '1000',
+  'payFee' => '112',
+  'platPayResultCode' => 'PTN0004',
+  'sign' => '740ca048129d60b2a9c69fa275a178dd',
+  'signType' => 'MD5',
+  'orderNum' => '2018020211164375599',
+  'platPayResultRemark' => '支付成功',
+  'command' => 'GWUP003',
+  'groupCode' => 'G910000000001078',
+)

@@ -1,0 +1,5 @@
+{
+  "require": {
+    "crazyfd/yii2-qiniu": "dev-master"
+  }
+}

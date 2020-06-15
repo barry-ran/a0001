@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel="stylesheet" type="text/css" href="css/wap/hui.css" />   
+<link rel="stylesheet" href="css/wap/layui.css">
+<title>优选好券</title>
+<style>
+.fenlei{width: auto;line-height: 44px;margin: auto;color: #fff;font-size: 16px;text-align: center;}
+.fenlei a{padding: 0 2px 5px;margin: 0 8px;height: 33px;line-height: 33px;color: rgba(255,255,255,.6);}
+</style>
+</head>
+
+<body>
+
+<{include file="wap/top.html"}> 
+
+<header class="hui-header">
+    <div id="hui-back"></div>
+    <h1 style="font-size: 16px;">优选好券</h1>
+    <div id="hui-header-menu" onclick="hui.showSlideMenu();"></div>
+</header>
+
+<div class="hui-wrap" style="padding-top: 44px;padding-bottom: 60px;">
+
+     <div id="fenlei" style="background: linear-gradient(90deg, #FF8C00 0%, #ff4a00 100%);">
+        <div>
+         <div class="fenlei"><a id="typeid" href="<{spUrl c=main a=quan_top}>">精选</a></div>
+            <div class="fenlei"><a id="typeid1" href="<{spUrl c=main a=quan_top typeid=1}>">女装</a></div>
+            <div class="fenlei"><a id="typeid2" href="<{spUrl c=main a=quan_top typeid=2}>">母婴</a></div>
+            <div class="fenlei"><a id="typeid3" href="<{spUrl c=main a=quan_top typeid=3}>">美妆</a></div>
+            <div class="fenlei"><a id="typeid4" href="<{spUrl c=main a=quan_top typeid=4}>">居家日用</a></div>
+            <div class="fenlei"><a id="typeid5" href="<{spUrl c=main a=quan_top typeid=5}>">鞋品</a></div>
+            <div class="fenlei"><a id="typeid6" href="<{spUrl c=main a=quan_top typeid=6}>">美食</a></div>
+            <div class="fenlei"><a id="typeid7" href="<{spUrl c=main a=quan_top typeid=7}>">文娱车品</a></div>
+            <div class="fenlei"><a id="typeid8" href="<{spUrl c=main a=quan_top typeid=8}>">数码家电</a></div>
+            <div class="fenlei"><a id="typeid9" href="<{spUrl c=main a=quan_top typeid=9}>">男装</a></div>
+            <div class="fenlei"><a id="typeid10" href="<{spUrl c=main a=quan_top typeid=10}>">内衣</a></div>
+            <div class="fenlei"><a id="typeid11" href="<{spUrl c=main a=quan_top typeid=11}>">箱包</a></div>
+            <div class="fenlei"><a id="typeid12" href="<{spUrl c=main a=quan_top typeid=12}>">配饰</a></div>
+            <div class="fenlei"><a id="typeid13" href="<{spUrl c=main a=quan_top typeid=13}>">户外运动</a></div>
+            <div class="fenlei"><a id="typeid14" href="<{spUrl c=main a=quan_top typeid=14}>">家装家纺</a></div>
+        </div>
+    </div>
+  
+    
+            <div class="hui-speed-dial">
+                     <ul id="cunfang">
+               
+               <{foreach from=$arrays_row item=value}>    
+               <a href="<{spUrl c=main a=mshop_show taobaoid=$value.goodsId}>">
+                     <li style="width: 47%;margin-top: .1rem;border-radius: 5px;background: #fff;margin: 2% 0 0 2%;position: relative;">
+                            <img src="<{$value.mainPic}>" style="width: 100%;"/>   
+                            <p style="font-size: 12px;font-family: 黑体-简;font-weight: 300;color: #808080;height: 26px;line-height: 26px;overflow: hidden;text-indent: 5px;"><{$value.title}></p> 
+                            <p style="text-align: left;"><span style="font-size: 10px;font-weight: 400;color: #666;">券后&nbsp;</span><span style="font-size: 12px;font-weight: 500;color: #FF2B22;margin-left: 1px;">¥</span>
+                            <span style="font-size: 19px;font-weight: 500;color: #FF2B22;"><{$value.actualPrice}></span>&nbsp;<span style="color: #bbb;text-decoration: line-through;font-size: 12px;">￥<{$value.originalPrice}></span>
+                            </p>
+                            <p style="height: 26px;line-height: 18px;text-align: left;font-size: 12px;color: #808080;">销量:<{$value.monthSales}>
+                            <span style="float: right;">
+                         <{if $value.shopType == '1'}>   <img src="images/tmall.png" style="width: 15px;height: 15px;"/>&nbsp;<{else}><{/if}>
+                          <{if $value.activityType == '3'}>  <img src="images/juhuasuan.png" style="width: 15px;height: 15px;"/><{else}><{/if}>
+                            </span>
+                            </p>
+   <div style="width: 50px;height: 45px;display: block;right: 0px;top: 0px;border-radius: 1px;text-align: center;background: red;color: yellow;z-index: 9;position: absolute;font-size: 12px;line-height: 14px;">优惠券<br><span style="font-weight: bold;font-size: 12px;color: #fff;"><{$value.couponPrice}>元</span><img src="images/wap/qulingquan.png" style="width: 100%;"/></div>
+                                </li>
+                            </a>      
+                      <{/foreach}>           
+                                  <input type="hidden" value="<{$pageid}>" id="newpage"/>
+                                  <input type="hidden" value="<{$typeid}>" id="new_typeid"/>
+                     </ul>
+                            </div>
+  
+    
+        <!-- 回到顶部 -->  
+   <div style="width:30px;overflow:hidden;position:fixed;right:10px;bottom:50px;z-index:10;">
+	<div style="width:100%;overflow:hidden;">
+		<div style="width:30px;height:30px;margin-bottom:10px;"><a href="#"><img src="images/top.png" style="width: 30px;height: 30px;opactiy:0.7"/></a></div>
+	</div>   
+</div>         
+<!-- 回到顶部 -->             
+    
+</div>
+<{include file="wap/footer.html"}> 
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/wap/hui-tab.js" type="text/javascript"></script>
+<script src="js/layui.js" type="text/javascript"></script>
+<script type="text/javascript">
+    hui.ready(function(){
+       hui('#fenlei').scrollX(4, '.fenlei');
+    });
+</script>
+<script>
+$(document).ready(function(){
+      $("#typeid<{$typeid}>").css({"border-bottom":"2px solid #f2f2f2","color":"#fff"});
+});
+</script> 
+   <script>
+layui.use(['flow'], function(){
+  var $ = layui.jquery; 
+  var flow = layui.flow;
+
+  flow.load({
+    elem: '#cunfang' 
+     ,isAuto: false
+    ,isLazyimg: true
+    ,done: function(page, next){  
+        var typeid=$("#new_typeid").val();
+        var pages=$("#newpage").val();  var pagenum=parseInt(pages)+1;
+        if(pages != ""){
+        page = pages ;
+        $("#newpage").val(pagenum);
+      }else{ }
+      var lis = []; 
+ $.getJSON("<{spUrl c=main a=ajax_mquan_top}>", { 'pageid': pagenum ,'typeid': typeid , }, function(json){ 
+        layui.each(json, function(index, item){
+           if(item.shopType == '1'){
+        lis.push('<a href="index.php?c=main&a=mshop_show&taobaoid='+item.goodsId+'"><li style="width: 47%;margin-top: .1rem;border-radius: 5px;background: #fff;margin: 2% 0 0 2%;position: relative;"><img src="'+item.mainPic+'" style="width: 100%;"/>   <p style="font-size: 12px;font-family: 黑体-简;font-weight: 300;color: #808080;height: 26px;line-height: 26px;overflow: hidden;text-indent: 5px;">'+item.title+'</p> <p style="text-align: left;"><span style="font-size: 10px;font-weight: 400;color: #666;">券后&nbsp;</span><span style="font-size: 12px;font-weight: 500;color: #FF2B22;margin-left: 1px;">¥</span><span style="font-size: 19px;font-weight: 500;color: #FF2B22;">'+item.actualPrice+'</span>&nbsp;<span style="color: #bbb;text-decoration: line-through;font-size: 12px;">￥'+item.originalPrice+'</span></p><p style="height: 26px;line-height: 18px;text-align: left;font-size: 12px;color: #808080;">销量:'+item.monthSales+'<span style="float: right;"><img src="images/tmall.png" style="width: 15px;height: 15px;"/>&nbsp;</span></p><div style="width: 50px;height: 45px;display: block;right: 0px;top: 0px;border-radius: 1px;text-align: center;background: red;color: yellow;z-index: 9;position: absolute;font-size: 12px;line-height: 14px;">优惠券<br><span style="font-weight: bold;font-size: 12px;color: #fff;">'+item.couponPrice+'元</span><img src="images/wap/qulingquan.png" style="width: 100%;"/></div></li></a>');    
+           }else{
+          lis.push('<a href="index.php?c=main&a=mshop_show&taobaoid='+item.goodsId+'"><li style="width: 47%;margin-top: .1rem;border-radius: 5px;background: #fff;margin: 2% 0 0 2%;position: relative;"><img src="'+item.mainPic+'" style="width: 100%;"/>   <p style="font-size: 12px;font-family: 黑体-简;font-weight: 300;color: #808080;height: 26px;line-height: 26px;overflow: hidden;text-indent: 5px;">'+item.title+'</p> <p style="text-align: left;"><span style="font-size: 10px;font-weight: 400;color: #666;">券后&nbsp;</span><span style="font-size: 12px;font-weight: 500;color: #FF2B22;margin-left: 1px;">¥</span><span style="font-size: 19px;font-weight: 500;color: #FF2B22;">'+item.actualPrice+'</span>&nbsp;<span style="color: #bbb;text-decoration: line-through;font-size: 12px;">￥'+item.originalPrice+'</span></p><p style="height: 26px;line-height: 18px;text-align: left;font-size: 12px;color: #808080;">销量:'+item.monthSales+'<div style="width: 50px;height: 45px;display: block;right: 0px;top: 0px;border-radius: 1px;text-align: center;background: red;color: yellow;z-index: 9;position: absolute;font-size: 12px;line-height: 14px;">优惠券<br><span style="font-weight: bold;font-size: 12px;color: #fff;">'+item.couponPrice+'元</span><img src="images/wap/qulingquan.png" style="width: 100%;"/></div></li></a>');    
+           } 
+       }); 
+        
+        next(lis.join(''), page < 1000);    
+      });
+      
+    }
+  });
+});
+      
+</script>
+</body>
+</html>

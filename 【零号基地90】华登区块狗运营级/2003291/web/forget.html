@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="./js/mui.min.js"></script>
+    <link href="./css/mui.min.css" rel="stylesheet"/>
+    <link href="./css/main.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+</head>
+<body style="background: #191d46;">
+	<div style="height: 0.4rem;"></div>
+	<header class="mui-bar mui-bar-nav" style="background: #191d46;padding-top: 0.4rem;">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title" style="font-size: 0.34rem;">忘记密码</h1>
+	</header>
+	<div class="main_wrap main_register">
+		<form id='register-form' class="mui-input-group">
+			<div class="mui-input-row">
+				<label><span class="mui-icon mui-icon-person"></span></label>
+				<input id='username' type="text" class="mui-input-clear mui-input" placeholder="用户名(字母开头,长度8-16位的字母数字组合)">
+			</div>
+			<div class="mui-input-row">
+				<label><span class="mui-icon mui-icon-phone"></span></label>
+				<input id='phone' type="tel" maxlength="11" class="mui-input-clear mui-input" placeholder="请输入电话号码">
+			</div>
+			<div class="mui-input-row">
+				<label><span class="mui-icon mui-icon-compose"></span></label>
+				<input id='code' type="text" class="mui-input-clear mui-input" placeholder="请输入验证码">
+				<a class="getcode_btn">发送验证码</a>
+				<a class="getcode_count"></a>
+			</div>
+			<div class="mui-input-row">
+				<label><span class="mui-icon mui-icon-locked"></span></label>
+				<input id='login_password' type="password" class="mui-input-clear mui-input" placeholder="请输入新密码">
+			</div>
+			<div class="mui-input-row">
+				<label><span class="mui-icon mui-icon-locked"></span></label>
+				<input id='login_password_confirm' type="password" class="mui-input-clear mui-input" placeholder="请再次输入新密码">
+			</div>
+		</form>
+		<a href="javascript:;" class="change_btn">确认</a>
+
+	</div>
+	<script src="./js/jquery-2.1.1.min.js"></script>
+	<script src="/js/maaa.js"></script>
+
+</body>
+</html>

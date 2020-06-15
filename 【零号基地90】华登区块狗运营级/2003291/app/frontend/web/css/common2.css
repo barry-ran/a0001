@@ -1,0 +1,810 @@
+html,
+body {
+    width: 100%;
+    font-size: 14px;
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+    overflow-x: hidden;
+/*    max-width: 640px;*/
+    margin: 0 auto;
+    background:#F1F1F1;
+    position: relative;
+    height: 100%;
+    overflow: visible;
+}
+
+input,
+button,
+select,
+textarea {
+    outline: none;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+/*修改input标签的placeholder的字体颜色等样式*/
+
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #000;
+    opacity: 0.4;
+}
+
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #000;
+    opacity: 0.4;
+}
+
+input:-ms-input-placeholder {
+    color: #000;
+    opacity: 0.4;
+}
+
+input::-webkit-input-placeholder {
+    color: #000;
+    opacity: 0.4;
+}
+/*border相关*/
+
+.border0 {
+    border: 0;
+}
+
+.bt0 {
+    border-top: 0 !important;
+}
+
+.border-R-1 {
+    border-right: 1px solid #cccccc;
+}
+
+.border-l-1 {
+    border-left: 1px solid #FBE4A4;
+}
+
+.border-r-orange {
+    border-right: 1px solid #1E88E5;
+}
+
+.border-orange {
+    border: 1px solid #F9DB56;
+}
+
+.border-b-gray {
+    border-bottom: 1px solid #b3b3b3;
+}
+
+/*border-radius圆弧相关*/
+.radius6{
+    border-radius: 6px;
+}
+/*margin相关*/
+
+.mt0 {
+    margin-top: 0 !important;
+}
+
+.mt10 {
+    margin-top: 10px !important;
+}
+
+.mt20 {
+    margin-top: 20px !important;
+}
+
+.mt50 {
+    /*margin-top: 50px !important;*/
+}
+
+.mr50 {
+    margin-right: 50px;
+}
+
+.ml30 {
+    margin-left: 30px;
+}
+/*padding相关*/
+
+.pad5 {
+    padding: 5px;
+}
+
+.pad10 {
+    padding: 10px;
+}
+.pad10_0{
+    padding: 10px 0;
+}
+.pad0_5 {
+    padding: 0 5px;
+}
+.pad0_10{
+    padding: 0 10px;
+}
+.pt0 {
+    padding-top: 0 !important;
+}
+
+.pb0 {
+    padding-bottom: 0 !important;
+}
+
+.pl0 {
+    padding-left: 0 !important;
+}
+
+.pr0 {
+    padding-right: 0 !important;
+}
+
+.pt15 {
+    padding-top: 15px;
+}
+
+.pt70 {
+    padding: 70px 0;
+}
+
+.pl10 {
+    padding-left: 10px;
+}
+/*width相关*/
+
+.width8 {
+    width: 80px;
+}
+.width70{
+    width: 70px;
+    display: inline-block;
+}
+.width100f-80{
+    display: inline-block;width: calc(100% - 80px);
+}
+.width33f {
+    width: 33.3%;
+}
+
+.width30f {
+    width: 30%;
+}
+
+.width20f {
+    width: 20%;
+}
+
+.width5f {
+    width: 5%;
+}
+
+.width100 {
+    width: 100%;
+    display: inline-block;
+}
+
+.width17em {
+    width: 17em !important;
+}
+/*height相关*/
+
+.height10 {
+    height: 10px;
+}
+.height22{
+    height: 22px;
+    line-height: 22px;
+}
+
+.height44 {
+    height: 44px;
+}
+
+.height68 {
+    vertical-align: middle;
+    height: 68px;
+    line-height: 68px;
+}
+
+.height100 {
+    vertical-align: middle;
+    height: 100px !important;
+    line-height: 100px !important;
+}
+/*text-align相关*/
+
+.tcenter {
+    text-align: center;
+}
+
+.tright {
+    text-align: right;
+}
+
+.tleft {
+    text-align: left;
+}
+/*透明度相关*/
+
+.opacity4 {
+    opacity: 0.4;
+}
+
+.opacity5 {
+    opacity: 0.5;
+}
+
+.opacity6 {
+    opacity: 0.6;
+}
+
+.opacity8 {
+    opacity: 0.8;
+}
+/*背景颜色相关*/
+
+.bg-white {
+    background: #FFF;
+}
+
+.bgBlb {
+    background: #F7D00D;
+}
+
+.bg-gray {
+    background: #F1F1F1;
+}
+/*字体颜色相关*/
+
+.color-white {
+    color: #FFF;
+}
+
+.color-gray {
+    color: #757575;
+}
+
+.color-orange {
+    color: #F7CA4B;
+}
+
+.color-grey {
+    color: #E2E2E2;
+}
+.color-red{
+    color: #FC2B39;
+}
+/*字体大小相关*/
+
+.fz12 {
+    font-size: 12px;
+}
+
+.fz16 {
+    font-size: 16px;
+}
+/*浮动样式*/
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+/*清除浮动*/
+
+.clear:after {
+    content: '.';
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+}
+/*隐藏样式*/
+
+.ng-hide {
+    display: none;
+}
+/*以下控制输入框的弹出层提示*/
+
+.frm select+label,
+.frm input.txt+label {
+    -webkit-transition: -webkit-transform .2s, visibility .2s .2s, visibility .2s;
+    transition: transform .2s, visibility .2s;
+    visibility: hidden;
+    top: 0;
+    left: 1em;
+    position: absolute;
+    color: rgba(255, 255, 255, 1);
+    font-size: 12px;
+}
+
+.frm select+label:before,
+.frm input.txt+label:before {
+    content: attr(title);
+}
+
+input.txt {
+    z-index: 1;
+    position: relative;
+    width: 16em;
+    padding: .5em 0;
+    border: none;
+    font-size: 12px;
+    box-sizing: border-box;
+    color: rgba(26, 179, 209, 1);
+    transition: background-color .2s, color .2s;
+}
+
+select {
+    z-index: 1;
+    position: relative;
+    padding: .5em 0em;
+    background-color: transparent;
+    /*color: rgba(255, 255, 255, 0.8);*/
+    /*border: none;*/
+    font-size: 12px;
+    box-sizing: border-box;
+    border-radius: .25em;
+    transition: background-color .2s, color .2s;
+}
+
+select.txt {
+    color: rgba(26, 179, 209, 1);
+}
+
+select option {
+    color: #666;
+}
+
+input.txt:focus+label {
+    visibility: visible;
+    width: auto;
+    -webkit-transform: translate3d(0, -2em, 0);
+    transform: translate3d(0, -2em, 0);
+}
+
+select:focus+label {
+    visibility: visible;
+    width: auto;
+    -webkit-transform: translate3d(0, -2em, 0);
+    transform: translate3d(0, -2em, 0);
+}
+
+.btn {
+    border-radius: 6px;
+}
+/*滚动块样式*/
+
+input[type="range"] {
+    margin-top: 8.5px;
+    background: linear-gradient(left, #52D8B7, #1E88E5 100%);
+    background: -o-linear-gradient(left, #52D8B7,#1E88E5 100%);
+    background: -ms-linear-gradient(left, #52D8B7, #1E88E5 100%);
+    background: -moz-linear-gradient(left, #52D8B7, #1E88E5 100%);
+    background: -webkit-linear-gradient(left, #52D8B7, #1E88E5 100%);
+    border-radius: 15px;
+    /*width: 280px;*/
+    -webkit-appearance: none;
+    height: 8px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    cursor: default;
+    top: 15px;
+    height: 16px;
+    width: 16px;
+    transform: translateY(1px);
+    /*background: url(img/icon02.png) no-repeat;*/
+    background: radial-gradient(center center, ellipse cover,#52D8B7 21%, #1E88E5 56%);
+    background: -o-radial-gradient(center center, ellipse cover, #52D8B7 21%,  #1E88E5 56%);
+    background: -ms-radial-gradient(center center, ellipse cover,#52D8B7 21%,  #1E88E5 56%);
+    background: -moz-radial-gradient(center center, ellipse cover,#52D8B7 21%, #1E88E5 56%);
+    background: -webkit-radial-gradient(center center, ellipse cover, #52D8B7 21%,  #1E88E5 56%);
+    border-radius: 19px;
+}
+/*以下为各页面样式*/
+a{
+    text-decoration: none;
+}
+/*高亮样式需要根据不同的项目风格做修改*/
+
+.on {
+    color: #FFFFFF;
+    background: #157DAA;
+}
+
+.header {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    position: relative;
+    color: #FFF;
+    font-size: 16px;
+}
+
+.goBack {
+    position: absolute;
+    left: 12px;
+    top: 24px;
+}
+
+.goDown {
+    position: absolute;
+    bottom: 6px;
+    left: calc(50% - 5px);
+    transition: .1s;
+}
+
+.balance {
+    padding: 5px;
+}
+
+.balance p {
+    margin: 0;
+}
+
+.orderPrice {
+    padding: 12px;
+}
+
+.orderArticle {
+    border-radius: 6px;
+    padding: 0 15px;
+}
+
+.orderArticleName {
+    display: inline-block;
+    width:100%;
+    height: 30px;
+    /*margin-bottom: 20px;*/
+    border-bottom: 1px solid #e8e7e7;
+}
+
+.orderArticleValue {
+    display: inline-block;
+    width:100%;
+}
+
+.orderArticleValue input[type=text] {
+    width: 100%;
+    border: 0;
+    color: #F9D675;
+    padding-left: 10px;
+}
+
+.orderNav {
+    padding: 8px 0;
+    border-bottom: 1px solid #F1F1F1;
+}
+
+.orderArticlePrice {
+    width:25% !important;
+}
+
+.choiceBi {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.choiceBi:focus+.goDown {
+    transform: rotateZ(180deg);
+}
+
+#realPrice {
+    color: #F9D675;
+    position: absolute;
+    display: inline-block;
+    right: 53px;
+    top: 2px;
+}
+
+#addPrice {
+    padding-left: 5px;
+    color: #1E88E5;
+}
+
+#deletePrice {
+    padding-right: 5px;
+    color: #1E88E5;
+}
+
+.assetsPrice {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.assetsOrder {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 5px;
+}
+
+.assetsC img {
+    width: 32px;
+    height: 32px;
+}
+
+.assetsTime {
+    border: 1px solid #1E88E5;
+    border-radius: 6px;
+    color: #1E88E5;
+    display: inline-block;
+    width: 100%;
+}
+
+.assetsTimeB {
+    width: 33.3%;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+}
+
+.assetsChart {
+    width: 100%;
+    height: 180px;
+}
+
+.assetsBS {
+    border: 1px solid #1E88E5;
+    border-radius: 6px;
+    color: #E6b447;
+/*    background-color: #3b3b3a;*/
+}
+
+.assetsBuy {
+    width: 50%;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+}
+
+.assetsSell {
+    width: 50%;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+}
+
+.crown {
+    position: absolute;
+}
+
+.numCenter {
+    background: url('../img/index_bg.png') 100% 100%;
+    background-size: contain;
+}
+
+.numCenterRecode {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.numCenterName {
+    padding: 10px;
+}
+
+.numCenterRecode .on {
+    background: #3b3b3a;
+    color: #E6b447;
+    border-bottom: 1px solid #E6b447;
+}
+
+.recodeRecode {
+    padding: 10px 0px;
+    /* border-bottom: 1px solid #3b3b3a; */
+    width: 100%;
+    display: inline-block;
+}
+
+.recodeNum {
+    width: 70px;
+    height: 44px;
+    line-height: 44px;
+}
+
+.numCenterButton {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.numCenterButtonIn {
+    width: 50%;
+    text-align: center;
+    background: #F7CA4B;
+    color: #FFFFFF;
+    padding: 10px;
+    font-size: 16px;
+    float: left;
+}
+
+.numCenterButtonOut {
+    width: 50%;
+    text-align: center;
+    background: #67D1FD;
+    color: #FFFFFF;
+    padding: 10px;
+    font-size: 16px;
+    float: right;
+}
+
+.titleAllRecode {
+    position: absolute;
+    right: 15px;
+}
+
+/*遮罩层*/
+.shade{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.3;
+    position: fixed;
+    top: 0;
+    display: none;
+    max-width: 640px;
+}
+.ballBox{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: none;
+}
+.ball{
+    width: 300px;
+    height: 400px;
+    background-color: #005a7f;
+    position: absolute;
+    top: 50%;
+    margin-top: -200px;
+    left:calc(50% - 150px);
+    border-radius: 10px;
+}
+.ball2{
+    width: 300px;
+    height: 180px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    margin-top: -90px;
+    left:calc(50% - 150px);
+    border-radius: 10px;
+}
+.client{
+    /*border:1px solid red;*/
+    text-align: center;
+    margin-top: 40px;
+    color: forestgreen;
+    font-size: 16px;
+}
+.client-1{
+    width: 20px;
+    height: 40px;
+    /*border:1px solid red;*/
+    font-size: 25px;
+    float: right;
+    margin-right: 10px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.client-1 img{
+    width: 12px;
+    height: 12px;
+}
+
+.n-pay{
+    width:95%;
+    height: 50px;
+    border-bottom: 1px solid gainsboro;
+    margin: auto;
+}
+.n-pay span{
+    line-height: 50px;
+}
+.x-pay{
+    margin-left: 10px;
+    color: darkgrey;
+}
+.n-pay input{
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
+}
+.v-pay{
+    float: right;
+    margin-right: 10px;
+    color: darkgrey;
+}
+.all-1{
+    width: 50px;
+    height: 25px;
+    background-color: forestgreen;
+    text-align: center;
+    line-height:25px;
+    float: right;
+    margin-top: 13px;
+    color: white;
+    border-radius:3px;
+}
+.password-a{
+    width:100%;
+    height: 70px;
+}
+.password1{
+    width:95%;
+    height: 50px;
+    margin: auto;
+    color: red;
+}
+
+/*密码框*/
+.pwd-box{
+    width:95%;
+    padding-left: 1px;
+    position: relative;
+    border: 1px solid #9f9fa0;
+    /*border-radius: 3px;*/
+    over-flow:hidden;
+    margin:  auto;
+    margin-top:25px;
+}
+.pwd-box input[type="tel"]{
+    width: 100%;
+    height: 48px;
+    color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+    font-size: 18px;
+    opacity: 0;
+    z-index: 1;
+    letter-spacing: 35px;
+}
+.fake-box{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+}
+.fake-box input{
+    width: 47px;
+    height: 48px;
+    border: none;
+    border-right: 1px solid #e5e5e5;
+    text-align: center;
+    font-size: 30px;
+}
+.fake-box input:nth-last-child(1){
+    border:none;
+}
+#mydivIMG{
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#mydivIMG img{width: 100%;}

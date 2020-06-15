@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="HandheldFriendly" content="True">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>Lucky zodiac</title>
+<link rel="stylesheet" type="text/css" media="all" href="./css/reset.css" />
+<link rel="stylesheet" type="text/css" media="all" href="./css/style.css" />
+<link rel="stylesheet" type="text/css" media="all" href="./css/zodiac_style.css" />
+
+<script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
+<script src="./js/js.js" type="text/javascript"></script>
+<script src="./js/layui.all.js" type="text/javascript"></script>
+
+<style type="text/css">
+	.marL93{margin-left: .93rem;}
+	.xzimg {
+	    width: .38rem;
+	    height: .38rem;
+	    margin-left: .24rem;
+	    margin-right: .24rem;
+	}
+</style>
+</head>
+<body>
+	<!-- 头部 -->
+	<div class="header">
+		<div class="duo"></div>
+		<a href="javascript:history.back(-1)" class="hele"></a>
+		<h1 class="hetitle">积分充值</h1>
+	</div>
+
+	<div id="page" class="page m3">	
+		<div  class="system disFlex align-items">
+			<span>充值数量</span>
+			<input type="text" placeholder="请输入充值积分数量" class="smipt hcg_num"/>
+		</div>
+		
+		<div class="system disFlex align-items">
+			<span>充值金额</span>
+			<input type="text" placeholder="请输入充值金额" class="smipt numberId" />
+		</div>
+	
+		<div class="system disFlex align-items">
+			<span>交易密码</span>
+			<input type="password" placeholder="请输入交易密码" class="smipt jy_pwd" />
+		</div>
+		
+		<div class="system disFlex align-items">
+			<span>支付方式</span>
+			<select name="" id="" class="smipt pay_id">
+				<option value="">请选择支付方式</option>
+				<option value="">支付宝扫码</option>
+				<option value="">微信扫码</option>
+			</select>
+		</div>
+		
+		<p class="font24 zfbcode">提示：积分与人民币兑换比例为1：<span class="scale"></span></p>
+		
+		<div class="aut">
+			<button class="cope rzbtn1">确认充值</button>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="/js/public.js"></script>
+	<script type="text/javascript">
+		//获取路径？后字段
+		function GetQueryString(name) {
+		    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+			var r = window.location.search.substr(1).match(reg);
+		    if (r != null) return decodeURI(r[2]);
+		    return '';
+		}		
+		var scale = GetQueryString('scale');
+		$(".scale").html(scale);
+		
+		var prevent_repetition=true;
+		$(".rzbtn1").on("click",function(){
+			if(prevent_repetition){
+				prevent_repetition=false;
+				var hcg_num = $(".hcg_num").val();
+				var numberId = $(".numberId").val();
+				var jy_pwd = $(".jy_pwd").val();
+				
+				var aa = $(".pay_id option:selected").text();
+				if(aa == '支付宝扫码'){
+					var pay_id = 1;
+		            localStorage.setItem('pay_id222',pay_id);		                						
+				}else{
+					var pay_id = 2;
+		            localStorage.setItem('pay_id222',pay_id);		                						
+				}
+				
+				if(!hcg_num){
+					layer.msg("请输入充值数量");
+					prevent_repetition=true;
+					return false;
+				}
+				if(!numberId){
+					layer.msg("请输入充值金额");
+					prevent_repetition=true;
+					return false;
+				}
+				if(!jy_pwd){
+					layer.msg("请输入交易密码");
+					prevent_repetition=true;
+					return false;
+				}
+				
+				if(aa == '请选择支付方式' ){
+					layer.msg("请选择支付方式");
+					prevent_repetition=true;
+					return false;
+				}
+				
+				$.ajax({
+		            type:"post",
+		            url:url+'/user/onlinerecharge.html?token='+token,
+		            async:false,
+		            data:{
+		                token:token,
+		                hcg_num:hcg_num,
+		                jy_pwd:jy_pwd,
+		                pay_id:pay_id
+		            },
+		            dataType:'json',
+		            success:function(result){
+		                if(result.status == "0001"){
+		                	var amount = result.data.amount;
+		                	var out_trade_no = result.data.out_trade_no;
+		                	var pay_id = result.data.pay_id;
+		                	var pay_no = result.data.pay_no;
+		                	var payment = result.data.payment;
+		                	var resp_code = result.data.resp_code;
+		                	var resp_desc = result.data.resp_desc;
+		                	var tran_amount = result.data.tran_amount;
+		                	var sign = result.data.sign;		                	
+		                	localStorage.setItem('amount',amount);
+		                	localStorage.setItem('out_trade_no',out_trade_no);
+		                	localStorage.setItem('pay_id',pay_id);
+		                	localStorage.setItem('pay_no',pay_no);
+		                	localStorage.setItem('payment',payment);
+		                	localStorage.setItem('resp_code',resp_code);
+		                	localStorage.setItem('resp_desc',resp_desc);
+		                	localStorage.setItem('tran_amount',tran_amount);
+		                	localStorage.setItem('sign',sign);		                	
+		                	window.location.href=payment;		                			                	
+		                }else{
+		                    isErr(result);
+		                }
+		            },
+		            error:function(){
+		                layer.msg("响应失败");
+		            },
+					complete: function() {
+						prevent_repetition = true;
+					}
+		        })
+			}
+			
+		})
+	</script>
+</body>
+</html>
+
